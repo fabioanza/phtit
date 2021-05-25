@@ -403,6 +403,8 @@ class Geometric_QM(Calculations):
     # enter as state an arrary as (16,). But it does work with an array as (1,16).
     #It also works with time-series. The quick solution is to use DYN[0:1] instead
     #of DYN[0]. I'll get back to it later.
+    ## TODO: This is probably caused by the fact that DYN is currently
+    #an ndarray. The problem should not be there if DYN is a list. Check this.
     def probabilities(self):
         #TESTED: YES. PASSED: 1
         return self.apply_to_state(self.probs)
@@ -447,6 +449,7 @@ class Geometric_QM(Calculations):
     #The function prob_phase(self,psi) takes the state of a qubit psi and
     #returns its (p,\phi) coordinate.
     def pphi(self,psi):
+        #TESTED: YES
         dS = 2**self.system_size
         assert dS ==len(psi), "Quantum State psi does not have the required dimension dS = {val}".format(val=dS)
         B_Sys = np.eye(dS)
@@ -455,6 +458,7 @@ class Geometric_QM(Calculations):
     #In general, the extraction of (probabilities,phases) coordinates is very
     #similar to what has been defined above.
     def prob_phase(self,psi):
+        #TESTED: YES
         chis, chis_zero = self.local_vectors(psi)
         dE = 2**self.env_size
         dS = 2**self.system_size
@@ -480,3 +484,234 @@ class Geometric_QM(Calculations):
                 p_vec.append(pp)
                 phi_vec.append(phi)
         return p_vec, phi_vec
+
+    def probability_phase(self):
+        return self.apply_to_state(self.prob_phase)
+
+
+    #For later, it is useful to separately define the function which compute
+    #the probabilities coordinates and the phases coordinates.
+    def p_coor(self,psi):
+        #TESTED: YES
+        chis, chis_zero = self.local_vectors(psi)
+        dE = 2**self.env_size
+        dS = 2**self.system_size
+        B_Sys = np.eye(dS)
+        assert len(chis)+len(chis_zero)==dE, "Total Number of chi_alpha is not equal to the declared environment size"
+        p_vec = []
+        s=0
+        for n in range(dE): #This ranges over all possible states in the environment (chosen basis)
+            pp = np.zeros(dS)
+            if (np.sum(np.array(chis_zero)==n))==1:
+                #If the index correspond to a null vector, we enter a null array both for p and for phi.
+                p_vec.append(pp)
+            else:
+                for k in range(dS):
+                    #If the index correspond to a non-null chi, we can identify correctly the (probability,phases) coordinates in CPN of the chi_alphas
+                    #Also, if the vector is an element of the basis |0>, |1>, |2> etc, the phases are not defined and we give it a zero value.
+                    pp[k]=np.abs(self.scalar_product(B_Sys[k],chis[s]))**2
+                s=s+1
+                p_vec.append(pp)
+        return np.array(p_vec)
+
+    def p_coordinates(self):
+        #TESTED: YES
+        return self.apply_to_state(self.p_coor)
+
+    def phi_coor(self,psi):
+        #TESTED: YES
+        chis, chis_zero = self.local_vectors(psi)
+        dE = 2**self.env_size
+        dS = 2**self.system_size
+        B_Sys = np.eye(dS)
+        assert len(chis)+len(chis_zero)==dE, "Total Number of chi_alpha is not equal to the declared environment size"
+        phi_vec = []
+        s=0
+        for n in range(dE): #This ranges over all possible states in the environment (chosen basis)
+            phi = np.zeros(dS)
+            if (np.sum(np.array(chis_zero)==n))==1:
+                #If the index correspond to a null vector, we enter a null array both for p and for phi.
+                phi_vec.append(phi)
+            else:
+                for k in range(dS):
+                    #If the index correspond to a non-null chi, we can identify correctly the (probability,phases) coordinates in CPN of the chi_alphas
+                    #Also, if the vector is an element of the basis |0>, |1>, |2> etc, the phases are not defined and we give it a zero value.
+                    phi[k]=np.angle(self.scalar_product(B_Sys[k],chis[s]))-np.angle(self.scalar_product(B_Sys[0],chis[s]))
+                s=s+1
+                phi_vec.append(phi)
+        return np.array(phi_vec)
+
+    def phi_coordinates(self):
+        #TESTED: YES
+        return self.apply_to_state(self.phi_coor)
+
+
+##############################################################################
+############INFORMATION TRANSPORT PART########################################
+##############################################################################
+
+class information_transport(Geometric_QM):
+    def __init__(self,psi,deltat,sys_list,env_list,N_p,N_phi):
+        Geometric_QM.__init__(self,psi,sys_list,env_list)
+        self.del_t = deltat
+        self.Np = N_p
+        self.Nphi = N_phi
+        self.del_p, self.del_phi = 1/self.Np, 2*np.pi/self.Nphi
+
+    #The first thing to do is to compute the derivatives of the geometric
+    #quantities. We do it with a dot_computation function. This takes in
+    #input the time-series of quantum states, the function of which we want
+    # to compute the time derivative, and the arguments of the function
+    def dot_function(self,func,*args):
+        func_dot = []
+        for t in range(len(self.psi_all)-1):
+            value = (func(psi=self.psi_all[t+1],*args)-func(psi=self.psi_all[t],*args))/self.del_t
+            func_dot.append(value)
+        return func_dot
+
+    def probabilities_dot(self):
+        #TESTED: YES
+        return self.dot_function(self.probs)
+
+    def p_alpha_dot(self):
+        #TESTED: YES
+        return self.dot_function(self.p_coor)
+
+    def phi_alpha_dot(self):
+        #TESTED: YES
+        return self.dot_function(self.phi_coor)
+
+    #This is the old code for the same derivatives. Just for reference.
+    def OLD_dot_computation(time_evolution,basis_sys,basis_env):
+        x_alpha, p_alpha, phi_alpha = [], [], []
+        x_alpha_dot, p_alpha_dot, phi_alpha_dot = [], [], []
+        CL = gt.geometric_tools(time_evolution[0],basis_sys,basis_env)
+        x_alpha.append(CL.probabilities())
+        a,b = CL.prob_phase()
+        p_alpha.append(a)
+        phi_alpha.append(b)
+        T=len(time_evolution)
+        co = 10
+        for t in range(1,T):
+            if t%np.int(T/10)==0:
+                print("countdown...",co)
+                co=co-1
+            CL = gt.geometric_tools(time_evolution[t],basis_sys,basis_env)
+            x_alpha.append(CL.probabilities())
+            a,b = CL.prob_phase()
+            p_alpha.append(a)
+            phi_alpha.append(b)
+            x_dot = np.array(x_alpha[t])-np.array(x_alpha[t-1])
+            p_dot = np.array(p_alpha[t])-np.array(p_alpha[t-1])
+            phi_dot = np.array(phi_alpha[t])-np.array(phi_alpha[t-1])
+            x_alpha_dot.append(x_dot)
+            p_alpha_dot.append(p_dot)
+            phi_alpha_dot.append(phi_dot)
+        return x_alpha,p_alpha,phi_alpha, x_alpha_dot, p_alpha_dot, phi_alpha_dot
+
+
+    #Now we start putting in some of the assunmptions specific of the numeric
+    #approach. Like the discretized CP1 properties.
+    def discretization_properties(self):
+        Ip_boundaries = np.linspace(0,1,self.Np)
+        Iphi_boundaries = np.linspace(0,2*np.pi,self.Nphi)
+        delta_p = Ip_boundaries[1]-Ip_boundaries[0]
+        delta_phi = Iphi_boundaries[1]-Iphi_boundaries[0]
+        Ip_centers = Ip_boundaries[0:-1]+0.5*delta_p
+        Iphi_centers = Iphi_boundaries[0:-1]+0.5*delta_phi
+        return Ip_boundaries, Iphi_boundaries, Ip_centers, Iphi_centers
+
+    #Once we have fixed the discretization, which is specified by (Np,Nphi),
+    #we need a function which identifies which cell a given pair (p,phi)
+    #belongs to.
+    def get_cell(self,pphi):
+        N_p, N_phi = np.int(1/self.del_p), np.int(2*np.pi/self.del_phi)
+        Ip_boundaries, Iphi_boundaries, Ip_centers, Iphi_centers = self.discretization_properties()
+        p,phi = pphi[0], pphi[1]
+        flag = 'N'  #The flag is necessary because the coordinates (p,phi) are
+        #good only with p is not 0 or 1. In that case, phi is not defined.
+        if np.isclose(p*(p-1),0,atol=10**(-8))==False:
+            #So, if p is not 0 or 1, we return the flag (for later check) and the cell.
+            return flag, np.argmin(np.abs(Ip_centers-p)), np.argmin(np.abs(Iphi_centers-phi))
+        else:
+            #If p is 0 or 1, we return the flag, p and then an Auxiliary
+            #argument so that, for consistency, the function returns always the
+            #same number of arguments.
+            return 'Y',p,'aaaa'
+
+
+    #We now compute the quantities specific for information_transport.
+    #The fluxes J_P, J_Phi and the sources Sigma_P and Sigma_Phi. This is
+    #the function which computes these quantities at a given time, given the
+    #relevant quantities as input.
+    def fluxes_sources_fixed_t(self,x_alpha_t,x_alpha_dot_t,p_alpha_t,p_alpha_dot_t,phi_alpha_t,phi_alpha_dot_t):
+        #x_alpha_t and x_alpha_dot_t have to be arrays of dimension dE.
+        #Extract the discretized CP1.
+        Ip_boundaries, Iphi_boundaries, Ip_centers, Iphi_centers = self.discretization_properties()
+        #Initialize fluxes to zero arrays.
+        JP, JPHI, SIGMA = np.zeros((len(Ip_centers),len(Iphi_centers))), np.zeros((len(Ip_centers),len(Iphi_centers))), np.zeros((len(Ip_centers),len(Iphi_centers)))
+        #Extremal points as |0> and |1> need to be treated in a slightly different way, due to discontinuity in the coordinate map.
+        SIGMA_0, SIGMA_1 = 0,0
+        JP_0,JP_1 = 0,0
+        JPHI_0,JPHI_1 = 0,0
+        dE = 2**(self.env_size)
+        for n in range(dE):
+            #Auxiliary array of the dimension set by the resolution of CP1 that we are using.
+            AUX = np.zeros((len(Ip_centers),len(Iphi_centers)))
+            #a and b are the two indices that identifies the cell (in the discretization on CP1) on which the specific point (p_alpha,\phi_alpha) can be found at.
+            #f is a flag that helps determine if the state is exactly |0> or |1>. f='N' means no. f='Y' means yes. In this last case, the second output is p and
+            #it tells if the state is |0> (p=0) or |1> (p=1).
+            #print("for n = {num:n} we get".format(num=n))
+            #print("p_alpha = {val}".format(val=p_alpha[n][1]))
+            f,a,b=self.get_cell(np.array([p_alpha_t[n][1],phi_alpha_t[n][1]]))
+            #print("f = {fl}; a = {val}".format(fl=f,val=a))
+            if f=='N':
+                #print('n = {num:n}, is in cell ({a:n},{b:n})'.format(num=n,a=a,b=b))
+                #This makes sure that, in the sum that determines the fluxes or sources, the terms are added to the right cell, identified by the position of the point.
+                AUX[a,b]=1
+                #Then we can add to the previously determined flux/source, and iterate over the environmental label.
+                #print('Adding {val} to JP'.format(val=x_alpha[n]*self.p_dot[n][1]))
+                JP = JP + x_alpha_t[n]*p_alpha_dot_t[n][1]*AUX
+                #print('Adding {val} to JPHI'.format(val=x_alpha[n]*self.phi_dot[n][1]))
+                JPHI = JPHI + x_alpha_t[n]*phi_alpha_dot_t[n][1]*AUX
+                #print('Adding {val} to SIGMA'.format(val=self.x_dot[n]))
+                SIGMA = SIGMA + x_alpha_dot_t[n]*AUX
+            elif f=='Y':
+                if a>0.5:
+                    #print('n= {num:n}, is in |0>'.format(num=n))
+                    #print('Adding {val} to JP_0'.format(val=x_alpha[n]*self.p_dot[n][1]))
+                    JP_0 = JP_0 + x_alpha_t[n]*p_alpha_dot_t[n][1]
+                    #Here we already have established that the point is an extremal one: |0>.
+                    #As a result of this, any variation of the phase only is pure gauge and should be disregarded. Hence,
+                    #we add only the physical terms, associated to a true variation of the state, which involves a non-zero p_dot[n][1]
+                    if np.isclose(p_alpha_dot_t[n][1],0,atol=10**(-8))==False:
+                        JPHI_0 = JPHI_0 + x_alpha_t[n]*phi_alpha_dot_t[n][1]
+                        #print('Adding {val} to JPHI_0'.format(val=x_alpha[n]*self.phi_dot[n][1]))
+                    #print('Adding {val} to SIGMA_0'.format(val=self.x_dot[n]))
+                    SIGMA_0 = SIGMA_0+x_alpha_dot_t[n]
+                elif a<0.5:
+                    #print('n= {num:n}, is in |1>'.format(num=n))
+                    #print('Adding {val} to JP_1'.format(val=x_alpha[n]*self.p_dot[n][1]))
+                    JP_1 = JP_1 + x_alpha_t[n]*p_alpha_dot_t[n][1]
+                    if np.isclose(p_alpha_dot_t[n][1],0,atol=10**(-8))==False:
+                        JPHI_1 = JPHI_1 + x_alpha_t[n]*phi_alpha_dot_t[n][1]
+                        #print('Adding {val} to JPHI_1'.format(val=x_alpha[n]*self.phi_dot[n][1]))
+                    #print('Adding {val} to SIGMA_1'.format(val=self.x_dot[n]))
+                    SIGMA_1 = SIGMA_1+x_alpha_dot_t[n]
+            else:
+                print('Problem with the flag.')
+
+        return JP, JP_0, JP_1, JPHI, JPHI_0, JPHI_1, SIGMA, SIGMA_0, SIGMA_1
+
+    #This is the full time-series of quantum states.
+    def fluxes_sources(self):
+        x, x_dot = self.probabilities(), self.probabilities_dot()
+        p, p_dot = self.p_coordinates(), self.p_alpha_dot()
+        phi, phi_dot = self.phi_coordinates(), self.phi_alpha_dot()
+        JP_t, JP0_t, JP1_t, JPHI_t, JPHI0_t, JPHI1_t, SIGMA_t, SIGMA0_t, SIGMA1_t = [], [], [], [], [], [], [], [], []
+        for t in range(len(self.psi_all)-1):
+            A0, A1, A2, A3, A4, A5, A6, A7, A8 = self.fluxes_sources_fixed_t(x[t],x_dot[t],p[t],p_dot[t],phi[t],phi_dot[t])
+            JP_t.append(A0), JP0_t.append(A1), JP1_t.append(A2)
+            JPHI_t.append(A3), JPHI0_t.append(A4), JPHI1_t.append(A5)
+            SIGMA_t.append(A6), SIGMA0_t.append(A7), SIGMA1_t.append(A8)
+        return JP_t, JP0_t, JP1_t, JPHI_t, JPHI0_t, JPHI1_t, SIGMA_t, SIGMA0_t, SIGMA1_t
