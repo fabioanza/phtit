@@ -1,0 +1,331 @@
+% Authors' response to PRA reviews of the manuscript formerly known as
+% "Extreme Quantum Advantage when Simulating Classical Systems with
+% 	Long-Range Interaction"
+%
+% jpc: 3/13/17, 3/21/17
+
+\documentclass{article}
+\usepackage{charter,graphicx,fancyhdr,geometry}
+%Added inputenc because it was  not compiling due to encoding issues.
+\usepackage{inputenc}
+
+\geometry{paper=letterpaper,
+  hmargin=1in,
+  vmargin=1.5in,
+  top = 0.25in,
+  bottom = 1in,
+  }
+
+\pagestyle{fancy}
+\fancyhf{}% Clear header/footer
+\renewcommand{\headrulewidth}{0pt}% No header rule
+\renewcommand{\footrulewidth}{1pt}% 1pt footer rule
+\fancyfoot[C]{%
+  \small
+  \begin{tabular}{c}
+    Complexity Sciences Center, Physics Department,
+    University of California, Davis, CA 95616-5270\\
+    http://csc.ucdavis.edu/
+  \end{tabular}}
+\fancyfoot[R]{\thepage}
+
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{.5\baselineskip plus 2pt minus 2pt}
+
+\usepackage{apacite}
+\usepackage{epstopdf}
+\usepackage{color}
+\definecolor{UCDBlue}{rgb}{0.067, 0.278, 0.506}
+\definecolor{UCDGold}{rgb}{0.855, 0.686, 0.024}
+
+\usepackage{color}
+\newcommand{\alert}[1]{\textbf{\textcolor{red}{#1}}}
+
+\usepackage{amsmath}
+%\usepackage{bordermatrix} % matrix with labeled row and col
+%\usepackage{kbordermatrix} % matrix with labeled row and col
+\usepackage{amscd}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bigints}
+\usepackage{braket}
+\usepackage{xfrac}
+
+\input{cmechabbrev}
+\newcommand{\Abet}{\ProcessAlphabet}
+\newcommand{\MS}{\MeasSymbol}
+\newcommand{\MSs}{\MeasSymbols}
+\newcommand{\ms}{\meassymbol}
+\newcommand{\SSet}{\CausalStateSet}
+\newcommand{\St}{\CausalState}
+\newcommand{\st}{\causalstate}
+
+\definecolor{reviewblack}{rgb}{0.5, 0.5, 0.5}
+\definecolor{todored}{rgb}{0.8, 0.2, 0.2}
+\definecolor{replyblue}{rgb}{0.1, 0.1, 0.8}
+\definecolor{highlightorange}{rgb}{0.9, 0.5, 0.1}
+
+\newcommand{\TODO}[1]{\textcolor{todored}{#1}}
+\newcommand{\REVIEW}[1]{{ \it \textcolor{reviewblack}{#1}}}
+\newcommand{\REPLY}[1]{\textcolor{UCDBlue}{#1}}
+\newcommand{\HIGHLIGHT}[1]{\textbf{\textcolor{UCDGold}{#1}}}
+
+\usepackage[colorlinks = True, urlcolor = UCDBlue]{hyperref}
+
+\begin{document}
+\includegraphics[height=3\baselineskip]{expanded_logo_cmyk_gold-blue}
+\hspace{3.7in}
+\includegraphics[height=5\baselineskip]{Logo_CSC}
+
+\hrulefill
+
+\begin{center}
+Authors' response to referee's comments on\\
+\vspace{0.1in}
+\emph{Beyond density matrices: geometric quantum states}\\
+by Anza  and Crutchfield\\
+\vspace{0.1in}
+\emph{Physical Review X - Quantum} \\
+\end{center}
+
+We are pleased to see that the referee believes the paper is publishable and 
+thank her/him for the extensive and detailed comments on the work. We found the
+comments useful and we addressed all of them. We now discuss them point-by-point.
+
+\REPLY{Authors' responses in roman;} \REVIEW{referee comments in italics,
+including points that we \HIGHLIGHT{highlight}}.
+
+{\bf Editor Stuff}
+
+
+{\bf Abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\REVIEW{1. I am uncomfortable with abstract. Rather than summarizing what the paper actually does, 
+instead it launches immediately into prejudicial view of quantum mechanics. The sentence
+``A quantum system’s state is identified with a density matrix.'' suggests that there is some kind 
+of a priori notion of what a ``state'' is, and one is identifying this with the idea of a density matrix. 
+But where does this a priori notion come from? What is meant by ``state'' other than density matrix?
+Remember, that English word ``state'' is a highly ``loaded'', and is not well-defined. One cannot 
+appeal to some vague, undefined, intuitive ``a priori'' notion of ``state'' and then insist that the 
+standard precise notion of density matrix as state is incorrect because it seems to fails to correspond 
+to this vague ``a priori" notion.
+}
+
+\REPLY{The logic of the statement agrees with the referee's perspective and it is what we want to convey. 
+A density matrix is a mathematically well-defined concept, hence, it can be used to give precise meaning to 
+an otherwise more vague concept, as the concept of ``state of a quantum system''. This is precisely 
+what we mean when we say that ``A quantum system's state (here state is vague) is identified with 
+a density matrix (mathematically precise concept)''. This is equivalent to saying, ``In quantum 
+mechanics, states are described by density matrices.'': a vague concept is stated clearly by associating
+it to a mathematically precise object. For the sake of clarity, we now use this latter 
+form, which might be more clear. }
+
+\REVIEW{2. Likewise, the following statement is problematic:} \\
+
+\REVIEW{``Though their probabilistic interpretation is rooted in ensemble theory, density matrices embody 
+a known shortcoming. They do not completely express an ensemble’s physical realization." It asserts a view that 
+is by no means held universally. Many, maybe even a majority, of quantum theorists believe that the density 
+matrix embodies all that can be said about an ensemble’s physical realization. Of course, it is possible that 
+this is not the case, but one cannot simply assert that it is not the case, as if one were asserting that $2 + 2 = 4$.}
+
+\REVIEW{In reality, it is a big open question of physics whether the density matrix completely expresses an 
+ensemble's physical realization. To put the matter another way, given two distinct ensembles sharing the same 
+density matrix, is there some experiment that can be performed that will enable one to distinguish them? Are 
+the authors of AC1 claiming that they can identify such an experiment?}
+
+\REPLY{Here we believe the language and logic are fairly clear. As it is well-known, 
+the same density matrix can be generated using two different ensembles. Hence, the density matrix does not
+express the ensemble's physical realization, because different physical realizations can give the same
+density matrix. Regarding the specific question, we do not claim that it is possible to identify such an
+experiment. However, we agree with the referee that this is indeed a very interesting and important question---one
+that we hope to address in the future.}
+
+
+\REVIEW{3. Of course it is true that}
+\REVIEW{"Conveniently, when working only with the statistical outcomes of projective and positive operator-valued 
+measurements this is not a hindrance."}
+\REVIEW{This is because it is the view of many, maybe even a majority, of quantum theorists that projective and 
+positive operator-valued measurements represent the totality of possible measurement types in quantum theory. 
+But specifically what alternative measurement types do the authors of AC1 have in mind in making this assertion?
+}
+
+\REPLY{Here we admit the language can be confusing. We do not suggest new quantum measurements. We 
+simply want to state that if one is interested in the result of PVM and POVM, the structure of the ensemble $\left\{ p_k ,\ket{\psi_k}\right\}_k$
+per se does not matter, only the density matrix $\sum_k p_k \ket{\psi_k}\!\bra{\psi_k}$. We modified the sentence
+to clarify this issue.} 
+
+\REVIEW{
+4. The final sentence of the abstract is problematic:
+``To track ensemble realizations and so remove the shortcoming, we explore geometric quantum states and explain their physical significance. We emphasize two main consequences: one in quantum state manipulation and one in quantum thermodynamics."
+It is unhelpful, because "geometric quantum states" are not defined in the abstract, and the terminology is not standard.
+So to make the abstract useful, one needs to say up front, in precise language, what is meant by a "geometric quantum state", and what additional aspects of the "ensemble’s physical realization" such states capture
+-- and, most importantly, what is actually new in the paper in this respect.
+"Explore" and "explain" is not specific enough, nor does it suffice merely to indicate in general terms ("one in quantum state manipulation and one in quantum thermodynamics") where the applications are.
+Basically, we ask for more precise statements.
+}
+
+\REPLY{We modified the final sentence of the abstract to make our statements more precise.}
+
+{\bf Introduction}
+
+
+\REVIEW{5. Again, the language is a bit slippery here -- in a single paragraph one moves from the idea of a state space in classical mechanics, usually a symplectic manifold, to the "manifold of states" in quantum mechanics. Well, since the work of Segal (1947), Ludwig (1967), Davies and Lewis (1970), Mielnik (1974), Holevo (1982) and others, it has become common to regard the space of states in quantum mechanics as a convex set (not necessarily a manifold).}\\
+\REVIEW{The "manifold of states" referred to in AC1 is, however, I believe, the space of pure states, i.e. points in projective Hilbert space. Then of course it makes sense to speak of distributions on that space.}
+
+\REPLY{We modified the sentence and used the standard language of ``space of pure states''.}
+
+\REVIEW{6. But idea mentioned in the next paragraph -- referring to "mixed states that account for incomplete knowledge of a system’s actual state" -- is again prejudicial. The notion that the "actual" state of a system is necessarily pure is as far as I can see pure prejudice. There is nothing in the theory of quantum mechanics that says this has to be so.
+}
+
+\REPLY{We modified the sentence accordingly.}
+
+\REVIEW{7. The critique of density matrix theory that follows raises some good (though well known) objections to the statistical interpretation in terms of ensembles. But the assertion that follows, namely}\\
+\REVIEW{"A complete and unambiguous mathematical concept of state should not conflate such distinct physical configurations. Not only do such ambiguities lead to misapprehending fundamental mechanisms, they also lead one to ascribe complexity or randomness where there is none."}\\
+\REVIEW{strikes me again as being prejudicial. Many well-respected authors (e.g. Segal, Mielnik, Holevo, etc) maintain exactly the opposite point of view, namely that it is precisely the possibility that two different mixtures give rise to the same state (density matrix) that is characteristic of quantum mechanics.}
+
+\REVIEW{I. E. Segal (1947) Postulates for general quantum mechanics. Ann. Math. Vol 48, 930–948.}\\
+\REVIEW{E. B. Davies and J. T. Lewis (1970) An operational approach to quantum probability. Commun. Math. Phys. Vol 17, 239-260.}\\
+
+\REVIEW{B. Mielnik (1974) Generalized quantum mechanics. Comm. Math. Phys. Vol 37, 221-256.}\\
+
+\REVIEW{A. S. Holevo (1982) Probabilistic and Statistical Aspects of Quantum Theory. Amsterdam: North-Holland.}\\
+
+\REVIEW{Admittedly, it may be that Segal, Mielnik, Holevo, et al, are all mistaken, but one should hardly regard this as obvious. Just what example of "misapprehending fundamental mechanisms" do the authors of AC1 have in mind? Can they draw two or three specific examples from the literature, by well known authoritative authors, where such "misapprehending fundamental mechanisms" takes place? Or where "complexity or randomness" is ascribed, “where there is none”?}\\
+
+\REVIEW{I ask for examples from the literature, since there is no point in making up a kind of "straw man" misapprehension and then pretending that this is a problem for competent everyday physicists.}
+
+\REPLY{Here we believe the language we used was misleading. We drastically simplified the sentence according to the referee's point.}
+
+
+\REVIEW{8. In the paragraph beginning "With this perspective in mind . . . ", I would change "introduce" to "recall the basics of . . ." or something like that. Otherwise, it makes it look like the authors are inventing the subject themselves.}\\
+
+\REVIEW{In the English language, if I "introduce" an idea, then I am saying that it is "my" idea. If I "recall" or "review" or "present an overview of" an (established) idea, then I am recalling someone else's idea, which I then want to use, or build on, or further develop. Why not simply say so?}\\
+
+\REPLY{We now use the verbs ``Recall''. }
+
+\REVIEW{9. I am a little nervous about the inclusion of the two arxived papers [6] and [7] at this point. It would be better if the present paper could stand on its own feet, with references only to previously published works, without having to refer to or rely on unpublished arxiv works, whatever their merits may be.}\\
+
+\REPLY{The American Physical Society allows citations to ArXiv papers in its journal. However, since this is an editorial policy, we leave this matter to the Editor.}
+
+\REVIEW{10. I do not like the idea of referring to "formalisms". After all, standard quantum mechanics in finite dimensions with density matrices and POVMs is a well-established theory, not a “formalism”. It can be presented using different notations, and with varying degrees of mathematical precision, but there is only one theory.}
+
+\REPLY{We changed the language and we use the wording ``geometric approach''.}
+
+{\bf Geometric Quantum Mechanics}
+
+\REVIEW{11. In your list of references regarding Geometric Quantum Mechanics, you might also mention the following:
+B. Mielnik (1968) Geometry of quantum states. Comm. Math. Phys. Vol 9, 55-80.
+D. A. Page (1987) Geometrical description of Berry's phase. Phys. Rev. A Vol 36, 3479-3481.
+J. Anandon and Y. Aharonov (1990) Phys. Rev. Lett. 65, 1697-1700 .
+}
+
+\REPLY{We thank the referee for these suggestions. We added them to the list of references about geometric quantum mechanics.}
+
+\REVIEW{12. I would prefer a more precise mathematical language to be used in the discussion of projective space, homogeneous coordinates, observable functions, and so on. An observable is not a quadratic function; it is a function that is biquadratic in the homogeneous coordinates. One should write $< \psi | O | \psi > / < \psi | O | \psi >$ which makes it clear that it does not depend on the scale of the ket $| \psi >$.}
+
+\REPLY{We modified the text and corresponding equation accordingly.}
+
+\REVIEW{13. Likewise, complex projective space does not automatically come equipped with FS metric -- one has to equip the projective space with a complex conjugation operation.}
+\REVIEW{So P(H) has this operation, but $CP^n$ on its own does not. The statement ``Complex projective spaces, such as $P(H)$, have a preferred metric...'' is not quite correct. It would be better to say something something along the following lines: "The projective Hilbert space P(H), which can be regarded as $CP^(D-1)$ equipped with a complex conjugation map from points to hyperplanes of co-dimension $D-2$, has a preferred metric."}
+\REVIEW{The take home here is that one should use a slightly higher level of mathematical precision in such statements, since this is well-established geometry, and one might as well take the trouble to get it right.}
+
+\REPLY{We agree with the referee and focus on $\mathcal{P}(\mathcal{H})$ which, as stated by the referee, does have a preferred metric. The wording we use for $\mathcal{P}(\mathcal{H})$ is: ``Projective Hilbert space of the pure states of a quantum system''.}
+
+{\bf Geometric Quantum States}
+
+\REVIEW{14. The notion of "geometric quantum state" used here is not new.}\\
+
+\REVIEW{The idea is that one introduces a density function (or possibly a suitably normalized generalized function) on the space of pure states (projective Hilbert space), along with a so-called observable function (expectation value of some standard observable with respect to a pure state, regarded as a function of the pure state). One then forms the expectation of the observable function with respect to the density function by taking an integral of their product with respect to the Fubini-Study volume element.}\\
+
+\REVIEW{This is equation (5) on page 2 of AC1. One finds the same formula, with the same interpretation, in the works of other authors – e.g., in section 15, page 48 of Ref. [14].}
+
+\REVIEW{The idea of a "geometric quantum state" appearing in AC1 is essentially identical to that of reference [14]'s "general mixed state", and shares essentially the same motivation. I quote from the abstract of reference [14]: "A general mixed state is determined by a probability density function on the state space, for which the associated first moment is the density matrix. The advantage of the idea of a general state is in its applicability in various attempts to go beyond the standard quantum theory, some of which admit a natural phase-space characterization."}
+
+\REPLY{We clarified that the section recalls the previously introduced idea of a probability density function on $\mathcal{P}(\mathcal{H})$.}
+
+\REVIEW{15. Towards the end of their paper, the authors of AC1 summarize, saying, "We introduced and then explored the concept of geometric quantum state p(Z) as a probability distribution on the manifold of pure states, . . }
+
+\REVIEW{But this is ambiguous and misleading. Again, "Introduced", in English, can be understood to mean "We came up first with the idea of . . .", which is not so in the present context. This needs to be corrected. A better statement would be: "We build on the idea of geometric quantum state (which has previously been considered by other authors, including for example [14]) as a probability distribution p(Z) on the manifold of pure states".}
+
+\REPLY{We modified the relevant sentence according to the referee's suggestion.}
+
+\REVIEW{16. The notion of "geometric canonical ensemble" introduced in the same section is identical to the "quantum canonical ensemble" (or "canonical $\Gamma$-ensemble") introduced in reference [27].}\\
+
+\REVIEW{AC1 use the weaker term "previously considered", but here "introduced" would indeed be correct. If there is some new twist to the idea in their work, they can draw attention to it -- but they must give credit to the original authors of the ideas they are working with.}\\
+
+\REPLY{We changed ``previously considered'' into ``introduced''.}
+
+\REVIEW{17. The motivation that AC1 ascribe to their unpublished arxiv paper [7], referring to the (so-called) geometric ensemble, is as follows:}\\
+
+\REVIEW{"Reference [7] investigated its potential role in establishing a quantum foundation of thermodynamics that is an alternative to that based on Gibbs ensembles and von Neumann entropy. Moreover, it showed that the geometric ensemble genuinely di7ffers from the Gibbs ensemble. This realization provides a concrete path to testing the experimental consequences of geometric quantum states."}\\
+
+\REVIEW{As best as I can tell, this is essentially identical to the motivation given in Ref [27]. I quote from the abstract of Ref [27]: "Based upon the geometric structure of the quantum phase space we introduce the corresponding natural microcanonical and canonical ensembles. The resulting density matrix for the canonical $\Gamma$-ensemble differs from density matrix of the conventional approach. As an illustration, the results are applied to the case of a spin one-half particle in a heat bath with an applied magnetic field."}\\
+
+\REVIEW{It was already shown in [27] that the geometric ensemble "genuinely differs" from the Gibbs ensemble. One should make that clear.}
+
+\REPLY{We erased the last two sentences of this paragraph and modified the rest according to the referee's suggestion.}
+
+{\bf Density matrix}\\
+
+\REVIEW{18. The word "distribution" is used in several distinct but precise ways by mathematicians.}\\
+
+\REVIEW{One has the notion of "probability distribution" and one also has the notion of distributions as "generalized functions".}\\
+
+\REVIEW{These are not the same thing. In this section of the paper, AC1 seem to be blurring these two meanings. This needs to be cleaned up.}
+
+\REPLY{We modified the wording to avoid confusion and refer to Geometric Quantum States.}
+
+\REVIEW{19. Again, at the top right of page 3 in AC1, the word "state" is being used in a prejudicial way, as if it has some clear a priori meaning. But such an appeal to metaphysics is not good, because no definition is being supplied as to what one means by "state".}
+
+\REPLY{We now avoid the use of the word ``state'' and clarify the point using a periphrasis.}
+
+{\bf State manipulation}
+
+\REVIEW{20. I am unhappy to draw on reference [29] for a "helpful illustration" since that paper has not been published. Cannot one draw an example from a published work?}\\
+
+\REPLY{The paper is now published and we added the correct reference.}
+
+\REVIEW{21. Use of the "d" notation here is confusing. Is $d^M$ a label, or is it "d" raised to the power M? What is M? Maybe the answer is obvious, but there is no point in using a confusing notation here that will trip up some of the readers. Please use a simple notation, and explain it in plain language.}
+
+\REPLY{We clarified and expanded the language to explain the notation. }
+
+\REVIEW{22. I do not find the "proof" of Theorem 1 given in the supplementary material to be convincing. It is too casual and seems to assume that the result is obvious to the reader. Can one please give a step-by-step proof showing how to put an arbitrary element of H in the form (8)? Please do the mathematics in a way that every step is clear, and don't skip any steps.}\\
+
+\REPLY{We added some steps to the proof of Theorem 1 to clarify it.}
+
+\REVIEW{By the way, the theorem is not stated in such a way as to allow a converse, so it is not clear what is meant by "the converse holds trivially". In the revised version of the paper, I suggest you move the proof of the theorem to the main body of the paper, but present it in a concise direct mathematical style.}
+
+\REPLY{HERE}
+
+\REVIEW{23. I find the discussion on page 4 concerning the map $\Phi$ quite obscure. The authors seem to be saying that $R*$ is a submanifold of $CP^n$, yet you are integrating a function defined on that submanifold with respect to the FS volume element.}\\
+
+\REVIEW{Now, the FS volume element is absolutely continuous with respect to the Lebesgue measure on any coordinate patch of $CP^n$, so this suggests that the integral of $q(Z)$ over any submanifold will be zero.}
+
+\REVIEW{Whether this is a real problem, or merely lack of precision in the mathematical formulation of the problem I cannot say. But the bottom line is that IF the result is correct, which is may not be, most readers will find this part of the paper lacking in the level of mathematical clarity required to state the argument in precise terms. In short, a major rewrite is required here.}
+
+\REPLY{HERE}
+
+{\bf Thermodynamic framework}
+
+\REVIEW{24. The arguments seem to be OK here up to the point where the thermodynamic limit is reached, but then the treatment lapses into what appears to be handwaving. Likewise it is not clear what the purpose of the discussion of the "discrepancy" is, which seems like a loose end.}
+
+\REPLY{HERE}
+
+{\bf Discussion, Conclusion}
+
+\REVIEW{25. These sections seem to be mostly repetitions of what has already been said in the paper. So one can shorten and be more to the point.}\\
+
+\REPLY{HERE}
+
+\REVIEW{26. It is not clear that the thermodynamics arguments add anything beyond what is already implicit in reference [27].}
+
+\REPLY{HERE}
+
+\end{document}
+
