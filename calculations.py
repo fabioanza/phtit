@@ -645,6 +645,7 @@ class information_transport(Geometric_QM):
     #the function which computes these quantities at a given time, given the
     #relevant quantities as input.
     def fluxes_sources_fixed_t(self,x_alpha_t,x_alpha_dot_t,p_alpha_t,p_alpha_dot_t,phi_alpha_t,phi_alpha_dot_t):
+        #TESTED: YES
         #x_alpha_t and x_alpha_dot_t have to be arrays of dimension dE.
         #Extract the discretized CP1.
         Ip_boundaries, Iphi_boundaries, Ip_centers, Iphi_centers = self.discretization_properties()
@@ -703,8 +704,9 @@ class information_transport(Geometric_QM):
 
         return JP, JP_0, JP_1, JPHI, JPHI_0, JPHI_1, SIGMA, SIGMA_0, SIGMA_1
 
-    #This is the full time-series of quantum states.
+    #This is for the full time-series of quantum states.
     def fluxes_sources(self):
+        #TESTED: YES
         x, x_dot = self.probabilities(), self.probabilities_dot()
         p, p_dot = self.p_coordinates(), self.p_alpha_dot()
         phi, phi_dot = self.phi_coordinates(), self.phi_alpha_dot()
