@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  26 MAY 2021 09:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  26 MAY 2021 11:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1927,231 +1927,218 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 
 Package natbib Warning: Citation `Anza2020a' on page 1 undefined on input line 
-194.
+195.
 
 
 Package natbib Warning: Citation `Anza2020b' on page 1 undefined on input line 
-194.
+195.
 
 
 Package natbib Warning: Citation `Anza2020a' on page 1 undefined on input line 
-201.
+202.
 
 
 Package natbib Warning: Citation `Anza2020b' on page 1 undefined on input line 
-201.
-
-
-LaTeX Warning: Reference `sec:IT' on page 1 undefined on input line 202.
-
-
-LaTeX Warning: Reference `sec:DYN' on page 1 undefined on input line 204.
-
-
-LaTeX Warning: Reference `sec:EXAMPLES' on page 1 undefined on input line 206.
-
-
-LaTeX Warning: Reference `sec:FINAL' on page 1 undefined on input line 207.
+202.
 
 
 Package natbib Warning: Citation `STROCCHI1966' on page 1 undefined on input li
-ne 233.
+ne 235.
 
 
-Package natbib Warning: Citation `Miel68' on page 1 undefined on input line 233
+Package natbib Warning: Citation `Miel68' on page 1 undefined on input line 235
 .
 
 
 Package natbib Warning: Citation `Kibble1979' on page 1 undefined on input line
- 233.
+ 235.
 
 
 Package natbib Warning: Citation `Heslot1985' on page 1 undefined on input line
- 233.
+ 235.
 
 
-Package natbib Warning: Citation `Page87' on page 1 undefined on input line 233
+Package natbib Warning: Citation `Page87' on page 1 undefined on input line 235
 .
 
 
-Package natbib Warning: Citation `And90' on page 1 undefined on input line 233.
+Package natbib Warning: Citation `And90' on page 1 undefined on input line 235.
 
 
 
 Package natbib Warning: Citation `Gibbons1992' on page 1 undefined on input lin
-e 233.
+e 235.
 
 
 Package natbib Warning: Citation `Ashtekar1995' on page 1 undefined on input li
-ne 233.
+ne 235.
 
 
 Package natbib Warning: Citation `Ashtekar1999' on page 1 undefined on input li
-ne 233.
+ne 235.
 
 
 Package natbib Warning: Citation `Brody2001' on page 1 undefined on input line 
-233.
+235.
 
 
 Package natbib Warning: Citation `Bengtsson2017' on page 1 undefined on input l
-ine 233.
+ine 235.
 
 
 Package natbib Warning: Citation `Carinena2007' on page 1 undefined on input li
-ne 233.
+ne 235.
 
 
 Package natbib Warning: Citation `Chruscinski2006' on page 1 undefined on input
- line 233.
+ line 235.
 
 
 Package natbib Warning: Citation `Marmo2010' on page 1 undefined on input line 
-233.
+235.
 
 
 Package natbib Warning: Citation `Avron2020' on page 1 undefined on input line 
-233.
+235.
 
 
 Package natbib Warning: Citation `Pastorello2015' on page 1 undefined on input 
-line 233.
+line 235.
 
 
 Package natbib Warning: Citation `Pastorello2015a' on page 1 undefined on input
- line 233.
+ line 235.
 
 
 Package natbib Warning: Citation `Pastorello2016' on page 1 undefined on input 
-line 233.
+line 235.
 
 
 Package natbib Warning: Citation `Clemente-Gallardo2013' on page 1 undefined on
- input line 233.
+ input line 235.
 
-
-Package natbib Warning: Citation `Nielsen2010' on page 1 undefined on input lin
-e 263.
-
-
-Package natbib Warning: Citation `Heinosaari2012' on page 1 undefined on input 
-line 263.
-
-
-Underfull \hbox (badness 3271) in paragraph at lines 261--267
-[]\T1/lmr/m/n/10 Measurement out-come prob-a-bil-i-ties are de-ter-mined
- []
-
-
-Underfull \hbox (badness 2591) in paragraph at lines 261--267
-\T1/lmr/m/n/10 by \T1/lmr/m/it/10 pos-i-tive operator-valued mea-sure-ments \T1
-/lmr/m/n/10 (POVMs)
- []
-
-LaTeX Font Info:    Try loading font information for T1+fvm on input line 267.
+LaTeX Font Info:    Try loading font information for T1+fvm on input line 263.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 6.48001pt on input line 267.
+(Font)              scaled to size 6.48001pt on input line 263.
  [1{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
+Package natbib Warning: Citation `Nielsen2010' on page 2 undefined on input lin
+e 268.
+
+
+Package natbib Warning: Citation `Heinosaari2012' on page 2 undefined on input 
+line 268.
+
+
+Underfull \hbox (badness 3271) in paragraph at lines 266--272
+[]\T1/lmr/m/n/10 Measurement out-come prob-a-bil-i-ties are de-ter-mined
+ []
+
+
+Underfull \hbox (badness 2591) in paragraph at lines 266--272
+\T1/lmr/m/n/10 by \T1/lmr/m/it/10 pos-i-tive operator-valued mea-sure-ments \T1
+/lmr/m/n/10 (POVMs)
+ []
+
+
 Package natbib Warning: Citation `Bengtsson2017' on page 2 undefined on input l
-ine 276.
+ine 281.
+
+
+Package natbib Warning: Citation `QUA' on page 2 undefined on input line 317.
 
 
 Package natbib Warning: Citation `Strocchi2008a' on page 2 undefined on input l
-ine 297.
+ine 342.
 
 
 Package natbib Warning: Citation `Brody2001' on page 2 undefined on input line 
-300.
+345.
+
+[2]
+
+Package natbib Warning: Citation `Brody1998' on page 3 undefined on input line 
+419.
 
 
-Package natbib Warning: Citation `Brody1998' on page 2 undefined on input line 
-376.
+Package natbib Warning: Citation `Brody2016' on page 3 undefined on input line 
+419.
 
 
-Package natbib Warning: Citation `Brody2016' on page 2 undefined on input line 
-376.
+Package natbib Warning: Citation `Anza20b' on page 3 undefined on input line 41
+9.
 
 
-Package natbib Warning: Citation `Anza20b' on page 2 undefined on input line 37
-6.
-
-
-Underfull \hbox (badness 1552) in paragraph at lines 382--388
+Underfull \hbox (badness 1552) in paragraph at lines 425--431
  []\T1/lmr/m/it/10 Density ma-trix.[] \T1/lmr/m/n/10 The con-nec-tion be-tween 
 ge-o-met-ric
  []
 
-[2]
-<img/New_Example.pdf, id=31, 1900.63788pt x 736.35489pt>
+<img/New_Example.pdf, id=34, 1900.63788pt x 736.35489pt>
 File: img/New_Example.pdf Graphic file (type pdf)
 <use img/New_Example.pdf>
-Package pdftex.def Info: img/New_Example.pdf  used on input line 427.
+Package pdftex.def Info: img/New_Example.pdf  used on input line 470.
 (pdftex.def)             Requested size: 246.0pt x 95.30254pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 441.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Package natbib Warning: Citation `Wilde2017' on page 3 undefined on input line 
-470.
-
+(Font)              <9> on input line 484.
 [3 <./img/New_Example.pdf>]
 
+Package natbib Warning: Citation `Wilde2017' on page 4 undefined on input line 
+511.
+
+
 Package natbib Warning: Citation `Eckmann1985' on page 4 undefined on input lin
-e 515.
+e 556.
 
 
-Package natbib Warning: Citation `Anza20c' on page 4 undefined on input line 52
-0.
+Package natbib Warning: Citation `Anza20c' on page 4 undefined on input line 56
+1.
 
 No file phtit.bbl.
 [4]
 
-Package natbib Warning: Citation `Brog25a' on page 5 undefined on input line 58
-1.
-
-
-Package natbib Warning: Citation `Schr26a' on page 5 undefined on input line 58
-1.
-
-
-Package natbib Warning: Citation `Neum27a' on page 5 undefined on input line 58
+Package natbib Warning: Citation `Brog25a' on page 5 undefined on input line 62
 2.
 
 
-Package natbib Warning: Citation `Neum32a' on page 5 undefined on input line 58
+Package natbib Warning: Citation `Schr26a' on page 5 undefined on input line 62
+2.
+
+
+Package natbib Warning: Citation `Neum27a' on page 5 undefined on input line 62
 3.
 
 
-Package natbib Warning: Citation `Dira29a' on page 5 undefined on input line 58
+Package natbib Warning: Citation `Neum32a' on page 5 undefined on input line 62
 4.
 
 
-Package natbib Warning: Citation `Dira30b' on page 5 undefined on input line 58
-4.
+Package natbib Warning: Citation `Dira29a' on page 5 undefined on input line 62
+5.
 
 
-Package natbib Warning: Citation `Dira31a' on page 5 undefined on input line 58
-4.
+Package natbib Warning: Citation `Dira30b' on page 5 undefined on input line 62
+5.
 
 
-Package natbib Warning: Citation `Heis25a' on page 5 undefined on input line 58
-7.
+Package natbib Warning: Citation `Dira31a' on page 5 undefined on input line 62
+5.
 
 
-LaTeX Warning: Reference `MainTheo' on page 5 undefined on input line 596.
+Package natbib Warning: Citation `Heis25a' on page 5 undefined on input line 62
+8.
 
 
-LaTeX Warning: Reference `MainTheo' on page 5 undefined on input line 599.
+LaTeX Warning: Reference `MainTheo' on page 5 undefined on input line 637.
 
 
-LaTeX Warning: Reference `MainTheo' on page 5 undefined on input line 642.
+LaTeX Warning: Reference `MainTheo' on page 5 undefined on input line 640.
+
+
+LaTeX Warning: Reference `MainTheo' on page 5 undefined on input line 683.
 
 [5]
 No file SM.bbl.
@@ -2165,24 +2152,28 @@ FiXme Summary: Number of notes: 0,
 (FiXme)        Number of fatal errors: 0,
 (FiXme)        Total: 0.
 
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 711.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 752.
 [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 711.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 752.
  (./phtit.aux)
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 711.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 752.
 
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
+
+
  ) 
 Here is how much of TeX's memory you used:
- 55491 strings out of 492616
- 1225765 string characters out of 6129482
- 1431260 words of memory out of 5000000
- 58513 multiletter control sequences out of 15000+600000
+ 55496 strings out of 492616
+ 1225840 string characters out of 6129482
+ 1433489 words of memory out of 5000000
+ 58518 multiletter control sequences out of 15000+600000
  626666 words of font info for 113 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,11n,138p,1037b,797s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 85i,11n,138p,1037b,791s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
 texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/20
 19/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2019/texmf-d
@@ -2211,11 +2202,12 @@ sy5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></u
 sr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2019/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2
-019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on phtit.pdf (6 pages, 648417 bytes).
+019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb></usr/local/texliv
+e/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on phtit.pdf (6 pages, 657311 bytes).
 PDF statistics:
- 162 PDF objects out of 1000 (max. 8388607)
- 119 compressed objects within 2 object streams
+ 166 PDF objects out of 1000 (max. 8388607)
+ 122 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

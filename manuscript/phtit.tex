@@ -187,9 +187,10 @@ transport phenomena at the nanoscale.
 While nowadays the use of kinetic and transport theories is ubiquitous, these techniques
 have not been leveraged to study quantum information in closed and open quantum systems. 
 Thus, in this work, we attempt to lay a bridge between the field of quantum information and 
-that of transport theories. We do so by building a kinetic theory of quantum information for 
-closed and open quantum systems. The main goal of this work is to provide a consistent definition
-for common tools such as fluxes and sink/sources which 
+that of transport theories. More accurately, here we provide a self-consistent theory to track
+the dynamical evolution of a quantum state (and its probability distribution) in nonequilibrium
+quantum systems. We do so by building a kinetic theory of quantum state evolution, on the quantum 
+state space, both in closed and open configurations.
 
 At the technical level, this is done by leveraging recent work \cite{Anza2020a,Anza2020b} on 
 Geometric Quantum Mechanics: a differential-geometric approach to quantum mechanics that 
@@ -229,25 +230,29 @@ we provide a quick summary and draw some conclusions.
 
 \section{Geometric Quantum Mechanics}
 \label{sec:GQM}
+
 References
 \cite{STROCCHI1966,Miel68,Kibble1979,Heslot1985,Page87,And90,Gibbons1992,Ashtekar1995,Ashtekar1999,Brody2001,Bengtsson2017,Carinena2007,Chruscinski2006,Marmo2010,Avron2020,Pastorello2015,Pastorello2015a,Pastorello2016,Clemente-Gallardo2013}
 give a comprehensive introduction to GQM. Here, we briefly summarize only the
 elements we need, working with Hilbert spaces $\mathcal{H}$ of finite dimension $D$.
+For the details of the derivations, we send the reader to the literature cited above.
 
-Pure states are points in the complex projective manifold $\mathcal{P}\left(
-\mathcal{H} \right)=\mathbb{C}\mathrm{P}^{D-1}$. Therefore, given an arbitrary
-basis $\left\{\ket{e_\alpha} \right\}_{\alpha=0}^{D-1}$, a pure state is
+Given an arbitrary basis $\left\{\ket{e_\alpha} \right\}_{\alpha=0}^{D-1}$, a pure state is
 parametrized by $D$ complex homogeneous coordinates $Z = \left\{      Z^\alpha\right\}$, up to
 normalization and an overall phase:
 \begin{align*}
 \ket{\psi} = \sum_{\alpha=0}^{D-1} Z^\alpha \ket{e_\alpha}
   ~,
 \end{align*}
-where $Z \in \mathbb{C}^{D}$, $Z \sim \lambda Z$, and $\lambda \in
-\mathbb{C}/\left\{ 0\right\}$. If the system consists of a single qubit, for
+This description is redundant since we can renormalize $Z$ by multiplying it for a real number
+and a phase (hence a complex number) and we would get the same physical situation. Therefore, 
+$Z \in \mathbb{C}^{D}$, $Z \sim \lambda Z$, and $\lambda \in \mathbb{C}/\left\{ 0\right\}$. This equivalence 
+relation means pure states of a quantum are points in the complex projective manifold $\mathcal{P}\left(
+\mathcal{H} \right)=\mathbb{C}\mathrm{P}^{D-1}$. If the system consists of a single qubit, for
 example, one can always use probability-phase coordinates $Z = (\sqrt{1-p},\sqrt{p} e^{i\nu})$.
+We will often refer to this coordinates as they play a particular role.
 
-An \emph{observable} is a function $\mathcal{O}(Z) \in
+\paragraph*{Observables and POVMs.} An \emph{observable} is a function $\mathcal{O}(Z) \in
 \mathbb{R}$ that associates to each point  $Z \in \mathcal{P}(\mathcal{H})$ the
 expectation value $\bra{\psi} \mathcal{O} \ket{\psi}/\braket{\psi}{\psi}$ of the corresponding
 operator $\mathcal{O}$ on state $\ket{\psi}$ with coordinates $Z$:
@@ -272,8 +277,8 @@ E_j(Z) = \frac{\sum_{\alpha,\beta}
 \end{align}
 where $\sum_{j=1}^{n}E_j(Z) = 1$.
 
-The projective Hilbert space of the pure states of a quantum system $\mathcal{P}(\mathcal{H})$ has a preferred
-metric $g_{FS}$---the \emph{Fubini-Study metric} \cite{Bengtsson2017}---and an
+The quantum state space $\mathcal{P}(\mathcal{H})$ has a preferred metric 
+$g_{FS}$---the \emph{Fubini-Study metric} \cite{Bengtsson2017}---and an 
 associated volume element $dV_{FS}$ that is coordinate-independent and
 invariant under unitary transformations. The geometric derivation of $dV_{FS}$
 is beyond our immediate goals here. That said, it is sufficient to give its
@@ -289,10 +294,50 @@ dV_{FS}
 Notice how $p_0$ and $\nu_0$ are not involved. This is due to
 $\mathcal{P}(\mathcal{H})$'s projective nature which guarantees that we can
 choose a coordinate patch in which $p_0 = 1 - \sum_{\alpha=1}^{D-1}p_\alpha$
-and $\nu_0 = 0$.
+and $\nu_0 = 0$. As we will see now, these coordinates play a particular role:
+they are canonically conjugated.
+
+\paragraph*{State-space structure.} Beyond the Riemannian structures, it can 
+be shown that $\PH$ also has another interesting geometric feature: a symplectic structure.
+This is the hallmark of classical state spaces and justifies the use of the term 
+\emph{quantum state space} for $\PH$. With a more common jargon, a symplectic
+structure is the geometric entity allowing us to define ``Poisson Brackets''
+and the existence of canonically conjugated coordinates. In particular, using 
+probabilities and phases coordinates $\left\{ (p_\alpha,\phi_\alpha)\right\}$
+one has that $\left\{ p_\alpha , \phi_\beta \right\} = \frac{1}{\hbar}\delta_{\alpha\beta}$. Thus,
+for arbitrary functions $A$ and $B$ on $\PH$ one has
+\begin{equation}
+\left\{ A, B\right\} \coloneqq \frac{1}{\hbar}\sum_{\alpha=1}^{D-1} \frac{\partial A}{\partial p_\alpha} \frac{\partial B}{\partial \phi_\alpha} - \frac{\partial B}{\partial p_\alpha} \frac{\partial A}{\partial \phi_\alpha}
+\end{equation}
+
+
+\paragraph*{Unitary evolution.} In QM, an isolated quantum system evolves
+with a unitary propagator $U(t,t_0) = e^{-\frac{i}{\hbar}H (t-t_0)}$, where the
+generator $H$ is the (time-independent) Hamiltonian of the system. Surprisingly, 
+it can be shown \cite{QUA} that this evolution is equivalent to a classical Hamiltonian 
+dynamics, with geometric coordinates. In particular, calling $E(p_\alpha, \phi_\alpha) = \bra{\psi(p_\alpha,\phi_\alpha)}H \ket{\psi(p_\alpha,\phi_\alpha)}$
+the expectation value of $H$ on a generic state $\ket{\psi(p_\alpha,\phi_\alpha)} = \sum_{\alpha=0}^{D-1}\sqrt{p_\alpha}e^{i\phi_\alpha}\ket{e_\alpha}$
+parametrized by $(p_\alpha,\phi_\alpha)$, the unitary of a generic function $A$
+on $\PH$ is given by 
+\begin{equation}
+\frac{\partial A}{\partial t} = \left\{ A,E\right\}
+\end{equation}
+Or, equivalently, a generic state $\left\{(p_\alpha,\phi_\alpha)\right\}$
+evolves according to Hamilton's equations of motion:
+\begin{align}
+&\frac{dp_\alpha}{dt} = \frac{1}{\hbar}\frac{\partial E}{\partial \phi_\alpha} \nonumber\\
+&\frac{d\phi_\alpha}{dt} = -\frac{1}{\hbar}\frac{\partial E}{\partial p_\alpha} \nonumber
+\end{align}
+
+Here the analogies with classical Hamiltonian mechanics are particularly evident.
+While quantum mechanics is clearly very different from its classical
+counterpart, at a certain descriptive level we can still use the intuition
+of classical mechanics to understand the unitary evolution of quantum
+systems. Thus, as we do for classical mechanics and statistical physics, 
+we continue by introducing probability distributions on the quantum state space.
 
 \paragraph*{Geometric quantum states.}
-This framework makes it very natural to view a quantum state as a functional
+The geometric framework makes it very natural to view a quantum state as a functional
 encoding that associates expectation values to observables, paralleling the
 $C^{*}$-algebra formulation of quantum mechanics \cite{Strocchi2008a}. 
 The idea is that one considers probability density functions on $\mathcal{P}(\mathcal{H})$ (as $q(Z)$),
@@ -315,7 +360,7 @@ P_q[\mathbb{I}] = \int_{\mathcal{P}(\mathcal{H})}
   ~,
 \end{align*}
 and $P_q[\mathcal{O}] \in \mathbb{R}$. 
-In this way, pure states $\ket{\psi_0}$ are functionals with a Dirac-delta
+In this way, kets $\ket{\psi_0}$ are functionals with a Dirac-delta
 distribution $p_0(Z) = \widetilde{\delta}\left[ Z - Z_0\right]$:
 \begin{align*}
 P_{0}[\mathcal{O}] &= \intP \widetilde{\delta}(Z-Z_0)\mathcal{O}(Z) dV_{FS} \\
@@ -337,9 +382,7 @@ this becomes simply:
   ~,
 \end{align*}
 where the coordinate-invariant nature of the functionals $P_q[\mathcal{O}]$ is
-now apparent.
-
-In this way, too, mixed states:
+now apparent. Extending by linearity, mixed states
 \begin{align*}
 \rho = \sum_{j}\lambda_j \ket{\lambda_j}\bra{\lambda_j}
 \end{align*}
@@ -442,21 +485,19 @@ equality of their POVM statistics.
 \label{fig:Example} 
 \end{figure}
 
-This is particularly important for quantum information processing where one
-encounters long-range and long-lived correlational and mechanistic demands.
-Quantum computing immediately comes to mind. There, one is not only interested
-in measurement outcomes, but also in predicting and understanding how a quantum
-system evolves under repeated external manipulations imposed by complex control
-protocols.
 
-%In such settings, understanding whether a
-%state-preparation protocol produces Dirac-delta-like distributions of pure
-%states or more general distributions is paramount to properly address
-%computational errors and to analyzing the thermodynamic costs of quantum
-%computation.
+\section{Information Transport}
+\label{sec:IT}
 
+\section{Dynamics}
+\label{sec:DYN}
 
-\section*{Summary.}
+\section{Examples}
+\label{sec:EXAMPLES}
+
+\section{Conclusions}
+\label{sec:FINAL}
+
 Standard quantum mechanics' concept of state is the density matrix. However,
 while density matrices provide a complete account of POVM statistics, they are
 not in one-to-one correspondence with the ensembles that generated them. This
