@@ -95,7 +95,7 @@
 \def\ourTitle{%
 % Interpretation of the Geometric Quantum State
 % What is a Quantum State?
-A phenomenological theory of information transport
+A kinetic theory of quantum information
 }
 
 \def\ourAbstract{%
@@ -170,103 +170,64 @@ University of California at Davis, One Shields Avenue, Davis, CA 95616}
 % {\bf Lead Paragraph:
 % }
 
-\paragraph*{Introduction.} Dynamical systems theory describes long-term
-recurrent behavior via a system's \emph{attractors}: stable
-dynamically-invariant sets. Said simply there are regions of state
-space---points, curves, smooth manifolds, or fractals---the system repeatedly
-visits. These objects are implicitly determined by the underlying equations of
-motion and the probability distributions they support---Sinai-Bowen-Ruelle (SRB)
-measures on the system's state space---are interpreted as the analogs of
-thermodynamic macrostates \cite{Eckmann1985,Beck93a}. Here lie the foundations
-of classical statistical mechanics.
+\section*{Introduction.} The study of transport phenomena is crucial to harness 
+the dynamical properties of natural systems. In this sense, transport theories are 
+phenomenological descriptions of the nonequilibrium behavior of a system. Well-known 
+examples are the theories of transport of charge, mass and heat. Most of them, were 
+originally formulated to understand macroscopic phenomena like (in the case of 
+mass transport) the tendency of a system to transfer mass in order to minimise the 
+concentration difference. Over time, they were put on more rigorous ground using 
+statistical mechanics and kinetic theory. Most notably, Boltzmann used this approach
+to describe the behavior of gases, and explain the rise of macroscopic irreversibility from 
+the underlying time-symmetric classical mechanics. After Boltzmann's work, the core idea 
+of treating motion and interaction in a statistical way has led to innumerable advances, both 
+of fundamental and applied nature. With the rise of quantum theory, these techniques have 
+also been adapted to include quantum fluctuations, leading to improved descriptions of 
+transport phenomena at the nanoscale.
+While nowadays the use of kinetic and transport theories is ubiquitous, these techniques
+have not been leveraged to study quantum information in closed and open quantum systems. 
+Thus, in this work, we attempt to lay a bridge between the field of quantum information and 
+that of transport theories. We do so by building a kinetic theory of quantum information for 
+closed and open quantum systems. The main goal of this work is to provide a consistent definition
+for common tools such as fluxes and sink/sources which 
 
-Building on this, the following introduces tools aimed at studying
-analogously-important state-space structures for quantum systems. This requires
-developing a more fundamental concept of ``state of a quantum system'',
-essentially moving beyond the standard notion of density matrices; though they
-can be directly recovered. We call these objects the system's \emph{geometric
-quantum states} and, paralleling SRB measures, they are specified by a
-probability distribution on the space of pure quantum states.
+At the technical level, this is done by leveraging recent work \cite{Anza2020a,Anza2020b} on 
+Geometric Quantum Mechanics: a differential-geometric approach to quantum mechanics that 
+gets rid of the phase redundancy of the Hilbert space. The geometric formalism maps the Hilbert 
+space onto a space of pure states that has the structure of a classical phase-space, with 
+canonically conjugated coordinates.
 
-Quantum mechanics is firmly grounded in a vector formalism in which states
-$\ket{\psi}$ are elements of a complex Hilbert space $\mathcal{H}$. These are
-the system's \emph{pure states}. To account for more general situations, one
-employs \emph{density matrices} $\rho$. These are operators in $\mathcal{H}$
-that are positive semi-definite $\rho \geq 0$, self-adjoint $\rho
-=\rho^\dagger$, and normalized $\Tr \rho = 1$.
-
-The interpretation of a density matrix as a system's \emph{probabilistic state}
-is given by \emph{ensemble theory} \cite{Pathria2011,Greiner1995}. Accordingly,
-since a density matrix always decomposes into eigenvalues $\lambda_i$ and
-eigenvectors $\ket{\lambda_i}$:
-\begin{align}
-\rho = \sum_i \lambda_i \ket{\lambda_i}\bra{\lambda_i}
-  ~,
-\label{eq:DiadDecomp}
-\end{align}
-one interprets $\rho$ as an ensemble of pure states---the eigenvectors---in
-which $\lambda_i$ is the probability of an observer interacting with
-state $\ket{\lambda_i}$.
-
-However, this interpretation is problematic: It is not unique. One can write
-the same $\rho$ using different decompositions, for example in terms of
-$\{ \ket{\psi_k}\} \neq \{\ket{\lambda_i}\}$:
-\begin{align*}
-\rho = \sum_k p_k \ket{\psi_k}\bra{\psi_k}
-  ~.
-\end{align*}
-Given the interpretation, all the decompositions identify the same quantum
-state $\rho$. While one often prefers Eq. (\ref{eq:DiadDecomp})'s diagonal
-decomposition in terms of eigenvalues and eigenvectors, it is not the only one
-possible. More tellingly, in principle, there is no experimental reason to
-prefer it to others. This fact is often addressed by declaring density matrices 
-with the same \emph{barycenter} equal. A familiar example of this degeneracy 
-is that the maximally mixed state ($\rho \propto \mathbb{I}$) has an infinite 
-number of identical decompositions, each possibly representing a physically-distinct 
-ensemble.
-
-Moreover, it is rather straightforward to imagine systems that, despite being
-in obviously different physical situations, are described by the same density
-matrix. For example, consider two distinct state-preparation protocols. In one
-case, we prepare $\{\ket{0},\ket{1}\}$ with classical probabilities $p_{0/1} = \frac{1\pm \lambda}{2}$; 
-in the other, we prepare states 
-\begin{subequations}
-\begin{align}
-&\ket{\psi_0} = \sqrt{\frac{1+\lambda}{2}} \ket{0} + \sqrt{\frac{1-\lambda}{2}} e^{i\chi}\ket{1}~,\\
-&\ket{\psi_1} = \sqrt{\frac{1+\lambda}{2}} \ket{0} + \sqrt{\frac{1-\lambda}{2}} e^{i(\chi + \pi)}\ket{1}~,
-\end{align}
-\end{subequations}
-each with probability $1/2$. It is easy to check that they are described by 
-the same $\rho$. It is also easy to see that the two state-preparation protocols
-simply traded a classical source of randomness, the bias $p_0 - p_1 = \lambda$, 
-for one of quantum nature, the bias $\left\vert \braket{\psi_0}{\psi_1} \right\vert^2 = \lambda$.
-
-The following argues that an alternative---the \emph{geometric
-formalism}---together with an appropriately adapted measure theory 
-allows to overcome these ambiguities.
+The paper is organized as follows. In Section \ref{sec:GQM} we give a brief summary of 
+GQM, and of the tools introduced in \cite{Anza2020a,Anza2020b}, both of which are needed.
+In Section \ref{sec:IT} we give the first result: a microscopic derivation of the continuity equation 
+for the information transport in quantum systems, with appropriate, microscopic definitions for 
+phenomenological quantities such as fluxes and sink/sources terms. In Section \ref{sec:DYN}
+we give the second result: a general equation of motion for the probability distribution that an open
+quantum system is found in one of its quantum states. In Section \ref{sec:EXAMPLES} we provide
+a few concrete examples, supported by numerical analysis. Eventually, in Section \ref{sec:FINAL}
+we provide a quick summary and draw some conclusions.
+ 
 
 
-%A complete and unambiguous mathematical concept of state should not conflate
-%such distinct physical configurations. Not only do such ambiguities lead to
-%misapprehending fundamental mechanisms, they also lead one to ascribe
-%complexity or randomness where there is none \cite{Ven20}. 
+%In the last fifty years we have witnessed an increasing use of
+%information-theoretic techniques in virtually all scientific disciplines. Among all of them, the 
+%cross-fertilization between physics and information theory has proven to be particularly fruitful.
+%Within physics itself, it is hard to overstate the rise of quantum computing and quantum information 
+%theory which, together with the modern experimental means to control nanoscale systems at the 
+%level of individual components, has been addressed as a second quantum revolution \cite{Dow03}, 
+%whose goal is to bring forth a new set of \emph{quantum technologies}. 
+%While much work has been done to better understand the physical nature of information, when 
+%compared to other fundamental concepts, such as the concept of energy, it is opinion of the author
+%that our understanding is still very much at the 
 
-%The following argues that an alternative---the \emph{geometric
-%formalism}---together with an appropriately adapted measure theory cleanly
-%separates the primary concept of a \emph{system state} from the derived concept
-%of a density matrix as the set of all \emph{positive operator-valued
-%measurement statistics} a system generates, resolving these ambiguities.
 
-With this perspective in mind, first, we recall the basics of \emph{geometric quantum
-mechanics} (GQM). Second, we discuss how it relates to density matrices. Then, we 
-analyze two broad settings in which the geometric approach arises naturally.
-We consider a quantum system with finite-dimensional Hilbert space, interacting with
-another one with (1) infinite-dimensional Hilbert space and (2) finite-dimensional
-Hilbert space. These are relevant, respectively, for the contexts of quantum state 
-manipulation \cite{Anza20c} and quantum thermodynamics \cite{Anza20b}. After 
-discussing the results, we draw out several consequences.
+%Within this larger perspective, in this work we address a single question: can we talk about information
+%as a localized quantity, which moves around and can be exchanged?
 
-\paragraph*{Geometric quantum mechanics.}
+
+
+
+\section{Geometric Quantum Mechanics}
 \label{sec:GQM}
 References
 \cite{STROCCHI1966,Miel68,Kibble1979,Heslot1985,Page87,And90,Gibbons1992,Ashtekar1995,Ashtekar1999,Brody2001,Bengtsson2017,Carinena2007,Chruscinski2006,Marmo2010,Avron2020,Pastorello2015,Pastorello2015a,Pastorello2016,Clemente-Gallardo2013}
@@ -494,260 +455,8 @@ protocols.
 %computational errors and to analyzing the thermodynamic costs of quantum
 %computation.
 
-\paragraph*{State manipulation.}
-The following shows that the geometric formalism arises quite naturally when a
-discrete quantum system interacts and develops entanglement with a continuous
-one. Imagine a protocol controlling a system's continuous degrees of freedom to
-manipulate discrete ones that store a computation's result. As a physical
-reference, consider quantum particles with a given number of discrete degrees
-of freedom (e.g., spin), confined to a region $\mathcal{R} \subseteq
-\mathbb{R}^3$. The results we derive do not depend on this choice, since the
-technical methods straightforwardly extend to other systems where continuous
-and discrete degrees of freedom are mixed. A helpful illustration is
-intra-particle entanglement \cite{Pasini2020} that couples position and spin
-degrees of freedom to create entangled states. In this way, one manipulates the
-spin by only acting on the positional degrees of freedom, possibly via a
-potential.
 
-Consider a hybrid quantum system comprised of $N$ continuous degrees of freedom
-and $M$ q-dits that are discrete. The entire system's Hilbert space is:
-\begin{align*}
-\mathcal{H} = \mathcal{H}^c_N \otimes \mathcal{H}^d_M
-  ~,
-\end{align*}
-where $\mathcal{H}_N^c \coloneqq \mathcal{H}_c^{\otimes N}$ hosts $N$ one-dimensional continuous degrees of freedom
-and has infinite dimension, while $\mathcal{H}^d_M \coloneqq \mathcal{H}_d^{\otimes M}$ hosts 
-$M$ discrete degrees of freedom, each with dimension $d$, and therefore has dimension $d^M$. 
-A basis for $\mathcal{H}_N^c$ is provided
-by $\left\{\ket{\vec{x}}\right\}$, where $\vec{x} \in \mathcal{R} \subseteq
-\mathbb{R}^N$ and a basis for $\mathcal{H}_M^d$ is
-$\left\{\ket{s}\right\}_{s=0}^{d^M-1}$. Thus, a generic pure state is:
-\begin{align*}
-\ket{\psi} = \int_{\mathcal{R}} d\vec{x} \sum_{s} \psi_s(\vec{x})\ket{\vec{x}} \ket{s}
-  ~,
-\end{align*}
-where $\vec{x}$ is a dimensionless counterpart of the physical continuous
-degrees of freedom, achieved by multiplying its value by appropriate physical
-quantities. So, the measure $d\vec{x}$ has no physical dimension. For an
-electron in a box, for example, this is achieved by renormalizing with the box's
-total volume.
-
-The following theorem establishes that this can be done constructively.
-
-\begin{theorem}
-\label{MainTheo}
-Any $\ket{\psi} \in \mathcal{H}$ can be written as:
-\begin{align}
-\ket{\psi} = \int_{\mathcal{R}}d\vec{x} f(\vec{x}) \ket{x}\ket{q(\vec{x})} \label{eq:theorem}
-  ~,
-\end{align}
-where $f(\vec{x})$ is such that $\int_{\mathcal{R}}d\vec{x} |f(\vec{x})|^2 = 1$
-and $\ket{q(\vec{x})}$ is a parametrized state of the discrete degrees of
-freedom:
-\begin{align*}
-\ket{q(\vec{x})}
-  = \sum_{s=0}^{d^M-1} \sqrt{p_s(\vec{x})} e^{i\phi_s(\vec{x})} \ket{s}
-  ~,
-\end{align*}
-where $\left\{ p_s(\vec{x}),\phi_s(\vec{x})\right\}_s$ is a set of $2(d^M-1)$
-real functions such that $\sum_{s=0}^{d^M-1} p_s(\vec{x}) = 1$,
-$\phi_s(\vec{x}) \in [0,2\pi]$, and $\left\{\ket{s}\right\}_{s=0}^{d^M-1}$ is a
-basis on $\mathcal{H}_M^d$.
-\end{theorem}
-
-(The Supplementary Material gives the proof.)
-Equation (\ref{eq:theorem})'s pure-state parametrization preserves key information
-about the continuous degrees of freedom, namely $|f(\vec{x})|^2$, when working
-with the discrete degrees of freedom. Indeed, the partial trace over the
-continuous degrees of freedom yields:
-\begin{align*}
-\rho = \int_{\mathcal{R}} d\vec{x}
-  \left\vert f(\vec{x})\right\vert^2 \ket{q(\vec{x})}\!\!\bra{q(\vec{x})}
-  ~.
-\end{align*}
-
-Continuing, given an observable $\mathcal{O}$ with support only on
-$\mathcal{H}^d_M$, we have:
-\begin{align*}
-\MV{\mathcal{O}} & = \Tr \rho \mathcal{O} \\
-  & = \int_{\mathcal{R}} d\vec{x}
-  \left\vert f(\vec{x})\right\vert^2 \mathcal{O}({q(\vec{x})})
-  ~,
-\end{align*}
-where $\mathcal{O}({q(\vec{x})}) = \bra{q(\vec{x})}\mathcal{O}
-\ket{q(\vec{x})}$. Comparing with Eq. (\ref{eq:gqs})
-one realizes that the functions $\left\{p_s(\vec{x}),\phi_s(\vec{x})\right\}$ provide an $\vec{x}$-dependent embedding of 
-$\mathcal{R} \subseteq \mathbb{R}^N$ onto $\mathbb{C}P^n$, with $n=d^M-1$, or
-a submanifold, via:
-\begin{align*}
-\Phi : \vec{x} \to \Phi(\vec{x}) = Z(\vec{x})
-  ~,
-\end{align*}
-where:
-\begin{align*}
-Z = (Z^0,\ldots,Z^n)
-  ~,
-\end{align*}
-with $Z^\alpha(\vec{x}) = \sqrt{p_\alpha(\vec{x})}e^{i\phi_\alpha(\vec{x})}$.
-Thus, letting $\mathcal{R}^{*} = \Phi(\mathcal{R})$, we obtain:
-\begin{align*}
-\int_{\mathcal{R}} d\vec{x} \left\vert f(\vec{x})\right\vert^2 \mathcal{O}({q(\vec{x})}) = \int_{\mathcal{R}^{*}} dV_{FS} \,\, q(Z) \mathcal{O}(Z)
-  ~,
-\end{align*}
-where:
-\begin{align*}
-q(Z) = \frac{\left\vert \det D\Phi (Z)
-  \right\vert }{\sqrt{\det g_{FS}}} \left\vert f(\Phi^{-1}(Z)) \right\vert^2
-  ~.
-\end{align*}
-Here, $D\Phi$ denotes the Jacobian of the transformation $\Phi$ and $g_{FS}$ is
-the Fubini-Study metric tensor and we assume the transformation is invertible.
-Generalizing to cases in which $\Phi^{-1}$ is not invertible, due to the fact
-that different $\vec{x}$ might yield the same $\left(
-p_s(\vec{x}),\phi_s(\vec{x})\right)$, is left to future efforts.
-
-Let's illustrate with a familiar system: an electron in a 2D rectangular box
-$\mathcal{R} = [x_0,x_1] \times [y_0,y_1]$. In this case, $M=1$ and $d=2$ so
-that the system is described by $f(x,y)$ and $\left\{p_s(x,y),
-\phi_s(x,y)\right\}_{s=0,1}$. With this we have:
-\begin{align*}
-\MV{\mathcal{O}} & = \int_{x_0}^{x_1} \!\!\! dx \int_{y_0}^{y_1} \!\!\!dy
-  |f(x,y)|^2 \mathcal{O}(q(x,y)) \\
-  & = \frac{1}{2}\int_0^1 \!\!\!dp \int_0^{2\pi}\!\!\!\!\!d\phi \, q(Z(p,\phi)) \, O(Z(p,\phi))
-  ~,
-\end{align*}
-where, for example, $p_0(x,y) = 1 - p_1(x,y)$, $p_1(x,y) = (x -
-x_0)/(x_1-x_0)$, $\phi_0(x,y) = 0$, and $\phi_1(x,y) = 2\pi (y -
-y_0)/(y_1-y_0)$.
-
-In short, a generic ket $\ket{\psi}$ of the whole system uniquely
-defines a distribution $q(Z)$ on the manifold of pure states
-$\mathcal{P}(\mathcal{H}_{M}^d) = \mathbb{C}P^{d^M-1}$. The correspondence is
-not one-to-one as knowing $q(Z)$ does not allow recovering the entire
-state. The missing part is $\theta_0(\vec{x})$---$f(\vec{x})$'s phase.
-However, $q(Z)$ does circumscribe the possible realizations as it fixes the
-shape of the continuous variables' probability distribution $|f(\vec{x})|^2$.
-
-Note how the embedding functions $p_s(\vec{x})$ and $\phi_s(\vec{x})$ play a
-key role in determining whether we can cover all of $\mathbb{C}P^n$ or only
-a submanifold. Consider the conditions that guarantee the two extreme cases are
-captured: covering all of $\mathbb{C}P^n$ and covering tensor product sub-manifold
-$\mathbb{C}P^{d-1} \otimes \ldots \otimes \mathbb{C}P^{d-1}$ only. In the first
-case, $\mathbb{C}P^n$ is a complex manifold that requires $2n$ independent real 
-coordinates to be completely covered. For $M$ qudits this means:
-\begin{align*}
-M & \leq M^{\mathrm{Full}}_{\max} \\
-  & = \frac{\log \left(N/2 + 1\right)}{\log d}
-  ~.
-\end{align*}
-Instead, if we need to cover only the submanifold of tensor product kets, the
-number of qudits we can control with $N$ continuous degrees of freedom is much
-larger:
-\begin{align*}
-M & \leq M^{\mathrm{Prod}}_{\max} \\
-  & = \frac{N}{2(d-1)}
-  ~.
-\end{align*}
-Most cases fall in between. And so, the number of qudits controllable with $N$
-continuous variables is $M \in \left[M^{\mathrm{Full}}_{\max},
-M^{\mathrm{Prod}}_{\max}\right]$.
-
-\paragraph*{Thermodynamic framework.}
-Another setting in which the geometric formalism arises naturally is quantum
-thermodynamics. There, one is often interested in modeling the behavior of a
-small system interacting with a larger environment. For modest-sized
-environments one can treat the system and environment as isolated and
-then simulate their evolution. As the environment's size grows, though, this
-quickly becomes infeasible. Nonetheless, as we now show, the geometric
-formalism allows appropriately writing the system's reduced density matrix in a
-way that retains much of the information about the environment. Theorem
-\ref{MainTheo} guarantees this can be done.
-
-Consider a large quantum system consisting of $M$ qudits split in two
-asymmetric parts. Call the small part with $N_S$ qudits the ``system'' and
-let the rest be the ``environment'' with $N_E = M-N_S$ qudits. A generic ket
-of the entire system $\mathcal{H}_S \otimes \mathcal{H}_E$ is:
-\begin{align*}
-\ket{\psi_{SE}} = \sum_{k=0}^{d_S-1} \sum_{\alpha=0}^{d_E-1}
-  \psi_{k\alpha}\ket{s_k}\ket{e_\alpha}
-  ~,
-\end{align*}
-where $\left\{\ket{s_k}\right\}_k$ and $\left\{\ket{e_\alpha}\right\}_k$ are
-bases for $\mathcal{H}_S$ and $\mathcal{H}_E$, respectively, $d_E$ is the
-dimension of the environment's Hilbert space, and $d_S$ that of the system
-under study.
-
-Given $\ket{\psi_{SE}}$, it is not too hard to see that the system's density matrix is:
-\begin{align}
-\rho^S = \sum_{\alpha=1}^{d_E} p_\alpha^S \ket{\chi_\alpha^S} \bra{\chi_\alpha^S}\label{eq:reducedS}
-  ~,
-\end{align}
-where:
-\begin{align*}
-p_\alpha^S = \sum_{k=0}^{d_S-1} \left\vert \psi_{k\alpha} \right\vert^2
-  ~,
-\end{align*}
-and
-\begin{align*}
-\ket{\chi_\alpha^S} = \frac{1}{\sqrt{p_\alpha^S}} \sum_{k=0}^{d_S-1} \psi_{k\alpha}\ket{s_k}
-  ~.
-\end{align*}
-
-In numerical analysis one often retains only the $d_S \times d_S$ matrix
-elements of $\rho^S$ in a certain basis. However, this erases the functional
-information about the environment. Instead, the latter can be recovered from
-$\left\{ p_\alpha^S, \ket{\chi_\alpha^S}\right\}$ as:
-\begin{align*}
-\left(\rho^E\right)_{\alpha\beta}
-  = \sqrt{p_\alpha^S p_\beta^S}\braket{\chi_\alpha^S}{\chi_\beta^S}
-  ~.
-\end{align*}
-As $d_E$ grows, retaining this information as a set of probabilities and 
-kets becomes quickly unrealistic.
-
-However, the same information can be effectively encoded by switching to a
-geometric description. Indeed, at finite $d_E$, $\rho^S$ becomes:
-\begin{align*}
-p^S_{d_E}(Z) = \sum_{\alpha=1}^{d_E}p_\alpha^E
-  \tilde{\delta}\left[ Z - Z(\chi_\alpha^S)\right]
-\end{align*}
-and the thermodynamic limit is conveniently handled with $p_\infty(Z) =
-\lim_{d_E \to \infty} p^S_{d_E}(Z)$. Here, as usual, the limit is performed
-keeping finite the average energy density $\lim_{d_E \to \infty} \MV{H}/(N_S +
-N_E) = \epsilon$.
-
-In this way, the geometric formalism emerges naturally in a quantum
-thermodynamics setting. In the limit of large environments, one simply cannot
-track exactly how an environment generates the ensemble of our system under
-study and so, per force, switches to a probabilistic description. The geometric
-formalism handles this with the continuous distribution $p_\infty(Z)$, or its
-approximations, that result from the thermodynamic limit procedure. See also
-Ref. \cite{Anza20b} for an expanded exploration of the geometric formalism in
-quantum thermodynamics.
-
-Before proceeding, though, let's highlight an interesting discrepancy between
-the two applications presented. In the thermodynamic setting, knowledge of the
-ensemble $\left\{ p_\alpha^S, \ket{\chi_\alpha^S}\right\}$ leads to $\ket{\psi_{SE}}$. 
-Indeed, it is easy to see that:
-\begin{align*}
-\psi_{k\alpha} = \sqrt{p_\alpha^S} \braket{s_k}{\chi_\alpha^S}
-  ~.
-\end{align*}
-Substituting this into the ket $\ket{\psi_{SE}}$, we obtain a Schmidt-like
-decomposition in which the common label runs over the dimensions of the 
-environment's Hilbert space:
-\begin{align*}
-\ket{\psi_{SE}} = \sum_{\alpha=0}^{d_E-1}
-  \sqrt{p_\alpha^S} \ket{\chi_\alpha^S}\ket{e_\alpha}
-  ~.
-\end{align*}
-The price paid for the decomposition is that the kets $\ket{\chi_\alpha^S}$
-are not orthogonal. However, we gain a more detailed description of our
-system's state. As we can see, here the challenge of recovering
-$\ket{\psi_{SE}}$ disappears thanks to $p_\alpha^S \in \mathbb{R}$. We comment
-on this discrepancy with the other case shortly.
-
-\paragraph*{Discussion.}
+\section*{Summary.}
 Standard quantum mechanics' concept of state is the density matrix. However,
 while density matrices provide a complete account of POVM statistics, they are
 not in one-to-one correspondence with the ensembles that generated them. This
