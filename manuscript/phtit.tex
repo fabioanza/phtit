@@ -460,12 +460,34 @@ geometric quantum state of the system is
 \begin{equation}
 q(Z) = \sum_{\alpha=0}^{d_E-1} x_\alpha \widetilde{\delta}\left( Z-Z(\chi_\alpha)\right)~,\label{eq:gqs_opn}
 \end{equation}
-where $x_\alpha = \sum_j \left\vert \psi_{j\alpha}\right\vert^2$ is the probability that the
-environment is in state $\ket{b_\alpha}$ and $\ket{\chi_\alpha} = \sum_j \frac{\psi_{j\alpha}}{\sqrt{x_\alpha}}\ket{a_j}\in \mathcal{H}_S$
+where 
+\begin{subequations}\label{eq:def_xchi}
+\begin{align}
+&x_\alpha \coloneqq \sum_j \left\vert \psi_{j\alpha}\right\vert^2~,\\
+&\ket{\chi_\alpha} = \sum_j \frac{\psi_{j\alpha}}{\sqrt{x_\alpha}}\ket{a_j}\in \mathcal{H}_S~.
+\end{align}
+\end{subequations}
+Here $x_\alpha$ is the probability that the environment is in state $\ket{b_\alpha}$ and $\left\{\ket{\chi_\alpha}\right\}$ 
 is a set of $d_E$ states of the system which constitutes the discrete support of the geometric 
 quantum state. The geometric quantum state in Eq.(\ref{eq:gqs_opn}) provides the correct reduced density matrix of the system
 $\rho^{S}(\psi_{SE}) = \sum_\alpha x_\alpha \ket{\chi_\alpha}\bra{\chi_\alpha}$.
-
+\begin{figure*}[t!]
+\centering
+\includegraphics[width=.9\textwidth]{./img/DynamicsLong.pdf}
+\caption{Evolution of the geometric quantum state of one qubit interacting with 
+	nine others via an Ising model with transverse field, visualized on the surface of the Bloch
+	sphere. Each particle is $\Gamma_\alpha(t)$, represented in spherical coordinates 
+	$\Gamma_\alpha(t) = \left( \theta_\alpha(t),\phi_\alpha(t)\right)$, with $\ket{\psi(\theta,\phi)} = 
+	\cos \theta/2 \ket{0}+ \sin \theta/2 e^{i\phi}\ket{1}$. The color of the point encodes the 
+	probability $x_\alpha(t)$. Time increases left to right and top to bottom. Each particle
+	carries a probability mass $x_\alpha$, which is the probability to find the system in a 
+	state $\Gamma_\alpha$. Thus, we think of it as an information carrier, moving the 
+	information about the state of a quantum system around the quantum state space.
+	The position of each particle is determined by the state of the environment and, indeed, 
+	there are $2^9$ particles.
+	}
+\label{fig:gqs_dynamics}
+\end{figure*}
 \paragraph*{Probability mass in a region of the state space.} Before we proceed with the
 main result, we introduce here a notation that will be useful later. This is imported
 from measure theory. Given a region $A \subseteq \PH$, we have
@@ -475,23 +497,6 @@ from measure theory. Given a region $A \subseteq \PH$, we have
 This is what we mean by ``Information contained in a certain region of the state space''.
 It quantifies the probability that our quantum system is in a state $Z$ that belongs to the region $A$
 of the quantum state space $\PH$.
-
-
-
-
-\begin{figure*}[t!]
-\centering
-\includegraphics[width=.9\textwidth]{./img/DynamicsLong.pdf}
-\caption{Evolution of the geometric quantum state of one qubit interacting with 
-	nine others via an Ising model with transverse field, visualized on the surface of the Bloch
-	sphere. Each point is $\Gamma_\alpha(t)$ and the color of the point encodes the probability
-	$x_\alpha(t)$. Time increases left to right and top to bottom. Each point indicates 
-	a possible state in which the system could be, and the color indicates the 
-	probability of finding it in that state. The position of each point is determined 
-	by the state of the environment and, indeed, there are $2^9$ points.
-	}
-\label{fig:gqs_dynamics}
-\end{figure*}
 
 \section{Information Transport: Continuity equation}
 \label{sec:IT}
@@ -570,9 +575,10 @@ This is our first result. A crucial aspect here is that this theoretical framewo
 as a physically localized (and overall conserved) quantity, which is carried around by points in quantum state space.
 This is in analogy with the classical theories of information, which deal with properties of particles such as mass 
 or charge, which are carried around by particles, represented as points wondering in a classical phase-space.
-\begin{figure}[t!]
+\begin{figure*}[t!]
 \centering
-\includegraphics[width=.45\textwidth]{./img/Flux.pdf}
+\begin{minipage}[t]{.45\textwidth}
+\includegraphics[width=\textwidth]{./img/Flux.pdf}
 \caption{Kinetic interpretation of the flux $J$. If we look at a small region of the quantum state space, 
 	due to the underlying dynamics we see that information is locally conserved in the sense that 
 	there is a certain number of points which enters and leaves this region. As a result of this local
@@ -580,20 +586,9 @@ or charge, which are carried around by particles, represented as points wonderin
 	across the quantum state space.
 	}
 \label{fig:flux_term}
-\end{figure}
-
-To reinforce this point, the physical interpretation of the flux $J_t$ and source/sink $\sigma_t$ term is essentially the 
-same as in other transport theories. We now describe them explicitly, together with their kinetic interpretation, drawn
-in Figures \ref{fig:flux_term} and \ref{fig:sigma_term}. First, $J_t$ is an information flux, in the proper sense of flux. As one can appreciate 
-in Figure \ref{fig:flux_term}, this flux is associated to an overall conserved quantity, localized in its carriers $\Gamma_\alpha$, 
-which move around and distribute it across the quantum state space. To emphasize this point we look at the simpler situation
-in which $\dot{x}_\alpha = 0$. In this case, the information carried around by the points in state space is a constant
-of motion ($x_\alpha(t)= x_\alpha(t_0)$). However, as the carriers move around, the information is still dispersed across
-the quantum state space.
-
-\begin{figure}[t!]
-\centering
-\includegraphics[width=.45\textwidth]{./img/Source.pdf}
+\end{minipage}\hfill
+\begin{minipage}[t]{.45\textwidth}
+\includegraphics[width=\textwidth]{./img/Source.pdf}
 \caption{Kinetic interpretation of the sink/source term $\sigma_t$. Even if the points do not move around
 	the quantum state space $\dot{\Gamma}_\alpha=0$, the term $\sigma_t$ allows the exchange of information 
 	between different regions. Note that this can be a non-local effect, as depicted above. In the example above
@@ -602,7 +597,41 @@ the quantum state space.
 	= x_\alpha(t) - \epsilon$.
 	}
 \label{fig:sigma_term}
-\end{figure}
+\end{minipage}
+\end{figure*}
+
+
+%\begin{figure}[t!]
+%\centering
+%\includegraphics[width=.45\textwidth]{./img/Flux.pdf}
+%\caption{Kinetic interpretation of the flux $J$. If we look at a small region of the quantum state space, 
+%	due to the underlying dynamics we see that information is locally conserved in the sense that 
+%	there is a certain number of points which enters and leaves this region. As a result of this local
+%	process, probability is moved around and can concentrate in a certain region or get scrambled 
+%	across the quantum state space.
+%	}
+%\label{fig:flux_term}
+%\end{figure}
+To reinforce this point, the physical interpretation of the flux $J_t$ and source/sink $\sigma_t$ term is essentially the 
+same as in other transport theories. We now describe them explicitly, together with their kinetic interpretation, drawn
+in Figures \ref{fig:flux_term} and \ref{fig:sigma_term}. First, $J_t$ is an information flux, in the proper sense of flux. As one can appreciate 
+in Figure \ref{fig:flux_term}, this flux is associated to an overall conserved quantity, localized in its carriers $\Gamma_\alpha$, 
+which move around and distribute it across the quantum state space. To emphasize this point we look at the simpler situation
+in which $\dot{x}_\alpha = 0$. In this case, the information carried around by the points in state space is a constant
+of motion ($x_\alpha(t)= x_\alpha(t_0)$). However, as the carriers move around, the information is still dispersed across
+the quantum state space.
+%\begin{figure}[t!]
+%\centering
+%\includegraphics[width=.45\textwidth]{./img/Source.pdf}
+%\caption{Kinetic interpretation of the sink/source term $\sigma_t$. Even if the points do not move around
+%	the quantum state space $\dot{\Gamma}_\alpha=0$, the term $\sigma_t$ allows the exchange of information 
+%	between different regions. Note that this can be a non-local effect, as depicted above. In the example above
+%	we have two state $\Gamma_\alpha$ and $\Gamma_\beta$ fixed in time, but exchanging a certain amount of
+%	$\epsilon $probability, thus moving information from one region of the state space to another one: $x_\beta(t+\delta t) = x_\beta(t)+\epsilon$, $x_\alpha(t+\delta t) 
+%	= x_\alpha(t) - \epsilon$.
+%	}
+%\label{fig:sigma_term}
+%\end{figure}
 Second, the term $\sigma_t$ is a proper source/sink term, with the usual interpretation. Indeed, we note that it
 can not be written as a divergence term. To emphasize this point we look at the simpler dynamics in which the 
 position of the points in $\PH$ does not change: $\dot{\Gamma}_\alpha = 0$. In this case the support of the 
@@ -615,19 +644,17 @@ as a divergence term.
 
 \subsection*{Closed quantum systems}
 
-What happens when the system is closed? Is there a specific form for the terms $J_t$ and $\sigma_t$?
+What happens when the system is closed? Is there a specific form for the information flux $J_t$ and source $\sigma_t$?
 Here we answer both these questions in a detailed manner. Since the evolution is Hamiltonian, we can 
 use Hamilton's equations of motion to derive the evolution equation of $\mu_t$ or, equivalently, of $q_t(Z)$.
 First, the sink/sources terms is trivially zero, as the evolution is Hamiltonian and preserves the local probabilities.
 Second, starting from the definition of the flux in Eq.(\ref{eq:flux}), we can explicitly write the form of the flux $J_t$, 
 using Hamilton's equations of motion. Writing $\Gamma_\alpha$ in canonical coordinates $(p_n(\Gamma_\alpha),\phi_n(\Gamma_\alpha))$, 
 we have 
-\begin{subequations}
 \begin{align}
-\dot{\Gamma}_\alpha & = \left\{\left( \dot{p}_n(\Gamma_\alpha), \dot{\phi}_n(\Gamma_\alpha)\right)\right\}_n\\
+\dot{\Gamma}_\alpha & = \left\{\left( \dot{p}_n(\Gamma_\alpha), \dot{\phi}_n(\Gamma_\alpha)\right)\right\}_n \nonumber \\
 & = \left\{\frac{1}{\hbar}\left( \frac{\partial E}{\partial \phi_n}, -\frac{\partial E}{\partial p_n}  \right)\right\}_n = v_H(p_n,\phi_n)
 \end{align}
-\end{subequations}
 Note how the right-hand side, which we called $v_H$ does not depend on the index $\alpha$ anymore: all 
 the points evolve in the same way, following the same Hamiltonian flow. Inserting this into the definition of the flux 
 we obtain that the flux is equal to the product between the distribution and the Hamiltonian velocity field $v_H$:
@@ -638,14 +665,20 @@ thus providing the following continuity equation:
 \begin{equation}
 \frac{\partial q_t}{\partial t} = - v_H \cdot \nabla q_t - q_t \, \nabla \cdot v_H
 \end{equation}
-This can be further simplified by noting that the Hamiltonian vector field is divergence free, $\nabla \cdot v_H = 0$, 
-thanks to the fact that the Hessian of $E(p_n,\phi_n)$ is symmetric. Eventually, this leads us to the final form
-of the continuity equation for a isolated quantum system:
+This can be further simplified by noting that the Hamiltonian vector field is divergence free, $\nabla \cdot v_H = 0$.
+This is due to the smoothness of $E(p_n,\phi_n)$ which, via Schwarz's theorem, implies that the Hessian of $E(p_n,\phi_n)$ 
+is symmetric. 
+\begin{align}
+\nabla \cdot v_H &= \sum_n \left( \frac{\partial}{\partial p_n} , \frac{\partial}{\partial \phi_n}\right) \cdot \frac{1}{\hbar}\left(\frac{\p E}{\p \phi_n}, -\frac{\p E}{\p p_n} \right) \nonumber \\
+& = \frac{1}{\hbar} \sum_n \left( \frac{\p^2 E}{\p p_n \p \phi_n } - \frac{\p^2 E}{\p \phi_n \p p_n }\right) = 0 \nonumber
+\end{align}
+
+This leads us to the final form of the continuity equation of an isolated quantum system:
 \begin{equation}
 \frac{\partial q_t}{\partial t} = - v_H \cdot \nabla q_t = -\left\{ q_t, E \right\}
 \end{equation}
 
-\paragraph*{Quantum Liouville's theorem.} As a further point of contact with the techniques of classical 
+\paragraph*{Liouville's theorem for GQM.} As a further point of contact with the techniques of classical 
 statistical mechanics, we now show that a generic Hamiltonian dynamics for the geometric quantum state 
 satisfies Liouville's theorem \cite{Soto}. Indeed, by writing explicitly the total derivative of $q_t(Z)$ with 
 respect to time we get 
@@ -702,12 +735,85 @@ Calling $H_S$ and $H_E$ the Hamiltonian operators of the system and environment,
 the total Hamiltonian of the joint system is $H = H_S + H_E + H_{\mathrm{int}}$. Since $H_{\mathrm{int}}$
 is the interaction term between system and environment, we can always put it in the form
 \begin{equation}
-H_{\mathrm{int}} = \sum_{k} A^{(k)} \otimes B^{(k)}~,
+H_{\mathrm{int}} = \sum_{k=1}^M A^{(k)} \otimes B^{(k)}~,
 \end{equation}
 where $A^{(k)}$ and $B^{(k)}$ are operators with support on $\mathcal{H}_S$ and $\mathcal{H}_E$,
 respectively. With a slight abuse of notation we will often conflate $A^{(k)}$ with $A^{(k)}\otimes \mathbb{I}_E$
 and $B^{(k)}$ with $\mathbb{I}_S \otimes B^{(k)}$, where $\mathbb{I}_S$ and $\mathbb{I}_E$ are, respectively,
 the identity operator on $\mathcal{H}_{S}$ and $\mathcal{H}_E$.
+Here we do not make a specific choice for the basis of the system and environment. While an obvious one
+is to choose the bases that diagonalize the non-interacting Hamiltonians $H_S$ and $H_E$, there are cases
+where this is not required. For example, in the case of a spin-$1/2$ chain one might be interested in
+using the computational basis. Thus, we keep things general and use a generic basis, with no particular 
+properties with respect to the algebra of observables: $\left\{ \ket{a_j}\right\}_{j=0}^{d_S}$ and $\left\{ \ket{b_\alpha}\right\}_{\alpha=0}^{d_E-1}$.
+
+Since the goal is to derive a dynamic equation for $\left\{x_\alpha(t) \right\}$ and $\left\{\Gamma_\alpha(t)\right\}$,
+we begin with the overall Schroedinger equation for the pure state $\ket{\psi(t)}$ of the joint system+environment, written
+in the generic tensor product basis defined above, with $\psi_{j\alpha}(t) = \braket{a_j,e_\alpha}{\psi(t)}$:
+\begin{equation}
+i\hbar \frac{d \psi_{j\alpha}(t)}{dt} = \sum_{k,\beta} H_{j\alpha;k\beta} \psi_{k\beta}(t)~,
+\end{equation}
+where
+\begin{align}
+H_{j\alpha;k\beta} &= \bra{a_j,b_\alpha} H \ket{a_k,b_\beta}\\
+&= \left(H_S\right)_{jk}\delta_{\alpha \beta} + \delta_{jk} \left(H_E\right)_{\alpha \beta} + \sum_{n=1}^M A_{jk}^{(n)} B^{(n)}_{\alpha \beta}~.\nonumber 
+\end{align}
+We now collect the probability $x_\alpha(t)$ and the states $\ket{\chi_\alpha(t)}$ into
+a single quantity: a non-normalized ket $\ket{\Phi_\alpha(t)} \coloneqq \sqrt{x_\alpha}\ket{\chi_\alpha} \in \mathcal{H}_S$.
+By plugging Schroedinger's equation into the time-derivative of $\ket{\Phi_\alpha(t)}$ we get the following set of $d_E$
+interacting linear equations:
+\begin{equation}
+i\hbar \frac{d \ket{\Phi_\alpha}}{dt} = H_S \ket{\Phi_\alpha} + \sum_{\beta} \left( H_E\right)_{\alpha\beta}\ket{\Phi_\beta} + \hat{M}_{\alpha \beta}\ket{\Phi_\beta}~,
+\end{equation}
+where $\hat{M}_{\alpha\beta}$ is a set of operators acting on the system, defined as 
+\begin{equation}
+\hat{M}_{\alpha \beta} = \sum_{k=1}^M B^{(k)}_{\alpha\beta} A^{(k)}
+\end{equation}
+This can be further manipulated to separate the non-interacting part, acting on each vector $\ket{\Phi_\alpha}$, 
+from the interacting part, acting on $\ket{\Phi_\beta}\neq \ket{\Phi_\alpha}$. The final form of our kinetic equation is
+\begin{equation}
+i\hbar \frac{d \ket{\Phi_\alpha}}{dt} = \hat{H}_\alpha \ket{\Phi_\alpha} + \sum_{\beta \neq \alpha} \hat{V}_{\alpha \beta}\ket{\Phi_\beta}~,\label{eq:kinetic}
+\end{equation}
+where the single-particle Hamiltonian is $\hat{H}_\alpha$ is
+\begin{equation}
+\hat{H}_\alpha \coloneqq H_S + \left( H_E\right)_{\alpha \alpha} \mathbb{I}_S + \sum_{k=1}^M B^{(k)}_{\alpha \alpha}A^{(k)}~,\label{ed:def_Halpha}
+\end{equation}
+and the interaction between particles is vehiculated by the set of operators $\hat{V}_{\alpha \beta}$
+\begin{equation}
+\hat{V}_{\alpha \beta} \coloneqq \left( H_E\right)_{\alpha \beta} \mathbb{I}_S + \sum_{k=1}^M B^{(k)}_{\alpha \beta} A^{(k)}~.\label{ed:def_V}
+\end{equation}
+The remaining step is to connect this with the quantities that determine the geometric quantum state of the system: $x_\alpha$ and $\ket{\chi_\alpha}$.
+This is easily done by using the original definition of $\ket{\Phi_\alpha}$. First, since $x_\alpha = \braket{\Phi_\alpha}{\Phi_\alpha}$, we can derive 
+the evolution equation for $x_\alpha(t)$ by using Eq.(\ref{eq:kinetic}):
+\begin{equation}
+\frac{dx_\alpha}{dt} = \frac{d}{dt}\braket{\Phi_\alpha}{\Phi_\alpha} = \frac{2}{\hbar} \sum_\beta \mathrm{Im} \left[ \bra{\Phi_\alpha}\hat{V}_{\alpha \beta}\ket{\Phi_\beta}\right]~.
+\end{equation}
+Second, the evolution for $\ket{\chi_\alpha}$ is inherited from the ones of $\ket{\Phi_\alpha}$ since $\ket{\chi_\alpha} = \frac{\ket{\Phi_\alpha}}{||\ket{\Phi_\alpha}||}$.
+Plugging Eq.(\ref{eq:kinetic}) into the definition for $\ket{\chi_\alpha}$ and applying some simple algebraic manipulations we get
+\begin{align}
+i\hbar \frac{d }{dt}\ket{\chi_\alpha} &= \left( \hat{H}_\alpha- \frac{i \hbar }{2} \frac{d\log x_\alpha}{dt} \mathbb{I}_S\right) \ket{\chi_\alpha} \nonumber \\
+&\quad +\sum_{\beta \neq \alpha } \sqrt{\frac{x_\beta}{x_\alpha}} \hat{V}_{\alpha \beta}\ket{\chi_\beta}~.
+\end{align}
+
+
+
+
+
+Here we can see that the evolution of $x_\alpha$ is dictated only by the interaction $\hat{V}_{\alpha \beta}$.
+
+
+First, as a consistency check, we note that the preservation of information within the quantum state space of the system is inherited by the 
+unitarity of the global evolution. This is manifested in the relations $\hat{H}_\alpha^\dagger = \hat{H}_\alpha$ and $\hat{V}_{\alpha \beta}^{\dagger} = \hat{V}_{\beta \alpha}$, 
+both of which can be easily shown to be true from the definitions above.
+
+
+
+
+
+
+
+
+
 
 
 
