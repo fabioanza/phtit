@@ -9,8 +9,11 @@
 \documentclass[draft,nofootinbib,pre,twocolumn,showpacs,showkeys,preprintnumbers,floatfix]{revtex4-1}
 
 \usepackage{dynlearn}
+\usepackage{wrapfig}
+\usepackage{graphicx}
 \usepackage{physics}
 \usepackage{multibib}
+\usepackage{caption}
 \newcites{SM}{SM References}
 % \usepackage[utf8]{inputenc}
 \usepackage{mathrsfs}
@@ -324,10 +327,12 @@ on $\PH$ is given by
 \end{equation}
 Or, equivalently, a generic state $\left\{(p_\alpha,\phi_\alpha)\right\}$
 evolves according to Hamilton's equations of motion:
+\begin{subequations}\label{eq:HAM_EOM}
 \begin{align}
-&\frac{dp_\alpha}{dt} = \frac{1}{\hbar}\frac{\partial E}{\partial \phi_\alpha} \nonumber\\
-&\frac{d\phi_\alpha}{dt} = -\frac{1}{\hbar}\frac{\partial E}{\partial p_\alpha} \nonumber
+&\frac{dp_\alpha}{dt} = \frac{1}{\hbar}\frac{\partial E}{\partial \phi_\alpha} \\
+&\frac{d\phi_\alpha}{dt} = -\frac{1}{\hbar}\frac{\partial E}{\partial p_\alpha} 
 \end{align}
+\end{subequations}
 
 Here the analogies with classical Hamiltonian mechanics are particularly evident.
 While quantum mechanics is clearly very different from its classical
@@ -423,18 +428,11 @@ Neumann entropy.
 
 \paragraph*{Density matrix.}
 The connection between geometric quantum states and density matrices is
-fairly straightforward. Since observables and POVM are functions of the 
+fairly straightforward. Since density matrices are a synthetic way of collecting
+measurement outcomes about POVMs, which functions of the 
 form $A(Z) \propto \sum_{\alpha,\beta}A_{\alpha \beta} Z^\alpha \overline{Z}^\beta$, 
-given a ge 
-
- On the one hand, when $q(Z)$ falls into one of the
-two aforementioned cases---Dirac-deltas or finite convex combinations of
-them---the present formalism is equivalent to the standard one. However, not
-all functionals fall into the Dirac-delta form. Given this, $q(Z)$ is clearly a
-more general notion of a quantum system's state than density matrices.
-
-On the other hand, given an arbitrary $q(Z)$, there is a unique
-density matrix $\rho^{q}$ associated to $q$:
+given a generic geometric quantum state $q(Z)$ the associated density matrix $\rho^q$can be 
+simply computed as follows:
 \begin{align}
 \rho^q_{\alpha \beta} & = P_q[Z^\alpha \overline{Z}^\beta] \nonumber \\
   & = \intP dV_{FS} \, q(Z)  \, Z^\alpha \overline{Z}^\beta
@@ -446,55 +444,180 @@ are sensitive to $q(Z)$ only via $\rho^q$. Therefore, if two geometric quantum s
 $q_1$ and $q_2$ induce the same density matrix $\rho^{q_1} = \rho^{q_2}$, then all POVMs
 produce the same outcomes.
 
-A well-known consequence of this fact is that two density matrices with the
-same barycenter are considered equal, even if they describe experiments with
-different physical configurations. In these cases, the statistics of POVM
-outcomes are described by the same density matrix. Note that this statement
-does not mean that the two physical configurations are the same. Rather, it
-means that there is no POVM on the system that distinguishes between $q_1$ and
-$q_2$.
+\paragraph*{The GQS of an Open Quantum System.}
+As shown above, if a system is in a pure state its GQS is simply a Dirac delta concentrated
+on a single point. However, if the system is in contact with an environment, this is not true 
+anymore, unless they are exactly in a product state. In general, contact with the environment
+causes the lost of information about which pure state the system inhabits. Hence, we need a 
+probability distribution for the state of our system: a geometric quantum state. The explicit 
+derivation of the generic geometric quantum state for an open quantum system can be found 
+in Ref.\cite{Anza2020a}. Here we simply give the result, without discussing the derivation. 
+Given a system and its environment, we call $\left\{ \ket{a_j}\right\}_{j=0}^{d_S-1}$ a basis for 
+the Hilbert space $\mathcal{H}_S$ of the system (dimension $d_S$) and 
+$\left\{ \ket{b_\alpha}\right\}_{\alpha=0}^{d_E}$ a basis for the Hilbert space $\mathcal{H}_E$ 
+of the environment (dimension $d_E$). Assuming system and environment are in 
+a pure state $\ket{\psi_{SE}} = \sum_{j,\alpha}\psi_{j\alpha}\ket{a_j}\ket{b_\alpha}$, the 
+geometric quantum state of the system is
+\begin{equation}
+q(Z) = \sum_{\alpha=0}^{d_E-1} x_\alpha \widetilde{\delta}\left( Z-Z(\chi_\alpha)\right)~,\label{eq:gqs_opn}
+\end{equation}
+where $x_\alpha = \sum_j \left\vert \psi_{j\alpha}\right\vert^2$ is the probability that the
+environment is in state $\ket{b_\alpha}$ and $\ket{\chi_\alpha} = \sum_j \frac{\psi_{j\alpha}}{\sqrt{x_\alpha}}\ket{a_j}\in \mathcal{H}_S$
+is a set of $d_E$ states of the system which constitutes the discrete support of the geometric 
+quantum state. The geometric quantum state in Eq.(\ref{eq:gqs_opn}) provides the correct reduced density matrix of the system
+$\rho^{S}(\psi_{SE}) = \sum_\alpha x_\alpha \ket{\chi_\alpha}\bra{\chi_\alpha}$.
 
-To emphasize, consider the example of two geometric quantum states, $q_1$ and
-$q_2$, with very different characteristics:
-\begin{align*}
-q_1(Z) & = 0.864~\tilde{\delta}(Z - Z_{+}) + 0.136~\tilde{\delta}(Z - Z_{-})~,\\
-q_2(Z) & = \frac{1}{Q} e^{-\frac{1}{2} \overline{Z}\rho^{-1}Z } 
-  ~,
-\end{align*}
-where $Q = \int_{\mathbb{C}P^1} dV_{FS} e^{-\frac{1}{2}Z \rho^{-1}
-\overline{Z}}$, $Z_+ = (0.657,0.418 + i 0.627)$, and $Z_- =
-(0.754,-0.364-i0.546)$. However, states $q_1$ and $q_2$ have same density
-matrix $\rho$ ($\rho_{00} = 0.45 = 1- \rho_{11}$ and $\rho_{01} = 0.2 - i 0.3
-= \rho_{10}^{*}$) and so the same POVM outcomes. From Fig. \ref{fig:Example}
-one appreciates the profound difference between $q_1$ and $q_2$, despite the
-equality of their POVM statistics.
 
-\begin{figure}[h]
+
+
+\begin{figure*}[t!]
 \centering
-\includegraphics[width=\columnwidth]{img/New_Example.pdf}
-\caption{Geometric quantum states in \emph{(probability,phase)} coordinates
-	$(p,\phi)$ of $\mathbb{C}P^1$: (Left) Geometric quantum state $q_1$ is the
-	convex sum of two Dirac delta-functions, centered on the eigenvectors
-	$(p_+,\phi_+) = (0.568,0.983) $ and $(p_-, \phi_-) = (0.432,4.124)$ of
-	density matrix $\rho$. (Right) Geometric quantum state $q_2$ differs
-	markedly: A smooth distribution across the entire pure-state manifold
-	$\mathbb{C}P^1$. However, $q_1$ and $q_2$ have the same density matrix
-	$\rho_{q_1} = \rho_{q_2} = \rho$, where $\rho_{00} = 1- \rho_{11} = 0.45$,
-	$\rho_{01} = \rho_{10}^{*} = 0.2 - 0.3 i$. $\rho_{\pm}$ are the eigenvalues
-	of the density matrix: $\rho_+ = 0.864$ and $\rho_{-}=0.136$. Thus, the
-	marked difference in the structure of geometric quantum states $q_1$ and
-	$q_2$ is not reflected in their shared density-matrix $\rho_1 = \rho_2 =
-	\rho$.
+\includegraphics[width=.9\textwidth]{./img/DynamicsLong.pdf}
+\caption{Evolution of the geometric quantum state of one qubit interacting with 
+	nine others via an Ising model with transverse field, visualized on the surface of the Bloch
+	sphere. Each point is $\Gamma_\alpha(t)$ and the color of the point encodes the probability
+	$x_\alpha(t)$. Time increases left to right and top to bottom. Each point indicates 
+	a possible state in which the system could be, and the color indicates the 
+	probability of finding it in that state. The position of each point is determined 
+	by the state of the environment and, indeed, there are $2^9$ points.
 	}
-\label{fig:Example} 
-\end{figure}
+\label{fig:gqs_dynamics}
+\end{figure*}
 
-
-\section{Information Transport}
+\section{Information Transport: Continuity equation}
 \label{sec:IT}
 
-In the past section we have summarized technical about GQM. In this 
-section we 
+In the past section we have summarized previous results about GQM. In this 
+section we build on them and, by bringing in the dynamics of the system, we derive 
+a continuity equation which dictates how the geometric quantum state of a non-equilibrium 
+open quantum system evolves, under very general assumptions. This is the fundamental 
+kinetic equation that dictates how the information about the state of a quantum system 
+changes as a result of its interaction with an environment. 
+Throughout this section we will try to maintain a fairly general language, to emphasize
+how the treatment applies to quantum systems under very general assumptions. However, 
+for concrete examples we will always refer to the simple case of a qubit.
+
+
+
+\paragraph*{General treatment.}
+The following treatment pertains quantum systems which are finite-dimensional, and 
+interact with finite-dimensional environments. Other than that, we continuity equation holds
+for arbitrary quantum systems. 
+
+Given an initial geometric quantum state, this is specified by two sets of quantities: $\left\{x_\alpha\right\}_{\alpha=0}^{d_E-1}$
+and $\left\{ \Gamma_\alpha\right\}_{\alpha=0}^{d_E-1}$, which is a short-hand notation for 
+$\Gamma_\alpha = Z(\ket{\chi_\alpha})$. The first one is a classical probability distribution
+resulting from hypothetical measurements on the environment. For each of the $x_\alpha$
+there is a corresponding pure state that the system inhabits: $\Gamma_\alpha \in \mathcal{P}(\mathcal{H}_S)$,
+which corresponds to the ket $\ket{\chi_\alpha}$. Since these are points moving in a state space $\Gamma_\alpha(t)$,
+we can think of them as particles on a classical phases space, which interact in a non-trivial
+way. These are the ``carriers of information'', in the sense that each of these particles carries 
+a probability mass $x_\alpha(t)$ that the system will be found on the state $\Gamma_\alpha(t)$.
+A clarifying example of how the geometric quantum state of a qubit evolves when the system 
+interacts with an environment is given in Figure \ref{fig:gqs_dynamics}. Since overall information 
+has to be preserved, $\int_{\PH} q_t(Z) dV_{\mathrm{FS}} = \sum_\alpha x_\alpha(t) =1$,
+the geometric quantum state $q_t(Z)$ must satisfy a continuity equation. Conceptually, this is 
+the starting point of virtually all transport theories, which deal with quantities that are globally 
+conserved, but that are moved around as a result of the underlying dynamics.
+
+
+Thus, the dynamics of a geometric quantum state has two different terms, arising from the 
+time-evolution of these two sets of quantities. By looking at Figure \ref{fig:gqs_dynamics}
+we can see that there are two different ways in which the geometric quantum state changes 
+in time. First, there is the color of each particle, which changes over time: $\dot{x}_\alpha \neq 0$. Second, there is
+the pure movements of each point: $\dot{\Gamma}_\alpha \neq 0$. By summing each term over
+all particles, and then summing the two terms, we get the following evolution equation for the geometric quantum state:
+\begin{equation}
+\frac{\partial q_t(Z)}{\partial t} = \sum_\alpha \dot{x}_\alpha \tilde{\delta}\left( Z- \Gamma_\alpha \right) - x_\alpha \widetilde{\delta}^{'}\left(Z - \Gamma_\alpha \right) \dot{\Gamma}_{\alpha}~.
+\end{equation}
+Here $\delta^{'}$ is the first distributional derivative of the dirac delta distribution. The second term in the
+right-hand side can be written as a covariant divergence\footnote{With an arbitrary coordinate system we have $\mathrm{div} \vec{f} = \frac{1}{\sqrt{g}} \partial_\alpha \left(\sqrt{g} f^\alpha\right)$,
+where $g = \vert \mathrm{det} g_{FS}\vert$ is the absolute value of the determinant of the metric which,
+in our case, is the Fubini-Study metric.}, since every dipendence on the coordinate $Z$ is inside the delta distribution:
+\begin{equation}
+\sum_\alpha x_\alpha \widetilde{\delta}^{'}\left(Z - \Gamma_\alpha \right) \dot{\Gamma}_{\alpha} = (\nabla \cdot J_t)(Z)
+\end{equation}
+This allows us to identify the first functional term of the continuity equation, the \emph{flux of information} $J(t)$, which is 
+a weighted average of the ``single-particle'' flux $J_\alpha(t)$:
+\begin{subequations}
+\begin{align}
+&J_\alpha(t) =  \widetilde{\delta}\left(Z - \Gamma_\alpha(t) \right) \dot{\Gamma}_{\alpha}(t)\\
+&J(t) = \sum_\alpha x_\alpha(t)J_\alpha(t)
+\end{align}
+\end{subequations}
+We now look at the first term in the right-hand: $\sum_\alpha \dot{x}_\alpha(t) \delta(Z-\Gamma_\alpha(t))$.
+This is identified to be a source/sink term, which is independent on the underlying movement of
+the points in the quantum state space. This identifies the second functional term of our continuity 
+equation: \emph{sinks and sources of information} $\sigma_t(Z)$:
+\begin{equation}
+\sigma_t(Z) = \sum_{\alpha=0}^{d_E} \dot{x}_\alpha(t) \widetilde{\delta}\left(Z - \Gamma_\alpha(t) \right)~.
+\end{equation}
+Eventually, we obtain the following continuity equation for the geometric quantum state of a finite-dimensional
+quantum system interacting with a finite-dimensional environment:
+\begin{equation}
+\frac{\partial q_t}{\partial t} + \nabla \cdot J_t = \sigma_t
+\end{equation}
+This is our first result. A crucial aspect here is that this theoretical framework allows us to talk about information 
+as a physically localized (and overall conserved) quantity, which is carried around by points in quantum state space.
+This is in analogy with the classical theories of information, which deal with properties of particles such as mass 
+or charge, which are carried around by particles, represented as points wondering in a classical phase-space.
+\begin{figure}[t!]
+\centering
+\includegraphics[width=.4\textwidth]{./img/Flux.pdf}
+\caption{TBD
+	}
+\label{fig:flux_term}
+\end{figure}
+
+To reinforce this point, the physical interpretation of the flux $J_t$ and source/sink $\sigma_t$ term is essentially the 
+same as in other transport theories. We now describe them explicitly, together with their kinetic interpretation, drawn
+in Figures \ref{fig:flux_term} and \ref{fig:sigma_term}. First, $J$ is an information flux, in the proper sense of flux. As one can appreciate 
+in Figure \ref{fig:flux_term}, this flux is associated to an overall conserved quantity, localized in its carriers $\Gamma_\alpha$, 
+which move around and distribute it across the quantum state space. To emphasize this point we look at the simpler situation
+in which $\dot{x}_\alpha = 0$. In this case, the information carried around by the points in state space is a constant
+of motion ($x_\alpha(t)= x_\alpha(t_0)$). However, as the carriers move around, the information is still dispersed across
+the quantum state space.
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=.4\textwidth]{./img/Source.pdf}
+\caption{TBD
+	}
+\label{fig:sigma_term}
+\end{figure}
+Second, the term $\sigma_t$ is a proper source/sink term, with the usual interpretation. Indeed, we note that it
+can not be written as a divergence term. To emphasize this point we look at the simpler dynamics in which the 
+position of the points in $\PH$ does not change: $\dot{\Gamma}_\alpha = 0$. In this case the support of the 
+distribution is fixed and the particles don't move $\Gamma_\alpha(t)=\Gamma_\alpha(t_0)$. However, even in 
+this case there can still be a non-trivial dynamics, due to $\dot{x}_\alpha(t)\neq 0$. Moreover, as depicted
+in Figure \ref{fig:sigma_term}, 
+
+Therefore, this term possesses 
+the hallmarks of sinks and sources terms in general transport theories: it is not associated with particles moving
+around the state space, and it can not be rewritten as a divergence term.
+
+
+
+
+If the system is closed, upon unitary evolution the distribution remains a Dirac delta, but 
+the point such state is concentrated on changes over time. For example, in the case of a 
+qubit we have coordinates $Z^0 = \sqrt{1-p}$ and $Z^1 = \sqrt{p}e^{i\phi}$. Hence we only 
+have a pair of independent canonically conjugated coordinates $(p,\phi)$. If the qubit is 
+isolated, with Hamiltonian $H = E_0 \ket{E_0}\bra{E_0} + E_1 \ket{E_1}\bra{E_1}$, we 
+can choose as a basis the Hamiltonian eigenstates and its evolution is simply written.
+Indeed, with this choice of coordinates we have $E(p,\phi) = E_0 + (E_1-E_0)p = E(p)$.
+Using Hamilton equations of motion (see Eq.\ref{eq:HAM_EOM}) we can see that $p$
+is preserved, $\dot{p} = \frac{1}{\hbar}\frac{\partial E}{\p \phi}=0$ and that $\phi$ is a cyclical
+coordinate $\dot{\phi} = - \frac{1}{\hbar} \frac{\partial E}{\partial p} = - \frac{E_0 - E_1}{\hbar}$, 
+giving $\phi(t) = \phi(t_0) - \frac{E_1-E_0}{\hbar}(t-t_0)$. This is easily generalized to
+the case of a generic Hilbert space, in which $p_\alpha$ are preserved and 
+$\phi_\alpha(t) = \phi_\alpha(t_0) - \frac{E_\alpha - E_0}{\hbar}(t-t_0)$. In a general coordinate
+system this means $q_t(Z) = \tilde{\delta}\left( Z - Z_t\right)$. 
+
+Unitary evolution do not spread information around the state space, but keep it localized, while
+moving around support of the distribution. 
+
+
 
 \section{Dynamics}
 \label{sec:DYN}
