@@ -657,7 +657,15 @@ Inserting Hamilton's equations of motion (Eq. (\ref{eq:HAM_EOM})), and then usin
 \frac{d q}{d t} &= \sum_\alpha \frac{\partial q_t}{\partial p_\alpha} \frac{dp_\alpha}{dt}+\frac{\partial q_t}{\partial \phi_\alpha} \frac{d\phi_\alpha}{dt} + \frac{\partial q_t}{\partial t}\nonumber \\
 & = \left\{ q_t, E\right\} - \nabla \cdot q_t v_H = 0
 \end{align}
+This concludes the section about the general approach, and the treatment of isolated quantum systems.
+We now turn to the more pertinent, and involved, case of an open quantum system.
 
+\subsection*{Discussion}
+
+\begin{itemize}
+\item This kind of hamiltonian dynamics is more restrictive than a generic classical Hamiltonian dynamics: No chaos allowed, as the distance between points is constant.
+\item Hence, we can concot Hamiltonian dynamics that violate this condition, possibly to give us quantum chaos.
+\end{itemize}
 %Upon unitary evolution the distribution remains 
 %a Dirac delta, but 
 %the point such state is concentrated on changes over time. For example, in the case of a 
@@ -679,8 +687,29 @@ Inserting Hamilton's equations of motion (Eq. (\ref{eq:HAM_EOM})), and then usin
 
 
 
-\section{Dynamics}
+\section{Kinetic theory of information transport in open quantum systems}
 \label{sec:DYN}
+
+As we move to analyze how open quantum systems move information around the
+quantum state space, the goal of this section is to provide a microscopic approach
+to the transport of information: a kinetic theory of how the information about the state
+of a quantum system changes as a result of its interaction with a structured, non-thermal,
+environment. Thus, the main outcome of this section is a concrete set of microscopic 
+equations that determines the evolution of the geometric quantum state in a non-Hamiltonian 
+setting.
+
+Calling $H_S$ and $H_E$ the Hamiltonian operators of the system and environment, respectively, 
+the total Hamiltonian of the joint system is $H = H_S + H_E + H_{\mathrm{int}}$. Since $H_{\mathrm{int}}$
+is the interaction term between system and environment, we can always put it in the form
+\begin{equation}
+H_{\mathrm{int}} = \sum_{k} A^{(k)} \otimes B^{(k)}~,
+\end{equation}
+where $A^{(k)}$ and $B^{(k)}$ are operators with support on $\mathcal{H}_S$ and $\mathcal{H}_E$,
+respectively. With a slight abuse of notation we will often conflate $A^{(k)}$ with $A^{(k)}\otimes \mathbb{I}_E$
+and $B^{(k)}$ with $\mathbb{I}_S \otimes B^{(k)}$, where $\mathbb{I}_S$ and $\mathbb{I}_E$ are, respectively,
+the identity operator on $\mathcal{H}_{S}$ and $\mathcal{H}_E$.
+
+
 
 \section{Examples}
 \label{sec:EXAMPLES}
