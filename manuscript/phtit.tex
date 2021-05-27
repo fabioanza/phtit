@@ -863,24 +863,26 @@ We now come to writing explicitly the flux $J_t = (J_t^p,J_t^{\phi})$. As argued
 with Hamiltonian evolution the flux is the product between the Hamiltonian vector 
 field $v_H$ and the geometric quantum state $f_t(p,\phi)$. Explicitly:
 \begin{equation}
-J_t =  \frac{f_t(p,\phi)}{\hbar} \left(\frac{\p \mathcal{E}(p,\phi)}{\p p}, -\frac{\p \mathcal{E}(p,\phi)}{\p \phi}\right)
+J_t =  \frac{f_t(p,\phi)}{\hbar} \left(\frac{\p \mathcal{E}(p,\phi)}{\p \phi}, -\frac{\p \mathcal{E}(p,\phi)}{\p p}\right)
 \end{equation}
 Plugging this into the continuity equation we get an equation for $f_t(p,\phi)$ and remembering
 that a Hamiltonian vector field is divergence-free, we get
 \begin{equation}
 \frac{\partial f_t}{\partial t} + A(p,\phi) \frac{\partial f}{\partial p} + B(p,\phi) \frac{\partial f}{\partial \phi} = 0~,
 \end{equation}
-with $A(p,\phi) = - \frac{1}{\hbar}\frac{\partial \mathcal{E}}{\partial \phi}$ and $B(p,\phi) = \frac{1}{\hbar}\frac{\partial \mathcal{E}}{\partial p}$.
+with $A(p,\phi) = \frac{1}{\hbar}\frac{\partial \mathcal{E}}{\partial \phi}$ and $B(p,\phi) = - \frac{1}{\hbar}\frac{\partial \mathcal{E}}{\partial p}$.
 This is a linear, first-order, partial differential equation, which can be solved 
-in general using the method of the characteristics. Here we simplify the treatment 
-and switch to coordinates aligned to the convenient basis in which the Hamiltonian 
+in full generality by using the method of the characteristics. Here we simplify the treatment 
+by switching to coordinates aligned to the convenient basis in which the Hamiltonian 
 is diagonal. This leads to
 \begin{equation}
 \frac{\partial f}{\partial t} - \omega \frac{\partial f}{\partial \phi} = 0~,
 \end{equation}
 where $\omega = \frac{E_1 - E_0}{\hbar}$. This is equivalent to the transport 
-equation for advection, which leads the following analytical solution: $f_t(p,\phi) = f_0(p,\phi+\omega t)$,
-for any valid initial distribution $f_0(p,\phi)$.
+equation for advection, which leads the analytical solution for the time-dependent
+geometric quantum state: $f_t(p,\phi) = f_0(p,\phi+\omega t)$, for any valid initial 
+distribution $f_0(p,\phi)$.\\
+
 {\bf HERE}
 
 
