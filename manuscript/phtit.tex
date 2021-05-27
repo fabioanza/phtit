@@ -9,11 +9,9 @@
 \documentclass[draft,nofootinbib,pre,twocolumn,showpacs,showkeys,preprintnumbers,floatfix]{revtex4-1}
 
 \usepackage{dynlearn}
-\usepackage{wrapfig}
 \usepackage{graphicx}
 \usepackage{physics}
 \usepackage{multibib}
-\usepackage{caption}
 \newcites{SM}{SM References}
 % \usepackage[utf8]{inputenc}
 \usepackage{mathrsfs}
@@ -240,14 +238,15 @@ give a comprehensive introduction to GQM. Here, we briefly summarize only the
 elements we need, working with Hilbert spaces $\mathcal{H}$ of finite dimension $D$.
 For the details of the derivations, we send the reader to the literature cited above.
 
-Given an arbitrary basis $\left\{\ket{e_\alpha} \right\}_{\alpha=0}^{D-1}$, a pure state is
-parametrized by $D$ complex homogeneous coordinates $Z = \left\{      Z^\alpha\right\}$, up to
+Given an arbitrary basis $\left\{\ket{e_n} \right\}_{n=0}^{D-1}$, a pure state is
+parametrized by $D$ complex homogeneous coordinates $Z = \left\{      Z^n\right\}$, up to
 normalization and an overall phase:
 \begin{align*}
-\ket{\psi} = \sum_{\alpha=0}^{D-1} Z^\alpha \ket{e_\alpha}
-  ~,
+\ket{\psi} = \sum_{n=0}^{D-1} Z^n \ket{e_n}~.
 \end{align*}
-This description is redundant since we can renormalize $Z$ by multiplying it for a real number
+Here and throughout the paper we will always use upper indices to identify different 
+coordinates of the same point and lower indices to identify different point. This 
+description is redundant since we can renormalize $Z$ by multiplying it for a real number
 and a phase (hence a complex number) and we would get the same physical situation. Therefore, 
 $Z \in \mathbb{C}^{D}$, $Z \sim \lambda Z$, and $\lambda \in \mathbb{C}/\left\{ 0\right\}$. This equivalence 
 relation means pure states of a quantum are points in the complex projective manifold $\mathcal{P}\left(
@@ -267,36 +266,36 @@ operator $\mathcal{O}$ on state $\ket{\psi}$ with coordinates $Z$:
 where $\mathcal{O}_{\alpha \beta}$ is Hermitian $\mathcal{O}_{\beta,\alpha} = \overline{\mathcal{O}}_{\alpha,\beta}$.
 
 Measurement outcome probabilities are determined by \emph{positive
-operator-valued measurements} (POVMs) $\left\{E_j\right\}_{j=1}^n$ applied to a
+operator-valued measurements} (POVMs) $\left\{E_j\right\}_{j=1}^D$ applied to a
 state \cite{Nielsen2010,Heinosaari2012}. They are nonnegative operators
-$E_j\geq 0$, called \emph{effects}, that sum up to the identity: $\sum_{j=1}^n
+$E_j\geq 0$, called \emph{effects}, that sum up to the identity: $\sum_{j=1}^{D}
 E_j = \mathbb{I}$. In GQM they consist of nonnegative real functions $E_j(Z)\ge
 0$ on $\mathcal{P}(\mathcal{H})$ whose sum is always unity:
 \begin{align}
-E_j(Z) = \frac{\sum_{\alpha,\beta}
-  \left(E_j\right)_{\alpha,\beta} Z^\alpha \overline{Z}^\beta}{\sum_{\gamma} \left\vert Z^\gamma \right\vert^2}
+E_j(Z) = \frac{\sum_{m,n}
+  \left(E_j\right)_{m,n} Z^m \overline{Z}^n}{\sum_{k} \left\vert Z^k \right\vert^2}
   ~,
 \label{eq:GQM_POVMs}
 \end{align}
-where $\sum_{j=1}^{n}E_j(Z) = 1$.
+where $\sum_{j=1}^{D}E_j(Z) = 1$.
 
 The quantum state space $\mathcal{P}(\mathcal{H})$ has a preferred metric 
 $g_{FS}$---the \emph{Fubini-Study metric} \cite{Bengtsson2017}---and an 
 associated volume element $dV_{FS}$ that is coordinate-independent and
 invariant under unitary transformations. The geometric derivation of $dV_{FS}$
 is beyond our immediate goals here. That said, it is sufficient to give its
-explicit form in the probability-phase coordinate system $Z^{\alpha} =
-\sqrt{p_\alpha}e^{i\nu_\alpha}$ that we use for explicit calculations: 
+explicit form in the probability-phase coordinate system $Z^n =
+\sqrt{p_n}e^{i\nu_n}$ that we use for explicit calculations: 
 \begin{align*}
 dV_{FS}
   & = \sqrt{\det g_{FS}}
-  \prod_{\alpha=0}^{D-1} dZ^\alpha d\overline{Z}^\alpha \\
-  & =  \prod_{\alpha=1}^{D-1} \frac{dp_\alpha d\nu_\alpha}{2}
+  \prod_{n=0}^{D-1} dZ^n d\overline{Z}^n \\
+  & =  \prod_{n=1}^{D-1} \frac{dp_n d\nu_n}{2}
   ~.
 \end{align*}
 Notice how $p_0$ and $\nu_0$ are not involved. This is due to
 $\mathcal{P}(\mathcal{H})$'s projective nature which guarantees that we can
-choose a coordinate patch in which $p_0 = 1 - \sum_{\alpha=1}^{D-1}p_\alpha$
+choose a coordinate patch in which $p_0 = 1 - \sum_{n=1}^{D-1}p_n$
 and $\nu_0 = 0$. As we will see now, these coordinates play a particular role:
 they are canonically conjugated.
 
@@ -306,11 +305,11 @@ This is the hallmark of classical state spaces and justifies the use of the term
 \emph{quantum state space} for $\PH$. With a more common jargon, a symplectic
 structure is the geometric entity allowing us to define ``Poisson Brackets''
 and the existence of canonically conjugated coordinates. In particular, using 
-probabilities and phases coordinates $\left\{ (p_\alpha,\phi_\alpha)\right\}$
-one has that $\left\{ p_\alpha , \phi_\beta \right\} = \frac{1}{\hbar}\delta_{\alpha\beta}$. Thus,
+probabilities and phases coordinates $\left\{ (p_n,\phi_n)\right\}$
+one has that $\left\{ p_n , \phi_n \right\} = \frac{1}{\hbar}\delta_{nm}$. Thus,
 for arbitrary functions $A$ and $B$ on $\PH$ one has
 \begin{equation}
-\left\{ A, B\right\} \coloneqq \frac{1}{\hbar}\sum_{\alpha=1}^{D-1} \frac{\partial A}{\partial p_\alpha} \frac{\partial B}{\partial \phi_\alpha} - \frac{\partial B}{\partial p_\alpha} \frac{\partial A}{\partial \phi_\alpha}
+\left\{ A, B\right\} \coloneqq \frac{1}{\hbar}\sum_{n=1}^{D-1} \frac{\partial A}{\partial p_n} \frac{\partial B}{\partial \phi_n} - \frac{\partial B}{\partial p_n} \frac{\partial A}{\partial \phi_n}
 \end{equation}
 
 
@@ -318,19 +317,19 @@ for arbitrary functions $A$ and $B$ on $\PH$ one has
 with a unitary propagator $U(t,t_0) = e^{-\frac{i}{\hbar}H (t-t_0)}$, where the
 generator $H$ is the (time-independent) Hamiltonian of the system. Surprisingly, 
 it can be shown \cite{QUA} that this evolution is equivalent to a classical Hamiltonian 
-dynamics, with geometric coordinates. In particular, calling $E(p_\alpha, \phi_\alpha) = \bra{\psi(p_\alpha,\phi_\alpha)}H \ket{\psi(p_\alpha,\phi_\alpha)}$
-the expectation value of $H$ on a generic state $\ket{\psi(p_\alpha,\phi_\alpha)} = \sum_{\alpha=0}^{D-1}\sqrt{p_\alpha}e^{i\phi_\alpha}\ket{e_\alpha}$
-parametrized by $(p_\alpha,\phi_\alpha)$, the unitary of a generic function $A$
+dynamics, with geometric coordinates. In particular, calling $E(p_n, \phi_n) = \bra{\psi(p_n,\phi_n)}H \ket{\psi(p_n,\phi_n)}$
+the expectation value of $H$ on a generic state $\ket{\psi(p_n,\phi_n)} = \sum_{n=0}^{D-1}\sqrt{p_n}e^{i\phi_n}\ket{e_n}$
+parametrized by $(p_n,\phi_n)$, the unitary of a generic function $A$
 on $\PH$ is given by 
 \begin{equation}
 \frac{\partial A}{\partial t} = \left\{ A,E\right\}
 \end{equation}
-Or, equivalently, a generic state $\left\{(p_\alpha,\phi_\alpha)\right\}$
+Or, equivalently, a generic state $\left\{(p_n,\phi_n)\right\}$
 evolves according to Hamilton's equations of motion:
 \begin{subequations}\label{eq:HAM_EOM}
 \begin{align}
-&\frac{dp_\alpha}{dt} = \frac{1}{\hbar}\frac{\partial E}{\partial \phi_\alpha} \\
-&\frac{d\phi_\alpha}{dt} = -\frac{1}{\hbar}\frac{\partial E}{\partial p_\alpha} 
+&\frac{dp_n}{dt} = \frac{1}{\hbar}\frac{\partial E}{\partial \phi_n} \\
+&\frac{d\phi_n}{dt} = -\frac{1}{\hbar}\frac{\partial E}{\partial p_n} 
 \end{align}
 \end{subequations}
 
@@ -376,14 +375,14 @@ $\widetilde{\delta}(Z-Z_0)$ is shorthand for a coordinate-covariant Dirac-delta 
 arbitrary coordinates. In homogeneous coordinates this reads:
 \begin{align*}
 \widetilde{\delta}(Z - Z_0) \coloneqq \frac{1}{\sqrt{\det g_{FS}}}
-  \prod_{\alpha=0}^{D-1} \delta(X^\alpha - X^\alpha_0)
-  \delta(Y^\alpha - Y^\alpha_0)
+  \prod_{n=0}^{D-1} \delta(X^n - X^n_0)
+  \delta(Y^n - Y^n_0)
   ~,
 \end{align*}
-where $Z^\alpha = X^\alpha + iY^\alpha$. In $(p_\alpha,\nu_\alpha)$ coordinates
+where $Z^n = X^n + iY^n$. In $(p_n,\nu_n)$ coordinates
 this becomes simply:
 \begin{align*}
-\widetilde{\delta}(Z - Z_0) = \prod_{\alpha=1}^{D-1} 2\delta(p_\alpha - p_\alpha^0) \delta(\nu_\alpha - \nu_\alpha^0)
+\widetilde{\delta}(Z - Z_0) = \prod_{n=1}^{D-1} 2\delta(p_n - p_n^0) \delta(\nu_n - \nu_n^0)
   ~,
 \end{align*}
 where the coordinate-invariant nature of the functionals $P_q[\mathcal{O}]$ is
@@ -430,12 +429,12 @@ Neumann entropy.
 The connection between geometric quantum states and density matrices is
 fairly straightforward. Since density matrices are a synthetic way of collecting
 measurement outcomes about POVMs, which functions of the 
-form $A(Z) \propto \sum_{\alpha,\beta}A_{\alpha \beta} Z^\alpha \overline{Z}^\beta$, 
+form $A(Z) \propto \sum_{n,m}A_{n m} Z^n \overline{Z}^m$, 
 given a generic geometric quantum state $q(Z)$ the associated density matrix $\rho^q$can be 
 simply computed as follows:
 \begin{align}
-\rho^q_{\alpha \beta} & = P_q[Z^\alpha \overline{Z}^\beta] \nonumber \\
-  & = \intP dV_{FS} \, q(Z)  \, Z^\alpha \overline{Z}^\beta
+\rho^q_{mn} & = P_q[Z^m \overline{Z}^n] \nonumber \\
+  & = \intP dV_{FS} \, q(Z)  \, Z^m \overline{Z}^n
   ~.
 \label{eq:densitymatrix}
 \end{align}
@@ -454,7 +453,7 @@ derivation of the generic geometric quantum state for an open quantum system can
 in Ref.\cite{Anza2020a}. Here we simply give the result, without discussing the derivation. 
 Given a system and its environment, we call $\left\{ \ket{a_j}\right\}_{j=0}^{d_S-1}$ a basis for 
 the Hilbert space $\mathcal{H}_S$ of the system (dimension $d_S$) and 
-$\left\{ \ket{b_\alpha}\right\}_{\alpha=0}^{d_E}$ a basis for the Hilbert space $\mathcal{H}_E$ 
+$\left\{ \ket{b_n}\right\}_{n=0}^{d_E}$ a basis for the Hilbert space $\mathcal{H}_E$ 
 of the environment (dimension $d_E$). Assuming system and environment are in 
 a pure state $\ket{\psi_{SE}} = \sum_{j,\alpha}\psi_{j\alpha}\ket{a_j}\ket{b_\alpha}$, the 
 geometric quantum state of the system is
@@ -466,6 +465,16 @@ environment is in state $\ket{b_\alpha}$ and $\ket{\chi_\alpha} = \sum_j \frac{\
 is a set of $d_E$ states of the system which constitutes the discrete support of the geometric 
 quantum state. The geometric quantum state in Eq.(\ref{eq:gqs_opn}) provides the correct reduced density matrix of the system
 $\rho^{S}(\psi_{SE}) = \sum_\alpha x_\alpha \ket{\chi_\alpha}\bra{\chi_\alpha}$.
+
+\paragraph*{Probability mass in a region of the state space.} Before we proceed with the
+main result, we introduce here a notation that will be useful later. This is imported
+from measure theory. Given a region $A \subseteq \PH$, we have
+\begin{equation}
+\mu_t(A) = \int_A q_t(Z) dV_{FS}
+\end{equation}
+This is what we mean by ``Information contained in a certain region of the state space''.
+It quantifies the probability that our quantum system is in a state $Z$ that belongs to the region $A$
+of the quantum state space $\PH$.
 
 
 
@@ -499,7 +508,7 @@ for concrete examples we will always refer to the simple case of a qubit.
 
 
 
-\paragraph*{General treatment.}
+\subsection*{General treatment}
 The following treatment pertains quantum systems which are finite-dimensional, and 
 interact with finite-dimensional environments. Other than that, we continuity equation holds
 for arbitrary quantum systems. 
@@ -514,8 +523,8 @@ we can think of them as particles on a classical phases space, which interact in
 way. These are the ``carriers of information'', in the sense that each of these particles carries 
 a probability mass $x_\alpha(t)$ that the system will be found on the state $\Gamma_\alpha(t)$.
 A clarifying example of how the geometric quantum state of a qubit evolves when the system 
-interacts with an environment is given in Figure \ref{fig:gqs_dynamics}. Since overall information 
-has to be preserved, $\int_{\PH} q_t(Z) dV_{\mathrm{FS}} = \sum_\alpha x_\alpha(t) =1$,
+interacts with an environment is given in Figure \ref{fig:gqs_dynamics}. Since the total amount 
+of information has to be preserved, $\mu_t(\PH) = \int_{\PH} q_t(Z) dV_{\mathrm{FS}} = \sum_\alpha x_\alpha(t) =1$,
 the geometric quantum state $q_t(Z)$ must satisfy a continuity equation. Conceptually, this is 
 the starting point of virtually all transport theories, which deal with quantities that are globally 
 conserved, but that are moved around as a result of the underlying dynamics.
@@ -539,10 +548,10 @@ in our case, is the Fubini-Study metric.}, since every dipendence on the coordin
 \end{equation}
 This allows us to identify the first functional term of the continuity equation, the \emph{flux of information} $J(t)$, which is 
 a weighted average of the ``single-particle'' flux $J_\alpha(t)$:
-\begin{subequations}
+\begin{subequations}\label{eq:flux}
 \begin{align}
-&J_\alpha(t) =  \widetilde{\delta}\left(Z - \Gamma_\alpha(t) \right) \dot{\Gamma}_{\alpha}(t)\\
-&J(t) = \sum_\alpha x_\alpha(t)J_\alpha(t)
+&J_\alpha(t) =  \widetilde{\delta}\left(Z - \Gamma_\alpha(t) \right) \dot{\Gamma}_{\alpha}(t)~,\\
+&J(t) = \sum_\alpha x_\alpha(t)J_\alpha(t)~.
 \end{align}
 \end{subequations}
 We now look at the first term in the right-hand: $\sum_\alpha \dot{x}_\alpha(t) \delta(Z-\Gamma_\alpha(t))$.
@@ -550,7 +559,7 @@ This is identified to be a source/sink term, which is independent on the underly
 the points in the quantum state space. This identifies the second functional term of our continuity 
 equation: \emph{sinks and sources of information} $\sigma_t(Z)$:
 \begin{equation}
-\sigma_t(Z) = \sum_{\alpha=0}^{d_E} \dot{x}_\alpha(t) \widetilde{\delta}\left(Z - \Gamma_\alpha(t) \right)~.
+\sigma_t(Z) = \sum_{\alpha=0}^{d_E} \dot{x}_\alpha(t) \widetilde{\delta}\left(Z - \Gamma_\alpha(t) \right)~.\label{eq:sigma}
 \end{equation}
 Eventually, we obtain the following continuity equation for the geometric quantum state of a finite-dimensional
 quantum system interacting with a finite-dimensional environment:
@@ -563,15 +572,19 @@ This is in analogy with the classical theories of information, which deal with p
 or charge, which are carried around by particles, represented as points wondering in a classical phase-space.
 \begin{figure}[t!]
 \centering
-\includegraphics[width=.4\textwidth]{./img/Flux.pdf}
-\caption{TBD
+\includegraphics[width=.45\textwidth]{./img/Flux.pdf}
+\caption{Kinetic interpretation of the flux $J$. If we look at a small region of the quantum state space, 
+	due to the underlying dynamics we see that information is locally conserved in the sense that 
+	there is a certain number of points which enters and leaves this region. As a result of this local
+	process, probability is moved around and can concentrate in a certain region or get scrambled 
+	across the quantum state space.
 	}
 \label{fig:flux_term}
 \end{figure}
 
 To reinforce this point, the physical interpretation of the flux $J_t$ and source/sink $\sigma_t$ term is essentially the 
 same as in other transport theories. We now describe them explicitly, together with their kinetic interpretation, drawn
-in Figures \ref{fig:flux_term} and \ref{fig:sigma_term}. First, $J$ is an information flux, in the proper sense of flux. As one can appreciate 
+in Figures \ref{fig:flux_term} and \ref{fig:sigma_term}. First, $J_t$ is an information flux, in the proper sense of flux. As one can appreciate 
 in Figure \ref{fig:flux_term}, this flux is associated to an overall conserved quantity, localized in its carriers $\Gamma_\alpha$, 
 which move around and distribute it across the quantum state space. To emphasize this point we look at the simpler situation
 in which $\dot{x}_\alpha = 0$. In this case, the information carried around by the points in state space is a constant
@@ -580,8 +593,13 @@ the quantum state space.
 
 \begin{figure}[t!]
 \centering
-\includegraphics[width=.4\textwidth]{./img/Source.pdf}
-\caption{TBD
+\includegraphics[width=.45\textwidth]{./img/Source.pdf}
+\caption{Kinetic interpretation of the sink/source term $\sigma_t$. Even if the points do not move around
+	the quantum state space $\dot{\Gamma}_\alpha=0$, the term $\sigma_t$ allows the exchange of information 
+	between different regions. Note that this can be a non-local effect, as depicted above. In the example above
+	we have two state $\Gamma_\alpha$ and $\Gamma_\beta$ fixed in time, but exchanging a certain amount of
+	$\epsilon $probability, thus moving information from one region of the state space to another one: $x_\beta(t+\delta t) = x_\beta(t)+\epsilon$, $x_\alpha(t+\delta t) 
+	= x_\alpha(t) - \epsilon$.
 	}
 \label{fig:sigma_term}
 \end{figure}
@@ -590,32 +608,74 @@ can not be written as a divergence term. To emphasize this point we look at the 
 position of the points in $\PH$ does not change: $\dot{\Gamma}_\alpha = 0$. In this case the support of the 
 distribution is fixed and the particles don't move $\Gamma_\alpha(t)=\Gamma_\alpha(t_0)$. However, even in 
 this case there can still be a non-trivial dynamics, due to $\dot{x}_\alpha(t)\neq 0$. Moreover, as depicted
-in Figure \ref{fig:sigma_term}, 
+in Figure \ref{fig:sigma_term}, the time-evolution generated by this term is generally non-local in the quantum
+state space. Thus, $\sigma_t$ possesses all the hallmarks of the standard sinks and sources terms in general 
+transport theories: it is not associated with particles moving around the state space and it can not be rewritten 
+as a divergence term.
 
-Therefore, this term possesses 
-the hallmarks of sinks and sources terms in general transport theories: it is not associated with particles moving
-around the state space, and it can not be rewritten as a divergence term.
+\subsection*{Closed quantum systems}
 
+What happens when the system is closed? Is there a specific form for the terms $J_t$ and $\sigma_t$?
+Here we answer both these questions in a detailed manner. Since the evolution is Hamiltonian, we can 
+use Hamilton's equations of motion to derive the evolution equation of $\mu_t$ or, equivalently, of $q_t(Z)$.
+First, the sink/sources terms is trivially zero, as the evolution is Hamiltonian and preserves the local probabilities.
+Second, starting from the definition of the flux in Eq.(\ref{eq:flux}), we can explicitly write the form of the flux $J_t$, 
+using Hamilton's equations of motion. Writing $\Gamma_\alpha$ in canonical coordinates $(p_n(\Gamma_\alpha),\phi_n(\Gamma_\alpha))$, 
+we have 
+\begin{subequations}
+\begin{align}
+\dot{\Gamma}_\alpha & = \left\{\left( \dot{p}_n(\Gamma_\alpha), \dot{\phi}_n(\Gamma_\alpha)\right)\right\}_n\\
+& = \left\{\frac{1}{\hbar}\left( \frac{\partial E}{\partial \phi_n}, -\frac{\partial E}{\partial p_n}  \right)\right\}_n = v_H(p_n,\phi_n)
+\end{align}
+\end{subequations}
+Note how the right-hand side, which we called $v_H$ does not depend on the index $\alpha$ anymore: all 
+the points evolve in the same way, following the same Hamiltonian flow. Inserting this into the definition of the flux 
+we obtain that the flux is equal to the product between the distribution and the Hamiltonian velocity field $v_H$:
+\begin{equation}
+J_t(Z) = q_t(Z) v_H(Z)~,
+\end{equation}
+thus providing the following continuity equation:
+\begin{equation}
+\frac{\partial q_t}{\partial t} = - v_H \cdot \nabla q_t - q_t \, \nabla \cdot v_H
+\end{equation}
+This can be further simplified by noting that the Hamiltonian vector field is divergence free, $\nabla \cdot v_H = 0$, 
+thanks to the fact that the Hessian of $E(p_n,\phi_n)$ is symmetric. Eventually, this leads us to the final form
+of the continuity equation for a isolated quantum system:
+\begin{equation}
+\frac{\partial q_t}{\partial t} = - v_H \cdot \nabla q_t = -\left\{ q_t, E \right\}
+\end{equation}
 
+\paragraph*{Quantum Liouville's theorem.} As a further point of contact with the techniques of classical 
+statistical mechanics, we now show that a generic Hamiltonian dynamics for the geometric quantum state 
+satisfies Liouville's theorem \cite{Soto}. Indeed, by writing explicitly the total derivative of $q_t(Z)$ with 
+respect to time we get 
+\begin{equation}
+\frac{d q}{d t} = \sum_\alpha \frac{\partial q_t}{\partial p_\alpha} \frac{dp_\alpha}{dt}+\frac{\partial q_t}{\partial \phi_\alpha} \frac{d\phi_\alpha}{dt} + \frac{\partial q_t}{\partial t}
+\end{equation}
+Inserting Hamilton's equations of motion (Eq. (\ref{eq:HAM_EOM})), and then using the continuity equation
+\begin{align}
+\frac{d q}{d t} &= \sum_\alpha \frac{\partial q_t}{\partial p_\alpha} \frac{dp_\alpha}{dt}+\frac{\partial q_t}{\partial \phi_\alpha} \frac{d\phi_\alpha}{dt} + \frac{\partial q_t}{\partial t}\nonumber \\
+& = \left\{ q_t, E\right\} - \nabla \cdot q_t v_H = 0
+\end{align}
 
+%Upon unitary evolution the distribution remains 
+%a Dirac delta, but 
+%the point such state is concentrated on changes over time. For example, in the case of a 
+%qubit we have coordinates $Z^0 = \sqrt{1-p}$ and $Z^1 = \sqrt{p}e^{i\phi}$. Hence we only 
+%have a pair of independent canonically conjugated coordinates $(p,\phi)$. If the qubit is 
+%isolated, with Hamiltonian $H = E_0 \ket{E_0}\bra{E_0} + E_1 \ket{E_1}\bra{E_1}$, we 
+%can choose as a basis the Hamiltonian eigenstates and its evolution is simply written.
+%Indeed, with this choice of coordinates we have $E(p,\phi) = E_0 + (E_1-E_0)p = E(p)$.
+%Using Hamilton equations of motion (see Eq.\ref{eq:HAM_EOM}) we can see that $p$
+%is preserved, $\dot{p} = \frac{1}{\hbar}\frac{\partial E}{\p \phi}=0$ and that $\phi$ is a cyclical
+%coordinate $\dot{\phi} = - \frac{1}{\hbar} \frac{\partial E}{\partial p} = - \frac{E_0 - E_1}{\hbar}$, 
+%giving $\phi(t) = \phi(t_0) - \frac{E_1-E_0}{\hbar}(t-t_0)$. This is easily generalized to
+%the case of a generic Hilbert space, in which $p_\alpha$ are preserved and 
+%$\phi_\alpha(t) = \phi_\alpha(t_0) - \frac{E_\alpha - E_0}{\hbar}(t-t_0)$. In a general coordinate
+%system this means $q_t(Z) = \tilde{\delta}\left( Z - Z_t\right)$. 
 
-If the system is closed, upon unitary evolution the distribution remains a Dirac delta, but 
-the point such state is concentrated on changes over time. For example, in the case of a 
-qubit we have coordinates $Z^0 = \sqrt{1-p}$ and $Z^1 = \sqrt{p}e^{i\phi}$. Hence we only 
-have a pair of independent canonically conjugated coordinates $(p,\phi)$. If the qubit is 
-isolated, with Hamiltonian $H = E_0 \ket{E_0}\bra{E_0} + E_1 \ket{E_1}\bra{E_1}$, we 
-can choose as a basis the Hamiltonian eigenstates and its evolution is simply written.
-Indeed, with this choice of coordinates we have $E(p,\phi) = E_0 + (E_1-E_0)p = E(p)$.
-Using Hamilton equations of motion (see Eq.\ref{eq:HAM_EOM}) we can see that $p$
-is preserved, $\dot{p} = \frac{1}{\hbar}\frac{\partial E}{\p \phi}=0$ and that $\phi$ is a cyclical
-coordinate $\dot{\phi} = - \frac{1}{\hbar} \frac{\partial E}{\partial p} = - \frac{E_0 - E_1}{\hbar}$, 
-giving $\phi(t) = \phi(t_0) - \frac{E_1-E_0}{\hbar}(t-t_0)$. This is easily generalized to
-the case of a generic Hilbert space, in which $p_\alpha$ are preserved and 
-$\phi_\alpha(t) = \phi_\alpha(t_0) - \frac{E_\alpha - E_0}{\hbar}(t-t_0)$. In a general coordinate
-system this means $q_t(Z) = \tilde{\delta}\left( Z - Z_t\right)$. 
-
-Unitary evolution do not spread information around the state space, but keep it localized, while
-moving around support of the distribution. 
+%Unitary evolution do not spread information around the state space, but keep it localized, while
+%moving around support of the distribution. 
 
 
 
