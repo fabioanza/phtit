@@ -96,7 +96,7 @@
 \def\ourTitle{%
 % Interpretation of the Geometric Quantum State
 % What is a Quantum State?
-A kinetic theory of quantum information
+A kinetic theory of quantum information transport
 }
 
 \def\ourAbstract{%
@@ -495,8 +495,8 @@ from measure theory. Given a region $A \subseteq \PH$, we have
 \mu_t(A) = \int_A q_t(Z) dV_{FS}
 \end{equation}
 This is what we mean by ``Information contained in a certain region of the state space''.
-It quantifies the probability that our quantum system is in a state $Z$ that belongs to the region $A$
-of the quantum state space $\PH$.
+$\mu_t(A)$ quantifies the probability that, at time $t$, our quantum system is in a state $Z$ that 
+belongs to the region $A$ of the quantum state space $\PH$.
 
 \section{Information Transport: Continuity equation}
 \label{sec:IT}
@@ -592,9 +592,9 @@ or charge, which are carried around by particles, represented as points wonderin
 \caption{Kinetic interpretation of the sink/source term $\sigma_t$. Even if the points do not move around
 	the quantum state space $\dot{\Gamma}_\alpha=0$, the term $\sigma_t$ allows the exchange of information 
 	between different regions. Note that this can be a non-local effect, as depicted above. In the example above
-	we have two state $\Gamma_\alpha$ and $\Gamma_\beta$ fixed in time, but exchanging a certain amount of
-	$\epsilon $probability, thus moving information from one region of the state space to another one: $x_\beta(t+\delta t) = x_\beta(t)+\epsilon$, $x_\alpha(t+\delta t) 
-	= x_\alpha(t) - \epsilon$.
+	we have two state $\Gamma_\alpha$ and $\Gamma_\beta$ fixed in time, but exchanging a certain amount
+	$\epsilon$ of probability, thus moving information from one region of the state space to another one: 
+	$x_\beta(t+\delta t) = x_\beta(t)+\epsilon$, $x_\alpha(t+\delta t) 	= x_\alpha(t) - \epsilon$.
 	}
 \label{fig:sigma_term}
 \end{minipage}
@@ -679,9 +679,9 @@ This leads us to the final form of the continuity equation of an isolated quantu
 \end{equation}
 
 \paragraph*{Liouville's theorem for GQM.} As a further point of contact with the techniques of classical 
-statistical mechanics, we now show that a generic Hamiltonian dynamics for the geometric quantum state 
-satisfies Liouville's theorem \cite{Soto}. Indeed, by writing explicitly the total derivative of $q_t(Z)$ with 
-respect to time we get 
+statistical mechanics and kinetic theory, we now show that a generic Hamiltonian dynamics for the 
+geometric quantum state satisfies Liouville's theorem \cite{Soto}. Indeed, by writing explicitly the total 
+derivative of $q_t(Z)$ with respect to time we get 
 \begin{equation}
 \frac{d q}{d t} = \sum_\alpha \frac{\partial q_t}{\partial p_\alpha} \frac{dp_\alpha}{dt}+\frac{\partial q_t}{\partial \phi_\alpha} \frac{d\phi_\alpha}{dt} + \frac{\partial q_t}{\partial t}
 \end{equation}
@@ -698,6 +698,7 @@ We now turn to the more pertinent, and involved, case of an open quantum system.
 \begin{itemize}
 \item This kind of hamiltonian dynamics is more restrictive than a generic classical Hamiltonian dynamics: No chaos allowed, as the distance between points is constant.
 \item Hence, we can concot Hamiltonian dynamics that violate this condition, possibly to give us quantum chaos.
+\item Equilibrium ($J=\sigma=0$) and non-equilibrium stationary states.
 \end{itemize}
 %Upon unitary evolution the distribution remains 
 %a Dirac delta, but 
@@ -782,43 +783,109 @@ and the interaction between particles is vehiculated by the set of operators $\h
 \begin{equation}
 \hat{V}_{\alpha \beta} \coloneqq \left( H_E\right)_{\alpha \beta} \mathbb{I}_S + \sum_{k=1}^M B^{(k)}_{\alpha \beta} A^{(k)}~.\label{ed:def_V}
 \end{equation}
-The remaining step is to connect this with the quantities that determine the geometric quantum state of the system: $x_\alpha$ and $\ket{\chi_\alpha}$.
-This is easily done by using the original definition of $\ket{\Phi_\alpha}$. First, since $x_\alpha = \braket{\Phi_\alpha}{\Phi_\alpha}$, we can derive 
-the evolution equation for $x_\alpha(t)$ by using Eq.(\ref{eq:kinetic}):
-\begin{equation}
-\frac{dx_\alpha}{dt} = \frac{d}{dt}\braket{\Phi_\alpha}{\Phi_\alpha} = \frac{2}{\hbar} \sum_\beta \mathrm{Im} \left[ \bra{\Phi_\alpha}\hat{V}_{\alpha \beta}\ket{\Phi_\beta}\right]~.
-\end{equation}
-Second, the evolution for $\ket{\chi_\alpha}$ is inherited from the ones of $\ket{\Phi_\alpha}$ since $\ket{\chi_\alpha} = \frac{\ket{\Phi_\alpha}}{||\ket{\Phi_\alpha}||}$.
-Plugging Eq.(\ref{eq:kinetic}) into the definition for $\ket{\chi_\alpha}$ and applying some simple algebraic manipulations we get
-\begin{align}
-i\hbar \frac{d }{dt}\ket{\chi_\alpha} &= \left( \hat{H}_\alpha- \frac{i \hbar }{2} \frac{d\log x_\alpha}{dt} \mathbb{I}_S\right) \ket{\chi_\alpha} \nonumber \\
-&\quad +\sum_{\beta \neq \alpha } \sqrt{\frac{x_\beta}{x_\alpha}} \hat{V}_{\alpha \beta}\ket{\chi_\beta}~.
-\end{align}
+The remaining step is to connect this with the quantities that determine the geometric quantum state of the system: $x_\alpha$ and $\Gamma_\alpha$.
+This is easily done by using the original definition $\ket{\Phi_\alpha} = \sqrt{x_\alpha} \ket{\chi_\alpha}$. Since $\Gamma_\alpha(t) \leftrightarrow \ket{\chi_\alpha}$,
+we have $\Gamma^j_\alpha(t) = \frac{\braket{a_j}{\Phi_\alpha(t)}}{\sqrt{x_\alpha(t)}}$ and $x_\alpha(t) = \braket{\Phi_\alpha(t)}{\Phi_\alpha(t)}$.
+%we can also derive the evolution equation for $x_\alpha(t)$ by using Eq.(\ref{eq:kinetic}):
+%\begin{equation}
+%\frac{dx_\alpha}{dt} = \frac{d}{dt}\braket{\Phi_\alpha}{\Phi_\alpha} = \frac{2}{\hbar} \sum_\beta \mathrm{Im} \left[ \bra{\Phi_\alpha}\hat{V}_{\alpha \beta}\ket{\Phi_\beta}\right]~.
+%\end{equation}
 
+%Here we can see that the evolution of $x_\alpha$ is dictated only by the interaction $\hat{V}_{\alpha \beta}$.
 
-
-
-
-Here we can see that the evolution of $x_\alpha$ is dictated only by the interaction $\hat{V}_{\alpha \beta}$.
-
+This concludes the derivation of the microscopic kinetics of the points in quantum state space, for an open quantum system interacting
+with a finite-dimensional environment. While not treated here, by using the approach developed in Ref.\cite{Anza2020a} these results
+can be extended to include finite-systems interacting with infinite-dimensional environments.
 
 First, as a consistency check, we note that the preservation of information within the quantum state space of the system is inherited by the 
 unitarity of the global evolution. This is manifested in the relations $\hat{H}_\alpha^\dagger = \hat{H}_\alpha$ and $\hat{V}_{\alpha \beta}^{\dagger} = \hat{V}_{\beta \alpha}$, 
 both of which can be easily shown to be true from the definitions above.
 
 
-
-
-
-
-
-
-
-
-
-
-\section{Examples}
+\section{Case studies}
 \label{sec:EXAMPLES}
+
+So far we have developed the microscopic, kinetic, equations regulating the 
+information transport across the quantum state space. In this section we use
+an analytical and numerical approach to look at the information transport in 
+concrete physical systems. In particular, in our examples we look at the information
+transport in the state space of a qubit. Both in isolated and open configuration.
+This choice is made to support the theoretical calculations with visual representations,
+both of which are simpler in the case of a qubit.
+
+\subsection*{State space of a qubit: Canonical coordinates}
+
+Before we begin our case studies, here we collect useful technical details
+about the geometric quantum mechanics of a qubit. First, we will be using units in
+which $\hbar = 1$. Then, using as a reference basis an arbitrary basis $\left\{ \ket{0},\ket{1}\right\}$ 
+the (probability,phase) coordinates are identified via the following scalar product 
+on the Hilbert space $\braket{s}{\psi} = \sqrt{p_s}e^{i\phi_s}$, with $s=0,1$, giving $(p_0,\phi_0,p_1,\phi_1)$. 
+However, the quantum state space gets rid of two fundamental redundancies in this description.
+First, we can always assume that $\phi_0 = 0$. Second, due to normalization we have
+$p_0 = 1-p_1$. Thus, we only have a pair of independent coordinates: $(p_1,\phi_1)$.
+We can therefore drop the index and say that a general point on the state space
+of a qubit is uniquely identified by $(p,\phi) \in [0,1]\times[0,2\pi[$, with an embedding on the Hilbert space
+defined by $\ket{\psi(p,\phi)} = \sqrt{1-p}\ket{0} + \sqrt{p}e^{i\phi}\ket{1}$. 
+Note that the embedding is smooth everywhere, aside for two isolated points $\ket{0}$ and 
+$\ket{1}$, where $\phi$ is not defined and which are represented only by $p=0$ and $p=1$, 
+respectively. These coordinates $(p,\phi)$ are canonically conjugated: $\left\{ p,\phi\right\}$
+and the determinant of the Fubini-Study metric is simply $g= \frac{1}{2}$. Moreover, since the total
+volume of the state space is $\pi$ \cite{}, we renormalize the Fubini-Study volume element 
+with the total volume, so that $dV = \frac{dpd\phi}{2\pi} = \frac{dV_{FS}}{\mathrm{Vol}(\mathbb{C}P^1)}$.
+
+
+\subsection*{Isolated qubit}
+
+Our first case study is an isolated qubit, with an arbitrary initial geometric quantum 
+state $f_0(p,\phi)$ and Hamiltonian operator $H = \vec{h} \cdot \vec{\sigma} = E_0 \ket{E_0}\bra{E_0} + E_1 \ket{E_1}\bra{E_1}$. 
+Thus, the generator of the geometric evolution is:
+\begin{align}
+\mathcal{E}(p,\phi) & = \bra{\psi(p,\phi)}H\ket{\psi(p,\phi)} = (1-p)H_{00} + p H_{11} \nonumber \\
+&+ \sqrt{p(1-p)} \left(e^{i\phi}H_{01}+e^{-i\phi}H_{10} \right) \\
+& = \vec{h} \cdot \vec{S} \nonumber~,
+\end{align}
+where 
+\begin{equation}
+\vec{S} = \MV{\vec{\sigma}} = \left( 2\sqrt{p(1-p)}\cos \phi, 2\sqrt{p(1-p)}\sin \phi , p\right)
+\end{equation}
+
+
+Since the evolution is Hamiltonian, there is no source or sink term, so the continuity equation is 
+\begin{equation}
+\frac{\partial f_t(p,\phi)}{\partial t} + \nabla \cdot J_t = 0~.
+\end{equation}
+In canonical coordinates the $\nabla$ operator is simply $\nabla = (\frac{\p }{\p p},\frac{\p }{\p \phi})$.
+Writing explicitly, we get
+\begin{equation}
+\frac{\partial f_t(p,\phi)}{\partial t} + \frac{\p J_t^p}{\p p} + \frac{\p J_t^{\phi}}{\p \phi} = 0~.
+\end{equation}
+We now come to writing explicitly the flux $J_t = (J_t^p,J_t^{\phi})$. As argued above, 
+with Hamiltonian evolution the flux is the product between the Hamiltonian vector 
+field $v_H$ and the geometric quantum state $f_t(p,\phi)$. Explicitly:
+\begin{equation}
+J_t =  \frac{f_t(p,\phi)}{\hbar} \left(\frac{\p \mathcal{E}(p,\phi)}{\p p}, -\frac{\p \mathcal{E}(p,\phi)}{\p \phi}\right)
+\end{equation}
+Plugging this into the continuity equation we get an equation for $f_t(p,\phi)$ and remembering
+that a Hamiltonian vector field is divergence-free, we get
+\begin{equation}
+\frac{\partial f_t}{\partial t} + A(p,\phi) \frac{\partial f}{\partial p} + B(p,\phi) \frac{\partial f}{\partial \phi} = 0~,
+\end{equation}
+with $A(p,\phi) = - \frac{1}{\hbar}\frac{\partial \mathcal{E}}{\partial \phi}$ and $B(p,\phi) = \frac{1}{\hbar}\frac{\partial \mathcal{E}}{\partial p}$.
+This is a linear, first-order, partial differential equation, which can be solved 
+in general using the method of the characteristics. Here we simplify the treatment 
+and switch to coordinates aligned to the convenient basis in which the Hamiltonian 
+is diagonal. This leads to
+\begin{equation}
+\frac{\partial f}{\partial t} - \omega \frac{\partial f}{\partial \phi} = 0~,
+\end{equation}
+where $\omega = \frac{E_1 - E_0}{\hbar}$. This is equivalent to the transport 
+equation for advection, which leads the following analytical solution: $f_t(p,\phi) = f_0(p,\phi+\omega t)$,
+for any valid initial distribution $f_0(p,\phi)$.
+{\bf HERE}
+
+
+
+
 
 \section{Conclusions}
 \label{sec:FINAL}
