@@ -854,7 +854,7 @@ Since the evolution is Hamiltonian, there is no source or sink term, so the cont
 \begin{equation}
 \frac{\partial f_t(p,\phi)}{\partial t} + \nabla \cdot J_t = 0~.
 \end{equation}
-In canonical coordinates the $\nabla$ operator is simply $\nabla = (\frac{\p }{\p p},\frac{\p }{\p \phi})$.
+In canonical coordinates, the $\nabla$ operator is simply $\nabla = (\frac{\p }{\p p},\frac{\p }{\p \phi})$.
 Writing explicitly, we get
 \begin{equation}
 \frac{\partial f_t(p,\phi)}{\partial t} + \frac{\p J_t^p}{\p p} + \frac{\p J_t^{\phi}}{\p \phi} = 0~.
@@ -868,7 +868,7 @@ J_t =  \frac{f_t(p,\phi)}{\hbar} \left(\frac{\p \mathcal{E}(p,\phi)}{\p \phi}, -
 Plugging this into the continuity equation we get an equation for $f_t(p,\phi)$ and remembering
 that a Hamiltonian vector field is divergence-free, we get
 \begin{equation}
-\frac{\partial f_t}{\partial t} + A(p,\phi) \frac{\partial f}{\partial p} + B(p,\phi) \frac{\partial f}{\partial \phi} = 0~,
+\frac{\partial f_t}{\partial t} + A(p,\phi) \frac{\partial f_t}{\partial p} + B(p,\phi) \frac{\partial f_t}{\partial \phi} = 0~,
 \end{equation}
 with $A(p,\phi) = \frac{1}{\hbar}\frac{\partial \mathcal{E}}{\partial \phi}$ and $B(p,\phi) = - \frac{1}{\hbar}\frac{\partial \mathcal{E}}{\partial p}$.
 This is a linear, first-order, partial differential equation, which can be solved 
@@ -881,9 +881,19 @@ is diagonal. This leads to
 where $\omega = \frac{E_1 - E_0}{\hbar}$. This is equivalent to the transport 
 equation for advection, which leads the analytical solution for the time-dependent
 geometric quantum state: $f_t(p,\phi) = f_0(p,\phi+\omega t)$, for any valid initial 
-distribution $f_0(p,\phi)$.\\
+distribution $f_0(p,\phi)$.
 
-{\bf HERE}
+\subsection*{Heisenberg environment}
+
+We now look at the case of a single qubit which interact with a dipole-dipole 
+interaction with an environment made by a $1D$ chain of qubits evolving with
+a Heisenberg Hamiltonian
+\begin{equation}
+H = \sum_{k=0}^{L-1} J_x \sigma_k^x \sigma_{k+1}^{x} + J_y \sigma_k^y \sigma_{k+1}^{y} + J_z \sigma_k^z \sigma_{k+1}^{z} + \vec{B} \cdot \vec{\sigma}_k~,
+\end{equation}
+with $\vec{B}$ a homogeneous magnetic field.
+
+
 
 
 
@@ -892,79 +902,9 @@ distribution $f_0(p,\phi)$.\\
 \section{Conclusions}
 \label{sec:FINAL}
 
-Standard quantum mechanics' concept of state is the density matrix. However,
-while density matrices provide a complete account of POVM statistics, they are
-not in one-to-one correspondence with the ensembles that generated them. This
-is a well-known fact that underlies the freedom in writing a decomposition of
-the density matrix in terms of probabilities and pure states.  All such
-decompositions yield the same POVM statistics, but they are not physically
-equivalent since they are realized in physically different ways. The abiding
-question then becomes: Which of these physically different ways exhibit
-observable or, even perhaps, manipulable phenomena?
 
-From a purification perspective \cite{Wilde2017}, the physical information
-about an ensemble's realization can always be thought of as coming from a
-larger system that is in a pure state. While the additional information about
-how the ensemble is realized is not relevant for the measurement statistics on
-our system, it does provide a much richer description. It preserves part (if
-not all) of the structural information about how the system's POVM statistics
-result from interactions with its surroundings.
- 
-Geometric quantum mechanics and its concept of geometric quantum state provide
-a framework that allows retaining such information. This yields a richer
-description of the system--one that goes beyond the system's POVM statistics, 
-taking into account the physical manner in which an ensemble has been realized.
-The geometric formalism's benefits emerge in at least two important cases:
-(i) Hybrid continuous-discrete systems, e.g., electrons or other particles with
-spin or other discrete degrees of freedom and (ii) the thermodynamic setting
-of a system in contact with a large environment.
-
-The geometric formalism directly handles the continuous nature of hybrid
-systems and the large number of degrees of freedom in thermodynamics. And, it
-does so in a fairly direct way. Thus, the geometric quantum state retains the 
-structural information about how an ensemble is generated. While the 
-two applications considered are similar, a crucial difference appears.
-
-If we assume a finite environment, knowledge of the geometric quantum state of
-our system is sufficient to recover the globally pure joint state of system and
-environment. This does not occur for a hybrid discrete-continuous system, where
-knowledge of the geometric quantum state does not allow inferring the phase
-$\theta_0(\vec{x})$ of $f(\vec{x})$. Notably, fully recovering the overall pure
-state, whose physical relevance can be argued on the ground of continuity with
-the finite-dimensional case, effectively translates into a $U(1)$ gauge
-principle on the overall system. The requirement that wave-functions differing 
-from a local phase are physically equivalent---$\psi_s(\vec{x}) \sim
-e^{i\varphi(\vec{x})}\psi_s(\vec{x})$---turns into a sufficient condition for
-recovering the global pure state from the local geometric quantum state since, 
-in this case, one can always choose $f(\vec{x}) \in \mathbb{R}$. Effectively, this is
-the principle behind gauge symmetries and gauge theories. We must leave
-exploring the connection between recovering the global pure state from a local
-geometric quantum state and a gauge principle for a future investigation.
 
 \paragraph*{Conclusion.}
-Geometric quantum mechanics is an alternative to the standard vector-based
-formalism. We introduced and then explored the concept of \emph{geometric
-quantum state} $p(Z)$ as a probability distribution on the manifold of pure
-states, inspired by the thermodynamic formalism of chaotic attractors from the
-theory of dynamical systems or, more appropriately, its Sinai-Bowen-Ruelle
-measures \cite{Eckmann1985}. This characterization accounts for the fact 
-that singling out the density matrix as the sole descriptor of a quantum 
-system's state entails ignoring how an ensemble is physically realized.
-While this does not have observable consequences if one is restricted to POVM
-statistics, in concrete situations the information about the ensemble
-realization can be key to accurate modeling. Reference \cite{Anza20c} gives an
-example. That said, the geometric setting is always sufficiently general
-that density matrices are readily computed as quadratic averages from $p(Z)$
-via Eq. (\ref{eq:densitymatrix}).
-
-We explored the physical relevance of geometric quantum states via an open
-quantum system in which a (finite) system under study is in contact with a
-larger environment and their joint state is assumed to be pure. In this
-thermodynamic setting, portions of the structural information about the joint
-pure state is directly preserved in the geometric quantum state of the smaller
-system under study. The result is a markedly richer picture of the system's
-state---a picture that goes substantially beyond the density matrix and its
-POVM statistics.
 
 \section*{Acknowledgments}
 \label{sec:acknowledgments}
