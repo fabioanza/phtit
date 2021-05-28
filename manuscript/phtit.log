@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  26 MAY 2021 09:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  27 MAY 2021 16:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1747,40 +1747,40 @@ File: babel.def 2019/05/04 3.31 Babel common definitions
 \c@theorem=\count394
 \c@hypothesis=\count395
 Class revtex4-1 Info: colortbl package is loaded. (Proceeding with fingers cros
-sed.) on input line 93.
+sed.) on input line 94.
 
 
 Class revtex4-1 Warning: Repair the float package.
 
-Class revtex4-1 Info: Robustifying \LaTeX's \boldmath command on input line 93.
+Class revtex4-1 Info: Robustifying \LaTeX's \boldmath command on input line 94.
 
-Class revtex4-1 Info: cite was not loaded (OK!) on input line 93.
-Class revtex4-1 Info: mcite was not loaded (OK!) on input line 93.
-Class revtex4-1 Info: multicol was not loaded (OK!) on input line 93.
+Class revtex4-1 Info: cite was not loaded (OK!) on input line 94.
+Class revtex4-1 Info: mcite was not loaded (OK!) on input line 94.
+Class revtex4-1 Info: multicol was not loaded (OK!) on input line 94.
 (./phtit.aux)
 \openout1 = `phtit.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 93.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 94.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 94.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 93.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 94.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1816,12 +1816,12 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box122
-Package backref Info: ** backref set up for natbib ** on input line 93.
+Package backref Info: ** backref set up for natbib ** on input line 94.
 
 
 Package hyperref Warning: Draft mode on.
 
-Package hyperref Info: Link coloring ON on input line 93.
+Package hyperref Info: Link coloring ON on input line 94.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -1830,12 +1830,12 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count402
 )
-LaTeX Info: Redefining \ref on input line 93.
-LaTeX Info: Redefining \pageref on input line 93.
-LaTeX Info: Redefining \nameref on input line 93.
+LaTeX Info: Redefining \ref on input line 94.
+LaTeX Info: Redefining \pageref on input line 94.
+LaTeX Info: Redefining \nameref on input line 94.
 
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 93.
+LaTeX Info: Redefining \selectfont on input line 94.
  ABD: EveryShipout initializing macros
 (/usr/local/texlive/2019/texmf-dist/tex/latex/translator/translator-basic-dicti
 onary-English.dict
@@ -1846,7 +1846,7 @@ File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/siunitx/siunitx-binary.cfg
 File: siunitx-binary.cfg 2017/11/26 v2.7k siunitx: Binary units
 )
-LaTeX Info: Redefining \microtypecontext on input line 93.
+LaTeX Info: Redefining \microtypecontext on input line 94.
 
 
 Package microtype Warning: `draft' option active.
@@ -1860,300 +1860,343 @@ Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.16}).
 
 \c@lstlisting=\count403
-Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 93.
+Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 94.
 \openout3 = `phtitNotes.bib'.
 
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 93.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 94.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 93.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 94.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 93.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 94.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 93.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 94.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 93.
+(Font)              <10> on input line 94.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 93.
+(Font)              <7> on input line 94.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 93.
-LaTeX Font Info:    Try loading font information for U+msa on input line 93.
+(Font)              <5> on input line 94.
+LaTeX Font Info:    Try loading font information for U+msa on input line 94.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 93.
+LaTeX Font Info:    Try loading font information for U+msb on input line 94.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 93.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 94.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 93.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 94.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 93.
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 94.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 93.
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 94.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 161.
+(Font)              <8> on input line 162.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 161.
+(Font)              <6> on input line 162.
 
 
 Package natbib Warning: Citation `Anza2020a' on page 1 undefined on input line 
-194.
+196.
 
 
 Package natbib Warning: Citation `Anza2020b' on page 1 undefined on input line 
-194.
+196.
 
 
 Package natbib Warning: Citation `Anza2020a' on page 1 undefined on input line 
-201.
+203.
 
 
 Package natbib Warning: Citation `Anza2020b' on page 1 undefined on input line 
-201.
-
-
-LaTeX Warning: Reference `sec:IT' on page 1 undefined on input line 202.
-
-
-LaTeX Warning: Reference `sec:DYN' on page 1 undefined on input line 204.
-
-
-LaTeX Warning: Reference `sec:EXAMPLES' on page 1 undefined on input line 206.
-
-
-LaTeX Warning: Reference `sec:FINAL' on page 1 undefined on input line 207.
+203.
 
 
 Package natbib Warning: Citation `STROCCHI1966' on page 1 undefined on input li
-ne 233.
+ne 236.
 
 
-Package natbib Warning: Citation `Miel68' on page 1 undefined on input line 233
+Package natbib Warning: Citation `Miel68' on page 1 undefined on input line 236
 .
 
 
 Package natbib Warning: Citation `Kibble1979' on page 1 undefined on input line
- 233.
+ 236.
 
 
 Package natbib Warning: Citation `Heslot1985' on page 1 undefined on input line
- 233.
+ 236.
 
 
-Package natbib Warning: Citation `Page87' on page 1 undefined on input line 233
+Package natbib Warning: Citation `Page87' on page 1 undefined on input line 236
 .
 
 
-Package natbib Warning: Citation `And90' on page 1 undefined on input line 233.
+Package natbib Warning: Citation `And90' on page 1 undefined on input line 236.
 
 
 
 Package natbib Warning: Citation `Gibbons1992' on page 1 undefined on input lin
-e 233.
+e 236.
 
 
 Package natbib Warning: Citation `Ashtekar1995' on page 1 undefined on input li
-ne 233.
+ne 236.
 
 
 Package natbib Warning: Citation `Ashtekar1999' on page 1 undefined on input li
-ne 233.
+ne 236.
 
 
 Package natbib Warning: Citation `Brody2001' on page 1 undefined on input line 
-233.
+236.
 
 
 Package natbib Warning: Citation `Bengtsson2017' on page 1 undefined on input l
-ine 233.
+ine 236.
 
 
 Package natbib Warning: Citation `Carinena2007' on page 1 undefined on input li
-ne 233.
+ne 236.
 
 
 Package natbib Warning: Citation `Chruscinski2006' on page 1 undefined on input
- line 233.
+ line 236.
 
 
 Package natbib Warning: Citation `Marmo2010' on page 1 undefined on input line 
-233.
+236.
 
 
 Package natbib Warning: Citation `Avron2020' on page 1 undefined on input line 
-233.
+236.
 
 
 Package natbib Warning: Citation `Pastorello2015' on page 1 undefined on input 
-line 233.
+line 236.
 
 
 Package natbib Warning: Citation `Pastorello2015a' on page 1 undefined on input
- line 233.
+ line 236.
 
 
 Package natbib Warning: Citation `Pastorello2016' on page 1 undefined on input 
-line 233.
+line 236.
 
 
 Package natbib Warning: Citation `Clemente-Gallardo2013' on page 1 undefined on
- input line 233.
+ input line 236.
 
-
-Package natbib Warning: Citation `Nielsen2010' on page 1 undefined on input lin
-e 263.
-
-
-Package natbib Warning: Citation `Heinosaari2012' on page 1 undefined on input 
-line 263.
-
-
-Underfull \hbox (badness 3271) in paragraph at lines 261--267
-[]\T1/lmr/m/n/10 Measurement out-come prob-a-bil-i-ties are de-ter-mined
- []
-
-
-Underfull \hbox (badness 2591) in paragraph at lines 261--267
-\T1/lmr/m/n/10 by \T1/lmr/m/it/10 pos-i-tive operator-valued mea-sure-ments \T1
-/lmr/m/n/10 (POVMs)
- []
-
-LaTeX Font Info:    Try loading font information for T1+fvm on input line 267.
+LaTeX Font Info:    Try loading font information for T1+fvm on input line 261.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 6.48001pt on input line 267.
+(Font)              scaled to size 6.48001pt on input line 261.
  [1{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
+Package natbib Warning: Citation `Nielsen2010' on page 2 undefined on input lin
+e 270.
+
+
+Package natbib Warning: Citation `Heinosaari2012' on page 2 undefined on input 
+line 270.
+
+
+Underfull \hbox (badness 3271) in paragraph at lines 268--274
+[]\T1/lmr/m/n/10 Measurement out-come prob-a-bil-i-ties are de-ter-mined
+ []
+
+
+Underfull \hbox (badness 2591) in paragraph at lines 268--274
+\T1/lmr/m/n/10 by \T1/lmr/m/it/10 pos-i-tive operator-valued mea-sure-ments \T1
+/lmr/m/n/10 (POVMs)
+ []
+
+
 Package natbib Warning: Citation `Bengtsson2017' on page 2 undefined on input l
-ine 276.
+ine 283.
+
+
+Package natbib Warning: Citation `QUA' on page 2 undefined on input line 319.
 
 
 Package natbib Warning: Citation `Strocchi2008a' on page 2 undefined on input l
-ine 297.
+ine 346.
 
 
 Package natbib Warning: Citation `Brody2001' on page 2 undefined on input line 
-300.
+349.
+
+[2]
+
+Package natbib Warning: Citation `Brody1998' on page 3 undefined on input line 
+423.
 
 
-Package natbib Warning: Citation `Brody1998' on page 2 undefined on input line 
-376.
+Package natbib Warning: Citation `Brody2016' on page 3 undefined on input line 
+423.
 
 
-Package natbib Warning: Citation `Brody2016' on page 2 undefined on input line 
-376.
+Package natbib Warning: Citation `Anza20b' on page 3 undefined on input line 42
+3.
 
 
-Package natbib Warning: Citation `Anza20b' on page 2 undefined on input line 37
-6.
-
-
-Underfull \hbox (badness 1552) in paragraph at lines 382--388
+Underfull \hbox (badness 1552) in paragraph at lines 429--435
  []\T1/lmr/m/it/10 Density ma-trix.[] \T1/lmr/m/n/10 The con-nec-tion be-tween 
 ge-o-met-ric
  []
 
-[2]
-<img/New_Example.pdf, id=31, 1900.63788pt x 736.35489pt>
-File: img/New_Example.pdf Graphic file (type pdf)
-<use img/New_Example.pdf>
-Package pdftex.def Info: img/New_Example.pdf  used on input line 427.
-(pdftex.def)             Requested size: 246.0pt x 95.30254pt.
+
+Package natbib Warning: Citation `Anza2020a' on page 3 undefined on input line 
+453.
+
+<./img/DynamicsLong.pdf, id=34, 1927.2pt x 942.1683pt>
+File: ./img/DynamicsLong.pdf Graphic file (type pdf)
+<use ./img/DynamicsLong.pdf>
+Package pdftex.def Info: ./img/DynamicsLong.pdf  used on input line 476.
+(pdftex.def)             Requested size: 458.99689pt x 224.38547pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 441.
+(Font)              <9> on input line 488.
+[3]
+Underfull \hbox (badness 1867) in paragraph at lines 517--520
+[]\T1/lmr/m/n/10 The fol-low-ing treat-ment per-tains quan-tum sys-tems
+ []
+
+[4 <./img/DynamicsLong.pdf>]
+Underfull \hbox (badness 3439) in paragraph at lines 550--550
+  [][][]\T1/lmr/m/n/8 With an ar-bi-trary co-or-di-nate sys-tem we have $[][] \
+OT1/lmr/m/n/8 =
+ []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Underfull \hbox (badness 1242) in paragraph at lines 560--566
+\T1/lmr/m/n/10 We now look at the first term in the right-hand:
+ []
 
 
-Package natbib Warning: Citation `Wilde2017' on page 3 undefined on input line 
-470.
+Underfull \hbox (badness 1137) in paragraph at lines 560--566
+[][] []\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 t\OT1/lmr/m/n/10 )\OML/lmm/m/it/10 ^^N
+\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 Z \OMS/lmsy/m/n/10 ^^@ \OT1/lmr/m/n/10 ^^@[](
+\OML/lmm/m/it/10 t\OT1/lmr/m/n/10 ))$\T1/lmr/m/n/10 . This is iden-ti-fied to b
+e a
+ []
 
-[3 <./img/New_Example.pdf>]
+<./img/Flux.pdf, id=106, 1927.2pt x 1084.05pt>
+File: ./img/Flux.pdf Graphic file (type pdf)
+<use ./img/Flux.pdf>
+Package pdftex.def Info: ./img/Flux.pdf  used on input line 581.
+(pdftex.def)             Requested size: 229.49844pt x 129.0879pt.
+<./img/Source.pdf, id=107, 1927.2pt x 1084.05pt>
+File: ./img/Source.pdf Graphic file (type pdf)
+<use ./img/Source.pdf>
+Package pdftex.def Info: ./img/Source.pdf  used on input line 591.
+(pdftex.def)             Requested size: 229.49844pt x 129.0879pt.
+[5]
 
-Package natbib Warning: Citation `Eckmann1985' on page 4 undefined on input lin
-e 515.
+Package natbib Warning: Citation `Soto' on page 6 undefined on input line 683.
+
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 699.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [6 <./img/Flux.pdf> <./img/Source.pdf>]
+
+Package natbib Warning: Citation `Anza2020a' on page 7 undefined on input line 
+797.
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 880--885
+
+ []
 
 
-Package natbib Warning: Citation `Anza20c' on page 4 undefined on input line 52
-0.
+Package natbib Warning: Citation `Wilde2017' on page 8 undefined on input line 
+905.
+
+[8]
+
+Package natbib Warning: Citation `Eckmann1985' on page 9 undefined on input lin
+e 950.
+
+
+Package natbib Warning: Citation `Anza20c' on page 9 undefined on input line 95
+5.
 
 No file phtit.bbl.
-[4]
+[9]
 
-Package natbib Warning: Citation `Brog25a' on page 5 undefined on input line 58
-1.
-
-
-Package natbib Warning: Citation `Schr26a' on page 5 undefined on input line 58
-1.
+Package natbib Warning: Citation `Brog25a' on page 10 undefined on input line 1
+016.
 
 
-Package natbib Warning: Citation `Neum27a' on page 5 undefined on input line 58
-2.
+Package natbib Warning: Citation `Schr26a' on page 10 undefined on input line 1
+016.
 
 
-Package natbib Warning: Citation `Neum32a' on page 5 undefined on input line 58
-3.
+Package natbib Warning: Citation `Neum27a' on page 10 undefined on input line 1
+017.
 
 
-Package natbib Warning: Citation `Dira29a' on page 5 undefined on input line 58
-4.
+Package natbib Warning: Citation `Neum32a' on page 10 undefined on input line 1
+018.
 
 
-Package natbib Warning: Citation `Dira30b' on page 5 undefined on input line 58
-4.
+Package natbib Warning: Citation `Dira29a' on page 10 undefined on input line 1
+019.
 
 
-Package natbib Warning: Citation `Dira31a' on page 5 undefined on input line 58
-4.
+Package natbib Warning: Citation `Dira30b' on page 10 undefined on input line 1
+019.
 
 
-Package natbib Warning: Citation `Heis25a' on page 5 undefined on input line 58
-7.
+Package natbib Warning: Citation `Dira31a' on page 10 undefined on input line 1
+019.
 
 
-LaTeX Warning: Reference `MainTheo' on page 5 undefined on input line 596.
+Package natbib Warning: Citation `Heis25a' on page 10 undefined on input line 1
+022.
 
 
-LaTeX Warning: Reference `MainTheo' on page 5 undefined on input line 599.
+LaTeX Warning: Reference `MainTheo' on page 10 undefined on input line 1031.
 
 
-LaTeX Warning: Reference `MainTheo' on page 5 undefined on input line 642.
+LaTeX Warning: Reference `MainTheo' on page 10 undefined on input line 1034.
 
-[5]
+
+LaTeX Warning: Reference `MainTheo' on page 10 undefined on input line 1077.
+
+[10]
 No file SM.bbl.
 
 Package natbib Warning: There were undefined citations.
@@ -2165,57 +2208,61 @@ FiXme Summary: Number of notes: 0,
 (FiXme)        Number of fatal errors: 0,
 (FiXme)        Total: 0.
 
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 711.
-[6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 711.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1146.
+[11]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1146.
  (./phtit.aux)
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 711.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1146.
 
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 55491 strings out of 492616
- 1225765 string characters out of 6129482
- 1431260 words of memory out of 5000000
- 58513 multiletter control sequences out of 15000+600000
- 626666 words of font info for 113 fonts, out of 8000000 for 9000
+ 55562 strings out of 492616
+ 1227297 string characters out of 6129482
+ 1435999 words of memory out of 5000000
+ 58578 multiletter control sequences out of 15000+600000
+ 627031 words of font info for 114 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,11n,138p,1037b,797s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 85i,11n,138p,1059b,824s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
-texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/20
-19/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2019/texmf-d
-ist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/
-dvips/lm/lm-mathex.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base
-/8r.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb>
-</usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/loca
-l/texlive/2019/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/
-2019/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></usr/local/texlive/2019/texmf-
-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts
-/type1/public/lm/lmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/pub
-lic/lm/lmmi5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi
-6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr
-/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texl
-ive/2019/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2019/te
-xmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2019/texmf-dist/fo
-nts/type1/public/lm/lmr5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/pu
-blic/lm/lmr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr7
-.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/l
-ocal/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive
-/2019/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2019/texm
-f-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2019/texmf-dist/fon
-ts/type1/public/lm/lmri9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/pu
-blic/lm/lmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lm
-sy5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></u
-sr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/te
-xlive/2019/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2019/
-texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2
-019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on phtit.pdf (6 pages, 648417 bytes).
+texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2019/
+texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2019/texmf-dist
+/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc
+/dvips/lm/lm-rm.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-m
+athex.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr
+/local/texlive/2019/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/local/t
+exlive/2019/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/201
+9/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2019/texmf-di
+st/fonts/type1/public/lm/lmbx9.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
+pe1/public/lm/lmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public
+/lm/lmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi5.
+pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/l
+ocal/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texliv
+e/2019/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2019/texm
+f-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2019/texmf-dist/font
+s/type1/public/lm/lmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/pub
+lic/lm/lmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr5
+.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/l
+ocal/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive
+/2019/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2019/texmf-
+dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2019/texmf-dist/fonts/t
+ype1/public/lm/lmri10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publi
+c/lm/lmri12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmri9
+.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr
+/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texl
+ive/2019/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2019/te
+xmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2019/texmf-dist/fo
+nts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/p
+ublic/lm/lmsy9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfo
+nts/symbols/msbm10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/a
+msfonts/symbols/msbm5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publi
+c/amsfonts/symbols/msbm7.pfb>
+Output written on phtit.pdf (11 pages, 1930791 bytes).
 PDF statistics:
- 162 PDF objects out of 1000 (max. 8388607)
- 119 compressed objects within 2 object streams
+ 1274 PDF objects out of 1440 (max. 8388607)
+ 847 compressed objects within 9 object streams
  0 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 
