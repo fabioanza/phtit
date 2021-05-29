@@ -40,6 +40,7 @@ class DataGen_Config:
         assert os.path.exists(self.path_database_dyn)==True, "I can not find a database at {here4}".format(here4=self.path_database_dyn)
         self.database_dyn = ind.Index(self.path_database_dyn)
 
+
     def which_database(self,which):
         assert (which=='ham' or which=='eigs' or which=='unit' or which=='dyn')==True ,"Second argument of datagen can only be `ham`, `eigs`, `unit` or `dyn`"
         if which=='ham':
