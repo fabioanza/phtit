@@ -433,6 +433,8 @@ class Geometric_QM(Calculations):
                     scal=self.scalar_product(vec,psi) #scalar product.
                     vv = vv+scal/np.sqrt(x_alpha[n])*B_Sys[k] #Normalize
                 assert np.isclose(self.scalar_product(vv,vv),1)==True, "Norm of the output vector {val} is not 1".format(val=self.scalar_product(vv,vv)) #Check normalization
+                #Impose that the first phase is always zero.
+                vv = np.exp(-np.angle(vv[0])*1j)*vv
                 chi_alpha.append(vv) #Append to the right list.
             else:
                 chi_alpha_zero.append(n) #Append to the zero-list
@@ -544,6 +546,44 @@ class Geometric_QM(Calculations):
     def phi_coordinates(self):
         #TESTED: YES
         return self.apply_to_state(self.phi_coor)
+
+    #FUBINI-STUDY distance for qubit states, written in (p,phi) coordinates
+    def fs_distance_pphi(self,p1,phi1,p2,phi2):
+        return np.arccos(1-(p1+p2)+2*p1*p2+np.sqrt(p1*(1-p1))*np.sqrt(p2*(1-p2))*2*np.cos(phi1-phi2))
+
+    #FUBINI-STUDY distance, written using Hilbert space vectors
+    def fs_distance_vectors(self,psi1,psi2):
+        assert np.isclose(self.scalar_product(psi1,psi1),1,atol=10**(-8))==True, 'First argument is not a normalized vector'
+        assert np.isclose(self.scalar_product(psi2,psi2),1,atol=10**(-8))==True, 'Second argument is not a normalized vector'
+        if np.isclose(np.abs(self.scalar_product(psi1,psi2)),1,atol=10**(-13))==True:
+            return np.arccos(1)
+        elif np.isclose(np.abs(self.scalar_product(psi1,psi2)),0,atol=10**(-13))==True:
+            return np.arccos(0)
+        else:
+            return np.arccos(np.abs(self.scalar_product(psi1,psi2)))
+
+    def D_quantities(self,psi):
+        chis, chis_zero = self.local_vectors(psi)
+        x_alpha = self.probs(psi)
+        dE = 2**self.env_size
+        non_zero_chi_list = [k for k in range(dE)]
+        for n in chis_zero:
+            non_zero_chi_list.remove(n)
+        val1, val2 = 0,0
+        c = 0#Counts the total number of distinct non-zero pairs of x_alpha, x_beta
+        for k in range(len(non_zero_chi_list)):
+            for n in range(k+1,len(non_zero_chi_list)):
+                val1 = val1+x_alpha[non_zero_chi_list[k]]*x_alpha[non_zero_chi_list[n]]*self.fs_distance_vectors(chis[k],chis[n])
+                val2 = val2+self.fs_distance_vectors(chis[k],chis[n])
+                c=c+1
+        if c==0:
+            return val1,val2
+        else:
+            return val1,val2/c #We divide by two because we are looking for the arithmetic average
+
+    def BigD(self):
+        return self.apply_to_state(self.D_quantity)
+
 
 
 ##############################################################################
@@ -707,11 +747,15 @@ class information_transport(Geometric_QM):
     #This is for the full time-series of quantum states.
     def fluxes_sources(self):
         #TESTED: YES
+        print('Extracting probabilities and their time derivatives')
         x, x_dot = self.probabilities(), self.probabilities_dot()
+        print('Extracting coordinates and their time derivatives')
         p, p_dot = self.p_coordinates(), self.p_alpha_dot()
         phi, phi_dot = self.phi_coordinates(), self.phi_alpha_dot()
+        print('Beginning loop over time-series of quantum states')
         JP_t, JP0_t, JP1_t, JPHI_t, JPHI0_t, JPHI1_t, SIGMA_t, SIGMA0_t, SIGMA1_t = [], [], [], [], [], [], [], [], []
         for t in range(len(self.psi_all)-1):
+            print('Working on time t={val}'.format(val=t))
             A0, A1, A2, A3, A4, A5, A6, A7, A8 = self.fluxes_sources_fixed_t(x[t],x_dot[t],p[t],p_dot[t],phi[t],phi_dot[t])
             JP_t.append(A0), JP0_t.append(A1), JP1_t.append(A2)
             JPHI_t.append(A3), JPHI0_t.append(A4), JPHI1_t.append(A5)
