@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  21 JUL 2021 13:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  21 JUL 2021 14:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1933,29 +1933,29 @@ LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 100
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 176.
+(Font)              <8> on input line 175.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 176.
-LaTeX Font Info:    Try loading font information for T1+fvm on input line 259.
+(Font)              <6> on input line 175.
+LaTeX Font Info:    Try loading font information for T1+fvm on input line 261.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 6.48001pt on input line 259.
+(Font)              scaled to size 6.48001pt on input line 261.
  [1{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 3271) in paragraph at lines 287--293
+Underfull \hbox (badness 3271) in paragraph at lines 286--292
 []\T1/lmr/m/n/10 Measurement out-come prob-a-bil-i-ties are de-ter-mined
  []
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 287--293
+Underfull \hbox (badness 2591) in paragraph at lines 286--292
 \T1/lmr/m/n/10 by \T1/lmr/m/it/10 pos-i-tive operator-valued mea-sure-ments \T1
 /lmr/m/n/10 (POVMs)
  []
 
 [2]
-Underfull \hbox (badness 1552) in paragraph at lines 450--456
+Underfull \hbox (badness 1552) in paragraph at lines 449--455
  []\T1/lmr/m/it/10 Density ma-trix.[] \T1/lmr/m/n/10 The con-nec-tion be-tween 
 ge-o-met-ric
  []
@@ -1964,22 +1964,22 @@ ge-o-met-ric
 <./img/DynamicsLong.pdf, id=36, 1927.2pt x 942.1683pt>
 File: ./img/DynamicsLong.pdf Graphic file (type pdf)
 <use ./img/DynamicsLong.pdf>
-Package pdftex.def Info: ./img/DynamicsLong.pdf  used on input line 497.
+Package pdftex.def Info: ./img/DynamicsLong.pdf  used on input line 496.
 (pdftex.def)             Requested size: 458.99689pt x 224.38547pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 510.
+(Font)              <9> on input line 509.
 <./img/Flux.pdf, id=37, 1927.2pt x 1084.05pt>
 File: ./img/Flux.pdf Graphic file (type pdf)
 <use ./img/Flux.pdf>
-Package pdftex.def Info: ./img/Flux.pdf  used on input line 546.
+Package pdftex.def Info: ./img/Flux.pdf  used on input line 545.
 (pdftex.def)             Requested size: 229.49844pt x 129.0879pt.
 <./img/Source.pdf, id=38, 1927.2pt x 1084.05pt>
 File: ./img/Source.pdf Graphic file (type pdf)
 <use ./img/Source.pdf>
-Package pdftex.def Info: ./img/Source.pdf  used on input line 556.
+Package pdftex.def Info: ./img/Source.pdf  used on input line 555.
 (pdftex.def)             Requested size: 229.49844pt x 129.0879pt.
 
-Underfull \hbox (badness 3439) in paragraph at lines 599--599
+Underfull \hbox (badness 3439) in paragraph at lines 598--598
   [][][]\T1/lmr/m/n/8 With an ar-bi-trary co-or-di-nate sys-tem we have $[][] \
 OT1/lmr/m/n/8 =
  []
@@ -1989,15 +1989,15 @@ OT1/lmr/m/n/8 =
 <./img/gqs_dynamics2.pdf, id=1151, 1927.2pt x 1084.05pt>
 File: ./img/gqs_dynamics2.pdf Graphic file (type pdf)
 <use ./img/gqs_dynamics2.pdf>
-Package pdftex.def Info: ./img/gqs_dynamics2.pdf  used on input line 864.
+Package pdftex.def Info: ./img/gqs_dynamics2.pdf  used on input line 863.
 (pdftex.def)             Requested size: 458.99689pt x 258.17583pt.
 <./img/gqs_dynamics3.pdf, id=1152, 1927.2pt x 1084.05pt>
 File: ./img/gqs_dynamics3.pdf Graphic file (type pdf)
 <use ./img/gqs_dynamics3.pdf>
-Package pdftex.def Info: ./img/gqs_dynamics3.pdf  used on input line 918.
+Package pdftex.def Info: ./img/gqs_dynamics3.pdf  used on input line 917.
 (pdftex.def)             Requested size: 458.99689pt x 258.17583pt.
  [8]
-Underfull \hbox (badness 1152) in paragraph at lines 957--961
+Underfull \hbox (badness 1152) in paragraph at lines 956--960
 \T1/lmr/m/n/10 Its so-lu-tion is given by the prop-a-ga-tor $\OML/lmm/m/it/10 P
 \OT1/lmr/m/n/10 (\OML/lmm/m/it/10 t; t[]\OT1/lmr/m/n/10 ) =
  []
@@ -2005,29 +2005,29 @@ Underfull \hbox (badness 1152) in paragraph at lines 957--961
 <./img/summary.pdf, id=1156, 1927.2pt x 1084.05pt>
 File: ./img/summary.pdf Graphic file (type pdf)
 <use ./img/summary.pdf>
-Package pdftex.def Info: ./img/summary.pdf  used on input line 981.
+Package pdftex.def Info: ./img/summary.pdf  used on input line 980.
 (pdftex.def)             Requested size: 458.99689pt x 258.17583pt.
 [9 <./img/gqs_dynamics2.pdf>] [10 <./img/gqs_dynamics3.pdf>] [11 <./img/summary
 .pdf>]
 <./img/mu_average.pdf, id=1370, 909.43285pt x 890.89067pt>
 File: ./img/mu_average.pdf Graphic file (type pdf)
 <use ./img/mu_average.pdf>
-Package pdftex.def Info: ./img/mu_average.pdf  used on input line 1141.
+Package pdftex.def Info: ./img/mu_average.pdf  used on input line 1140.
 (pdftex.def)             Requested size: 153.00156pt x 149.87251pt.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 7.20001pt on input line 1162.
+(Font)              scaled to size 7.20001pt on input line 1161.
  [12]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 1181.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 1180.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 1181.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 1180.
 
 
 Class revtex4-1 Warning: Deferred float stuck during \clearpage processing.
 
 [13 <./img/mu_average.pdf>]
-Underfull \hbox (badness 1303) in paragraph at lines 1253--1258
+Underfull \hbox (badness 1303) in paragraph at lines 1252--1257
 []\T1/lmr/m/n/10 We thank James Crutch-field, David Gier, Ari-adna
  []
 
@@ -2043,11 +2043,11 @@ FiXme Summary: Number of notes: 0,
 (FiXme)        Number of fatal errors: 0,
 (FiXme)        Total: 0.
 
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1262.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1261.
 [15]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1262.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1261.
  (./phtit.aux)
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1262.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1261.
 
 
 LaTeX Warning: There were undefined references.
@@ -2090,7 +2090,7 @@ lic/lm/lmsy6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy
 ive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/
 texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb></usr/loc
 al/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on phtit.pdf (15 pages, 35933020 bytes).
+Output written on phtit.pdf (15 pages, 35933027 bytes).
 PDF statistics:
  1494 PDF objects out of 1728 (max. 8388607)
  967 compressed objects within 10 object streams

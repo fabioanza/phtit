@@ -110,11 +110,10 @@ In this work we build a theoretical framework for the transport of information i
 This is a framework aimed at describing how out of equilibrium open quantum systems move information 
 around their state space, using an approach inspired by transport theories. The main goal is to build new 
 mathematical tools, together with physical intuition, to improve our understanding of non-equilibrium 
-phenomena in quantum systems. In particular, we are interested in understanding the interplay between 
-physical properties in non-equilibrium configurations and the information-theoretic features of the 
-dynamics of open quantum systems. The main rationale here is to have a framework that can imitate, 
-and potentially replicate, the decades-long history of success of transport theories in modeling 
-non-equilibrium phenomena. 
+phenomena in quantum systems. In particular, we are aiming at unraveling the interplay between 
+dynamical properties and information-theoretic features. The main rationale here is to have a framework 
+that can imitate, and potentially replicate, the decades-long history of success of transport theories in 
+modeling non-equilibrium phenomena. 
 }
 
 \def\ourKeywords{%
@@ -192,15 +191,15 @@ Well-known examples are the theories of transport of charge, mass and heat. Most
 originally formulated to understand macroscopic phenomena like, in the case of 
 mass transport, the tendency of a system to transfer mass to minimize the 
 concentration difference. Over time, they were put on more rigorous ground using 
-statistical mechanics and kinetic theory and their use has been incredibly helpful in understanding
-and characterizing emergent non-equilibrium properties of many-particles systems. Most notably, 
+statistical mechanics and kinetic theory, and their use has been incredibly powerful in understanding
+and modeling emergent non-equilibrium properties of many-particles systems. Most notably, 
 Boltzmann used this approach to describe the behavior of gases, and explain the rise of 
 macroscopic irreversibility from the underlying time-symmetric classical mechanics. After 
-Boltzmann's work, the core idea of treating motion and interaction in a statistical way has 
+Boltzmann's work, the core idea of treating motion and interactions in a statistical way has 
 led to innumerable advances, both of fundamental and applied nature. With the rise of 
 quantum theory, these techniques have also been adapted to include quantum fluctuations, 
 leading to improved descriptions of transport phenomena at the nanoscale. 
-While nowadays the use of kinetic and transport theories is ubiquitous and is appropriate
+While nowadays the use of kinetic and transport theories is ubiquitous, and also appropriate
 at various length scales (from the lower nanoscale to the larger scale of stars and galaxies), 
 these techniques have not been leveraged to study quantum information in closed and open 
 quantum systems. Thus, in this work, we attempt to lay a bridge between the field of quantum 
@@ -213,20 +212,20 @@ state space, both in closed and open configurations.
 
 At the technical level, this is done by leveraging recent work \cite{Anza20a,Anza20b} on 
 Geometric Quantum Mechanics: a differential-geometric approach to quantum mechanics that 
-gets rid of the phase redundancy of the Hilbert space. The geometric formalism maps the Hilbert 
-space onto a space of pure states that has the structure of a classical phase-space, with 
+gets rid of the phase redundancy of the Hilbert space and exposes the underlying phase-space-like
+structure of the space of quantum states, with probabilities and phases playing the role of 
 canonically conjugated coordinates.
 
 The paper is organized as follows. In Section \ref{sec:GQM} we give a brief summary of 
-GQM, and of the tools introduced in \cite{Anza20a,Anza20b}, both of which are needed.
-In Section \ref{sec:IT} we give the first result: a microscopic derivation of the continuity equation 
-for the information transport in quantum systems, with the appropriate microscopic definitions for 
-phenomenological quantities such as information flux and sink/sources. Section \ref{sec:DYN}
-contains our second result: a general equation of motion for the probability distribution to 
-find an open quantum system in one of its pure states states. In Sections \ref{sec:EXAMPLES1} 
-and \ref{sec:EXAMPLES2} we use the theoretical framework developed to analyze a few concrete 
-examples, supported by numerical analysis. Eventually, in Section \ref{sec:FINAL} we provide 
-a quick summary and draw some conclusions. 
+GQM, and of the tools introduced in \cite{Anza20a,Anza20b}, both of which are needed to
+follow the details of the main part of the work. In Section \ref{sec:IT} we give our first result: 
+a microscopic derivation of the continuity equation for the information transport in quantum 
+systems, with the appropriate microscopic definitions for phenomenological quantities such 
+as information flux and sink/sources. Section \ref{sec:DYN} contains our second result: a 
+general equation of motion for the probability distribution to find an open quantum system 
+in one of its pure states. In Sections \ref{sec:EXAMPLES1} and \ref{sec:EXAMPLES2} 
+we use the theoretical framework developed to analyze a few concrete examples, supported 
+by numerical analysis. Eventually, in Section \ref{sec:FINAL} we draw some conclusions. 
 
 
 %In the last fifty years we have witnessed an increasing use of
