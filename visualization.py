@@ -16,6 +16,7 @@ def discretization_properties(Np,Nphi):
     Iphi_centers = Iphi_boundaries[0:-1]+0.5*delta_phi
     return Ip_boundaries, Iphi_boundaries, Ip_centers, Iphi_centers
 
+
 def plot_saving_routine(file_name,file_path):
     if os.path.isdir(file_path)==True:
         plt.savefig(file_path+file_name)
