@@ -661,13 +661,14 @@ quantum state space. Thus, $\sigma_t$ possesses all the hallmarks of the standar
 transport theories: it is not associated with particles moving around the state space and it can not be rewritten 
 as a divergence term.
 
-\subsection*{Closed quantum systems}
+\subsection*{Isolated quantum systems}
 
 What happens when the system is closed? Is there a specific form for the information flux $J_t$ and source $\sigma_t$?
 Here we answer both these questions in a detailed manner. Since the evolution is Hamiltonian, we can 
 use Hamilton's equations of motion to derive the evolution equation of $\mu_t$ or, equivalently, of $q_t(Z)$.
-First, the sink/sources terms is trivially zero, as the evolution is Hamiltonian and preserves the local probabilities.
-Second, starting from the definition of the flux in Eq.(\ref{eq:flux}), we can explicitly write the form of the flux $J_t$, 
+First, the sink/sources terms vanishes, since the evolution is Hamiltonian, thus preserving the local probabilities.
+Thus proves that a $\sigma_t \neq 0$ is related to the existence of a dissipative dynamics. Second, starting from 
+the definition of the flux in Eq.(\ref{eq:flux}), we can explicitly write the form of the flux $J_t$, 
 using Hamilton's equations of motion. Writing $\Gamma_\alpha$ in canonical coordinates $(p_n(\Gamma_\alpha),\phi_n(\Gamma_\alpha))$, 
 we have 
 \begin{align}
@@ -710,7 +711,7 @@ Inserting Hamilton's equations of motion (Eq. (\ref{eq:HAM_EOM})), and then usin
 & = \left\{ q_t, E\right\} - \nabla \cdot q_t v_H = 0
 \end{align}
 This concludes the section about the general approach, and the treatment of isolated quantum systems.
-We now turn to the more involved case of an open quantum system.
+We now turn to the more convoluted case of an open quantum system.
 
 %\subsection*{Discussion}
 
@@ -964,17 +965,13 @@ valid initial distribution $f_0(p,\phi)$.
 \begin{figure*}[t!]
 \centering
 \includegraphics[width=.9\textwidth]{./img/summary.pdf}
-\caption{Evolution of the geometric quantum state of one qubit interacting with 
-	eleven others via a Ferromagnetic Ising model with longitudinal and transverse field, 
-	visualized on the Bloch square. Each particle is $\Gamma_\alpha(t)$, represented via
-	canonically conjugated coordinates $\Gamma_\alpha(t) = \left( p=p_\alpha(t),\phi=\phi_\alpha(t)\right)$, with $\ket{\psi(p,\phi)} = 
-	\sqrt{1-p} \ket{0}+ \sqrt{p} e^{i\phi}\ket{1}$. The radius of the particle encodes its 
-	probability mass $x_\alpha(t)$. Time increases left to right and top to bottom. Each particle
-	carries a probability mass $x_\alpha$, which is the probability to find the system in a 
-	state $\Gamma_\alpha$. Here we show the detail of the evolution of a macroscopic 
-	coherent phenomenon that gives rise to sustained fluctuations and maintains the
-	system out of thermal equilibrium. A full video of the dynamical evolution is available 
-	\url{https://github.com/fabioanza/GeomQuantMech/blob/main/video_g1_h05_L12_ferro_long.mp4}
+\caption{Evolution of the coarse-grained geometric quantum state (Top row), Information Flux (Middle row)
+	and Information sink/source (Bottom row), for one qubit interacting with eleven other ones via
+	a Ferromagnetig Ising mode with longitudinal and transverse field, visualized on the Bloch square. 
+	We have sliced the quantum state space in $(p,\phi)$ coordinates into a grid of $19 \times 19$ small 
+	uniform cells $\mathcal{C}_{ik} = \left[\frac{i}{20},\frac{i+1}{20}\right[ \times \left[2\pi\frac{k}{20},2\pi \frac{k+1}{20}\right[$ of 
+	equal volume and integrated the relevant quantities for the study of the continuity equation over $\mathcal{C}_{ik}$ 
+	to obtain a time-dependent coarse-grained graphic representation: $\mu_{ik}(t)$, $J{ik}(t)$ and $\sigma_{ik}(t)$.
 	}
 \label{fig:summary}
 \end{figure*}
@@ -986,7 +983,7 @@ Say that, at $t=0$, the geometric quantum state is made by a convex sum
 of dirac deltas concentrated on a certain number $N$ of points $\Gamma_\alpha = (p_\alpha,\phi_\alpha)$: 
 $q_0(p,\phi) = \sum_{\alpha=1}^N \lambda_\alpha 2\delta\left[ p-p_\alpha\right] \delta\left[ \phi-\phi_\alpha\right]$.
 The evolution of the geometric quantum state is therefore dictated by how 
-the points $Z_\alpha(t)$ change over time. Since, however, the evolution 
+the points $\Gamma_\alpha(t)$ change over time. Since, however, the evolution 
 can be written as a linear change in the $\phi$ coordinate $\phi(t)=\phi(0)+\omega t$, this translates
 into $\phi_\alpha(t) = \phi_\alpha(0)- \omega t$, with $p_\alpha(t)=p_\alpha(0)$.
 As a result, the shape of the distribution never changes as the relative distance
@@ -998,7 +995,7 @@ the Fubini-Study distance, we have
 \end{align}
 giving
 \begin{equation}
-d_{FS}(\Gamma_\alpha(t),\Gamma_\beta(t))=d_{FS}(\Gamma_\alpha(0),\Gamma_\beta(0)) \quad \forall \alpha,\beta~.
+d_{FS}(\Gamma_\alpha(t),\Gamma_\beta(t))=d_{FS}(\Gamma_\alpha(0),\Gamma_\beta(0)) \quad \forall \alpha,\beta~.\label{eq:nochaos}
 \end{equation}
 Since Hamiltonian evolutions can generically support folding and stretching 
 in state space, causing chaotic behavior, we conclude that this is not the 
@@ -1015,7 +1012,7 @@ We now look at the case of a single qubit which interacts with an environment
 made by a $1D$ chain of qubits evolving with an Ising Hamiltonian with periodic
 boundary conditions $\vec{\sigma}_{k+L}= \vec{\sigma}_k$
 \begin{equation}
-H_{\mathrm{Ising}} = \sum_{k=0}^{L-1} J_z \sigma_k^z \sigma_{k+1}^{z} + \vec{B} \cdot \vec{\sigma}_k~,
+H_{\mathrm{Ising}} = \sum_{k=0}^{L} J_z \sigma_k^z \sigma_{k+1}^{z} + \vec{B} \cdot \vec{\sigma}_k~,
 \end{equation}
 with $\vec{B}$ a homogeneous magnetic field. Here, since the number of points
 in quantum state space is $2^{L_{\mathrm{env}}}$, where $L_{\mathrm{env}}$
@@ -1087,9 +1084,17 @@ hand, $\sigma_{ik}(t)$ quantifies the probability mass that is produced or sinke
 in $\CC{j}{k}$. Beyond the initial transient, as the distribution settles on a more
 regular behavior, we expect a more regular evolution equation to emerge. In
 particular, we expect two emergent behavior. First, we assume the sink/sources
-term to be zero after a short transient $\sigma_{ik} \approx 0$. This implies that
-the evolution is guided only by the flux term, leading to a local conservation of probability
-mass. Thus, we can now build a microscopic, particle-like, model for $\Phi_{ik}(J_t)$.
+term to be zero after a short transient $\sigma_{ik} \approx 0$. This assumption is
+motivated by two physical reasons. Since the $x_\alpha(t)$ are the probabilities of 
+finding the environment in one of the elements of its eigenbasis $\ket{b_\alpha}$, 
+for a large environment (the number of points is exponential in the size of the system) 
+it is reasonable to expect that after a short transient these probabilities will settle on 
+``equilibrium'' values (as the ones given by max entropy) and, possibly, oscillate 
+around them. Second, we are interested in looking at the system on longer time-scales, 
+where these oscillations can be averaged out. Together, these arguments supports the
+assumptions for $\sigma_{ik}\approx 0$. This implies that the evolution is guided only 
+by the flux term, leading to a local conservation of probability mass. Thus, we can 
+now build a microscopic, particle-like, model for $\Phi_{ik}(J_t)$.
 Since probability mass is locally conserved, the only way $\CC{i}{k}$ can loose or 
 gain probability mass is by exchanging particles with its immediate neighbors: $\CC{i\pm1,}{k}$ and $\CC{i,}{k\pm1}$. 
 Thus, as first approximation, we assume there is a fixed rate of gain and loss of particles,
@@ -1100,9 +1105,10 @@ the following phenomenological model for the evolution of $\mu_{ik}(t)$:
 &- \gamma_{\mathrm{loss}}\mu_{ik}~.
 \end{align}
 The first two terms represent the gain due to a certain number of particles entering 
-either from the $p$ or the $\phi$ direction. The last term represents the loss
-due to a certain number of particles leaving $\CC{i}{k}$ for one of its four adjacent neighbors.
-By assuming that all cells are equal, unless otherwise specified, this leads to $\gamma_{\mathrm{loss}} = 2(\gamma_p+\gamma_{\phi})$.
+from each of the four sides of a cell $\mathcal{C}_{ik}$, either from $p$ or $\phi$ direction. 
+The last term represents the loss due to a certain number of particles leaving $\CC{i}{k}$ 
+for one of its four adjacent neighbors. By assuming that there are no special cells, unless otherwise 
+specified, this leads to $\gamma_{\mathrm{loss}} = 2(\gamma_p+\gamma_{\phi})$.
 This model leads to a simple diffusive behavior that, while not entirely accurate, 
 clearly captures the essence of the evolution beyond the transient. While finite-size
 fluctuations in time are to be expected, as we increase the size of the Ising environment
@@ -1110,7 +1116,7 @@ we expect them to be less relevant, and our model more accurate. A full analysis
 the phenomenology of this model will be carried elsewhere. Here we are interested 
 in proving that this theoretical framework can lead to tractable phenomenological 
 models. Indeed, in the limit of an infinitely fine-grained discretization this model leads 
-to a Fick's law of information diffusion $\PH$, as $J_t \propto - (\gamma_p \frac{\partial q_t}{\partial p},\gamma_\phi \frac{\partial q_t}{\partial \phi} ) = - \gamma \cdot \nabla q_t$
+to a Fick's law of information diffusion $\PH$, as $J^{\mathrm{diff}}_t =  (-\gamma_p \frac{\partial q_t}{\partial p},-\gamma_\phi \frac{\partial q_t}{\partial \phi} ) = - \gamma \cdot \nabla q_t$
 and therefore to a diffusion equation in $\PH$:
 \begin{equation}
 \frac{\partial q_t}{\partial t} =  \gamma \cdot \nabla^2 q_t~,
@@ -1168,31 +1174,54 @@ behavior provided by expectation values of observables like $\MV{\sigma_z}$.
 \section{Conclusions}
 \label{sec:FINAL}
 
-In this work we have developed a consistent framework to study how quantum systems move
+We have developed a consistent framework to study how quantum systems move
 information around their state space. Our main results are the continuity equation (Eq.(\ref{eq:continuity}))
-and the underlying kinetic equation (Eq.(\ref{eq:kinetic})). Together, they regulate how information
+and the underlying kinetic equations (Eq.(\ref{eq:kinetic})). Together, they regulate how information
 can be transported around the quantum state space as a result of the interactions between the
 system and its environment. The kinetic equation represents the microscopic, detailed, model 
-while the continuity equation is more adapt to extract phenomenological descriptions. 
-As an example of this logic, in Section \ref{sec:EXAMPLES1} and \ref{sec:EXAMPLES2} we have looked
-at the transport of information in the state space of a qubit. In both cases we have seen the emergence
-of well-defined average behavior that can be described with sufficiently simple information 
-fluxes. In the case of an isolated qubit we were able to analytically extract the information flux and
-for the case of an antiferromagnetic Ising environment with both longitudinal and transverse field, we
-have seen how a simple diffusion model can reproduce the macroscopic feature of the kinetic evolution.
+while the goal of the continuity equation formulation is to extract emergent, simplified, phenomenological descriptions. 
+As an example of this logic, in Section \ref{sec:EXAMPLES1} and \ref{sec:EXAMPLES2} 
+we have looked at the transport of information in the state space of a qubit. In both cases we have 
+seen the emergence of consisten behavior that can be described with sufficiently simple information 
+fluxes. In the case of an isolated qubit, we were able to analytically extract the information flux. The 
+case of an antiferromagnetic Ising environment with both longitudinal and transverse field led us to 
+see how a simple diffusion model can reproduce the macroscopic feature of the kinetic evolution.
 
 While here we focused only on the theoretical framework, we believe we have shown that the 
-detailed study of concrete kinetic models of information transport is phenomenologically richer than expected.
+study of concrete kinetic models of information transport is phenomenologically quite rich, and
+deserves to be investigated in depth. The underlying reason behind our efforts in this kind of geometric-oriented 
+research direction is that we believe these new tools will allow us to (1) gather a more accurate understanding
+and (2) build improved models for the nonequilibrium behavior of quantum systems. In particular, we
+believe these tools will reveal to be appropriate to get a more accurate picture of the interplay between 
+the non-equilibrium physical properties of open quantum systems and the information-theoretic features
+of their dynamics, which emerge from their complex stochastic nature.
+
+
+
 Future work in this direction will be focused on extracting more general, approximated, analytical models and 
 developing more powerful numerical techniques, to investigate the behavior of quantum systems with larger 
-environments. In this sense, an interesting concrete issue is to understand how quantum information moves around the 
+environments. An interesting concrete issue is to understand how quantum information moves around the 
 quantum state space when our system is part of a quantum computer performing quantum computation.
 Indeed, we believe this framework can help better understand how to improve and optimize quantum information
 processing for future quantum technologies.
-Moreover, the analyses outlined in Section \ref{sec:EXAMPLES1} and \ref{sec:EXAMPLES2}
-have exhibited certain features of interest, which deserve further investigation. For example, the emergence of 
-the fractal pattern in the transient behavior and the more general question of describing stationary states
-with non-trivial non-equilibrium behavior.
+
+We conclude with a general comment, clarifying our main goal behind the paper, and with a series of future directions
+opened by our work. While the main aim of this work was to develop the theoretical framework and build the intuition to 
+support it, we believe the general analyses presented in Sections \ref{sec:EXAMPLES1} and \ref{sec:EXAMPLES2} 
+revealed three features of interest, which deserve attention on their own. First, the dynamical emergence of the 
+fractal pattern in the transient behavior of the antiferromagnetic model was unexpected and one wonders
+if similar dynamical patterns are typical of quantum models or not. This is clearly related to the second point, 
+which is the more general question of describing stationary states, with non-trivial non-equilibrium behavior.
+A natural route starts with imposing $\frac{\partial q_t}{\partial t} = 0$ in the continuity equation, which in turn 
+leads to a balance equation between information flux and information sinks and sources. This can be used
+to characterize stationary states. Third, in the Discussion part of Section \ref{sec:EXAMPLES1} and, in particular, 
+Eq. \ref{eq:nochaos}, we have seen that a unitary dynamics is a very rigid evolution in which there is a unique
+velocity field (a divergence-free one) and all points in the support of any geometric quantum state have to 
+move in the same way. It is well known from the theory of dynamical systems that this is not a feature of all
+Hamiltonian evolutions, which are able to support chaotic phenomenology via stretching and folding. Therefore, 
+a quantum state space should be able to support more general Hamiltonian evolutions, exhibiting richer phenomenology
+as chaos, of quantum nature. Thus, we believe the geometric formalism and the framework developed here to 
+be a concrete route to improve our understanding of quantum chaos.
 
 
 \section*{Acknowledgments}
