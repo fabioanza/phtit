@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  21 JUL 2021 11:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  21 JUL 2021 12:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2016,12 +2016,12 @@ Package pdftex.def Info: ./img/mu_average.pdf  used on input line 1127.
 (pdftex.def)             Requested size: 153.00156pt x 149.87251pt.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 (Font)              scaled to size 7.20001pt on input line 1148.
- [12 <./img/mu_average.pdf>]
-Underfull \hbox (badness 1303) in paragraph at lines 1230--1235
+ [12 <./img/mu_average.pdf>] [13]
+Underfull \hbox (badness 1303) in paragraph at lines 1239--1244
 []\T1/lmr/m/n/10 We thank James Crutch-field, David Gier, Ari-adna
  []
 
-[13] (./phtit.bbl
+(./phtit.bbl
 
 LaTeX Warning: Reference `LastBibItem' on page 14 undefined on input line 1.
 
@@ -2033,21 +2033,21 @@ FiXme Summary: Number of notes: 0,
 (FiXme)        Number of fatal errors: 0,
 (FiXme)        Total: 0.
 
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1239.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1248.
 [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1239.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1248.
  (./phtit.aux)
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1239.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1248.
 
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 55785 strings out of 492616
- 1230758 string characters out of 6129482
- 1449281 words of memory out of 5000000
- 58798 multiletter control sequences out of 15000+600000
+ 55805 strings out of 492616
+ 1230997 string characters out of 6129482
+ 1454416 words of memory out of 5000000
+ 58818 multiletter control sequences out of 15000+600000
  617048 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  85i,12n,138p,1261b,824s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2080,7 +2080,7 @@ lic/lm/lmsy6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy
 ive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/
 texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb></usr/loc
 al/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on phtit.pdf (14 pages, 35930035 bytes).
+Output written on phtit.pdf (14 pages, 35931211 bytes).
 PDF statistics:
  1491 PDF objects out of 1728 (max. 8388607)
  965 compressed objects within 10 object streams

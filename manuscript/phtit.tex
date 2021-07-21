@@ -661,7 +661,7 @@ quantum state space. Thus, $\sigma_t$ possesses all the hallmarks of the standar
 transport theories: it is not associated with particles moving around the state space and it can not be rewritten 
 as a divergence term.
 
-\subsection*{Isolated quantum systems}
+\subsection{Isolated quantum systems}\label{subsec:IQS}
 
 What happens when the system is closed? Is there a specific form for the information flux $J_t$ and source $\sigma_t$?
 Here we answer both these questions in a detailed manner. Since the evolution is Hamiltonian, we can 
@@ -1206,22 +1206,31 @@ Indeed, we believe this framework can help better understand how to improve and 
 processing for future quantum technologies.
 
 We conclude with a general comment, clarifying our main goal behind the paper, and with a series of future directions
-opened by our work. While the main aim of this work was to develop the theoretical framework and build the intuition to 
+opened by our work. While our main goal here was to develop the theoretical framework and build the intuition to 
 support it, we believe the general analyses presented in Sections \ref{sec:EXAMPLES1} and \ref{sec:EXAMPLES2} 
-revealed three features of interest, which deserve attention on their own. First, the dynamical emergence of the 
+revealed four features of interest, which deserve attention on their own. First, the dynamical emergence of the 
 fractal pattern in the transient behavior of the antiferromagnetic model was unexpected and one wonders
-if similar dynamical patterns are typical of quantum models or not. This is clearly related to the second point, 
-which is the more general question of describing stationary states, with non-trivial non-equilibrium behavior.
+if similar dynamical patterns are typical of quantum models or not. This is clearly related to the Second point: 
+the more general question of describing stationary states, with non-trivial non-equilibrium behavior.
 A natural route starts with imposing $\frac{\partial q_t}{\partial t} = 0$ in the continuity equation, which in turn 
-leads to a balance equation between information flux and information sinks and sources. This can be used
-to characterize stationary states. Third, in the Discussion part of Section \ref{sec:EXAMPLES1} and, in particular, 
-Eq. \ref{eq:nochaos}, we have seen that a unitary dynamics is a very rigid evolution in which there is a unique
+leads to a balance equation between information flux and information sinks and sources. While one
+can expect that $J_t=\sigma_t=0$ characterizes thermal equilibrium, this will not be true in general, and the
+continuity equation can be used to characterize stationary states. Third, in the Discussion part of Section \ref{sec:EXAMPLES1} (see 
+Eq. (\ref{eq:nochaos})), we have seen that a unitary dynamics is a very rigid evolution in which there is a unique
 velocity field (a divergence-free one) and all points in the support of any geometric quantum state have to 
 move in the same way. It is well known from the theory of dynamical systems that this is not a feature of all
 Hamiltonian evolutions, which are able to support chaotic phenomenology via stretching and folding. Therefore, 
 a quantum state space should be able to support more general Hamiltonian evolutions, exhibiting richer phenomenology
 as chaos, of quantum nature. Thus, we believe the geometric formalism and the framework developed here to 
-be a concrete route to improve our understanding of quantum chaos.
+be a concrete route to improve our understanding of quantum chaos. Fourth, in Section \ref{subsec:IQS} we have 
+proven a novel form of Liouville's theorem for quantum systems. This poses a conundrum as it is in stark contrast with 
+all other phase space formulation of quantum mechanics, such as Wigner's \cite{Wig32} or variations of it such as 
+the one based on the Husimi function \cite{Hus40}, both of which are known to violate Lioville's theorem \cite{Oliva18}. 
+The validity of Liouville's theorem is not just a mathematical fact, but a truly important property of the dynamical 
+evolution, which can help us characterize useful properties of the dynamics, such as the emergence of chaos. 
+Here, again, the geometric formalism and the theoretical framework developed here is bringing to light interesting
+new insights into the nonequilibrium behavior of quantum systems. 
+
 
 
 \section*{Acknowledgments}
