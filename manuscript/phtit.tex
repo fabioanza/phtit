@@ -106,9 +106,14 @@ A kinetic theory for quantum information transport
 }
 
 \def\ourAbstract{%
-In this work we develop a theoretical framework for the transport of information in quantum systems 
+In this work we build a theoretical framework for the transport of information in quantum systems. 
 This is a framework aimed at describing how out of equilibrium open quantum systems move information 
-around their state space, using an approach inspired by transport theories.
+around their state space, using an approach inspired by transport theories. The main goal is to build new 
+mathematical tools, together with physical intuition, to improve our understanding of non-equilibrium 
+phenomena in quantum systems. In particular, we are aiming at unraveling the interplay between 
+dynamical properties and information-theoretic features. The main rationale here is to have a framework 
+that can imitate, and potentially replicate, the decades-long history of success of transport theories in 
+modeling non-equilibrium phenomena. 
 }
 
 \def\ourKeywords{%
@@ -186,37 +191,41 @@ Well-known examples are the theories of transport of charge, mass and heat. Most
 originally formulated to understand macroscopic phenomena like, in the case of 
 mass transport, the tendency of a system to transfer mass to minimize the 
 concentration difference. Over time, they were put on more rigorous ground using 
-statistical mechanics and kinetic theory. Most notably, Boltzmann used this approach
-to describe the behavior of gases, and explain the rise of macroscopic irreversibility from 
-the underlying time-symmetric classical mechanics. After Boltzmann's work, the core idea 
-of treating motion and interaction in a statistical way has led to innumerable advances, both 
-of fundamental and applied nature. With the rise of quantum theory, these techniques have 
-also been adapted to include quantum fluctuations, leading to improved descriptions of 
-transport phenomena at the nanoscale.
-While nowadays the use of kinetic and transport theories is ubiquitous, these techniques
-have not been leveraged to study quantum information in closed and open quantum systems. 
-Thus, in this work, we attempt to lay a bridge between the field of quantum information and 
-that of transport theories. More accurately, here we provide a self-consistent theory to track
-the dynamical evolution of a quantum state (and its probability distribution) in nonequilibrium
-quantum systems. We do so by building a kinetic theory of quantum state evolution, on the quantum 
+statistical mechanics and kinetic theory, and their use has been incredibly powerful in understanding
+and modeling emergent non-equilibrium properties of many-particles systems. Most notably, 
+Boltzmann used this approach to describe the behavior of gases, and explain the rise of 
+macroscopic irreversibility from the underlying time-symmetric classical mechanics. After 
+Boltzmann's work, the core idea of treating motion and interactions in a statistical way has 
+led to innumerable advances, both of fundamental and applied nature. With the rise of 
+quantum theory, these techniques have also been adapted to include quantum fluctuations, 
+leading to improved descriptions of transport phenomena at the nanoscale. 
+While nowadays the use of kinetic and transport theories is ubiquitous, and also appropriate
+at various length scales (from the lower nanoscale to the larger scale of stars and galaxies), 
+these techniques have not been leveraged to study quantum information in closed and open 
+quantum systems. Thus, in this work, we attempt to lay a bridge between the field of quantum 
+information and that of transport theories, with the goal of building new tools to investigate the
+interplay between non-equilibrium physical properties of quantum systems and their information-theoretic
+features. More accurately, here we provide a self-consistent framework to track and model the 
+dynamical evolution of a quantum state (and its probability distribution) in nonequilibrium quantum 
+systems. We do so by building a kinetic theory of quantum state evolution, on the quantum 
 state space, both in closed and open configurations.
 
 At the technical level, this is done by leveraging recent work \cite{Anza20a,Anza20b} on 
 Geometric Quantum Mechanics: a differential-geometric approach to quantum mechanics that 
-gets rid of the phase redundancy of the Hilbert space. The geometric formalism maps the Hilbert 
-space onto a space of pure states that has the structure of a classical phase-space, with 
+gets rid of the phase redundancy of the Hilbert space and exposes the underlying phase-space-like
+structure of the space of quantum states, with probabilities and phases playing the role of 
 canonically conjugated coordinates.
 
 The paper is organized as follows. In Section \ref{sec:GQM} we give a brief summary of 
-GQM, and of the tools introduced in \cite{Anza20a,Anza20b}, both of which are needed.
-In Section \ref{sec:IT} we give the first result: a microscopic derivation of the continuity equation 
-for the information transport in quantum systems, with the appropriate microscopic definitions for 
-phenomenological quantities such as information flux and sink/sources. Section \ref{sec:DYN}
-contains our second result: a general equation of motion for the probability distribution to 
-find an open quantum system in one of its pure states states. In Sections \ref{sec:EXAMPLES1} 
-and \ref{sec:EXAMPLES2} we use the theoretical framework developed to analyze a few concrete 
-examples, supported by numerical analysis. Eventually, in Section \ref{sec:FINAL} we provide 
-a quick summary and draw some conclusions. 
+GQM, and of the tools introduced in \cite{Anza20a,Anza20b}, both of which are needed to
+follow the details of the main part of the work. In Section \ref{sec:IT} we give our first result: 
+a microscopic derivation of the continuity equation for the information transport in quantum 
+systems, with the appropriate microscopic definitions for phenomenological quantities such 
+as information flux and sink/sources. Section \ref{sec:DYN} contains our second result: a 
+general equation of motion for the probability distribution to find an open quantum system 
+in one of its pure states. In Sections \ref{sec:EXAMPLES1} and \ref{sec:EXAMPLES2} 
+we use the theoretical framework developed to analyze a few concrete examples, supported 
+by numerical analysis. Eventually, in Section \ref{sec:FINAL} we draw some conclusions. 
 
 
 %In the last fifty years we have witnessed an increasing use of
@@ -661,7 +670,8 @@ quantum state space. Thus, $\sigma_t$ possesses all the hallmarks of the standar
 transport theories: it is not associated with particles moving around the state space and it can not be rewritten 
 as a divergence term.
 
-\subsection*{Isolated quantum systems}
+
+\subsection{Isolated quantum systems}\label{subsec:IQS}
 
 What happens when the system is closed? Is there a specific form for the information flux $J_t$ and source $\sigma_t$?
 Here we answer both these questions in a detailed manner. Since the evolution is Hamiltonian, we can 
@@ -995,7 +1005,7 @@ the Fubini-Study distance, we have
 \end{align}
 giving
 \begin{equation}
-d_{FS}(\Gamma_\alpha(t),\Gamma_\beta(t))=d_{FS}(\Gamma_\alpha(0),\Gamma_\beta(0)) \quad \forall \alpha,\beta~.
+d_{FS}(\Gamma_\alpha(t),\Gamma_\beta(t))=d_{FS}(\Gamma_\alpha(0),\Gamma_\beta(0)) \quad \forall \alpha,\beta~.\label{eq:nochaos}
 \end{equation}
 Since Hamiltonian evolutions can generically support folding and stretching 
 in state space, causing chaotic behavior, we conclude that this is not the 
@@ -1084,9 +1094,17 @@ hand, $\sigma_{ik}(t)$ quantifies the probability mass that is produced or sinke
 in $\CC{j}{k}$. Beyond the initial transient, as the distribution settles on a more
 regular behavior, we expect a more regular evolution equation to emerge. In
 particular, we expect two emergent behavior. First, we assume the sink/sources
-term to be zero after a short transient $\sigma_{ik} \approx 0$. This implies that
-the evolution is guided only by the flux term, leading to a local conservation of probability
-mass. Thus, we can now build a microscopic, particle-like, model for $\Phi_{ik}(J_t)$.
+term to be zero after a short transient $\sigma_{ik} \approx 0$. This assumption is
+motivated by two physical reasons. Since the $x_\alpha(t)$ are the probabilities of 
+finding the environment in one of the elements of its eigenbasis $\ket{b_\alpha}$, 
+for a large environment (the number of points is exponential in the size of the system) 
+it is reasonable to expect that after a short transient these probabilities will settle on 
+``equilibrium'' values (as the ones given by max entropy) and, possibly, oscillate 
+around them. Second, we are interested in looking at the system on longer time-scales, 
+where these oscillations can be averaged out. Together, these arguments supports the
+assumptions for $\sigma_{ik}\approx 0$. This implies that the evolution is guided only 
+by the flux term, leading to a local conservation of probability mass. Thus, we can 
+now build a microscopic, particle-like, model for $\Phi_{ik}(J_t)$.
 Since probability mass is locally conserved, the only way $\CC{i}{k}$ can loose or 
 gain probability mass is by exchanging particles with its immediate neighbors: $\CC{i\pm1,}{k}$ and $\CC{i,}{k\pm1}$. 
 Thus, as first approximation, we assume there is a fixed rate of gain and loss of particles,
@@ -1097,9 +1115,10 @@ the following phenomenological model for the evolution of $\mu_{ik}(t)$:
 &- \gamma_{\mathrm{loss}}\mu_{ik}~.
 \end{align}
 The first two terms represent the gain due to a certain number of particles entering 
-either from the $p$ or the $\phi$ direction. The last term represents the loss
-due to a certain number of particles leaving $\CC{i}{k}$ for one of its four adjacent neighbors.
-By assuming that all cells are equal, unless otherwise specified, this leads to $\gamma_{\mathrm{loss}} = 2(\gamma_p+\gamma_{\phi})$.
+from each of the four sides of a cell $\mathcal{C}_{ik}$, either from $p$ or $\phi$ direction. 
+The last term represents the loss due to a certain number of particles leaving $\CC{i}{k}$ 
+for one of its four adjacent neighbors. By assuming that there are no special cells, unless otherwise 
+specified, this leads to $\gamma_{\mathrm{loss}} = 2(\gamma_p+\gamma_{\phi})$.
 This model leads to a simple diffusive behavior that, while not entirely accurate, 
 clearly captures the essence of the evolution beyond the transient. While finite-size
 fluctuations in time are to be expected, as we increase the size of the Ising environment
@@ -1107,7 +1126,7 @@ we expect them to be less relevant, and our model more accurate. A full analysis
 the phenomenology of this model will be carried elsewhere. Here we are interested 
 in proving that this theoretical framework can lead to tractable phenomenological 
 models. Indeed, in the limit of an infinitely fine-grained discretization this model leads 
-to a Fick's law of information diffusion $\PH$, as $J_t \propto - (\gamma_p \frac{\partial q_t}{\partial p},\gamma_\phi \frac{\partial q_t}{\partial \phi} ) = - \gamma \cdot \nabla q_t$
+to a Fick's law of information diffusion $\PH$, as $J^{\mathrm{diff}}_t =  (-\gamma_p \frac{\partial q_t}{\partial p},-\gamma_\phi \frac{\partial q_t}{\partial \phi} ) = - \gamma \cdot \nabla q_t$
 and therefore to a diffusion equation in $\PH$:
 \begin{equation}
 \frac{\partial q_t}{\partial t} =  \gamma \cdot \nabla^2 q_t~,
@@ -1165,31 +1184,63 @@ behavior provided by expectation values of observables like $\MV{\sigma_z}$.
 \section{Conclusions}
 \label{sec:FINAL}
 
-In this work we have developed a consistent framework to study how quantum systems move
+We have developed a consistent framework to study how quantum systems move
 information around their state space. Our main results are the continuity equation (Eq.(\ref{eq:continuity}))
-and the underlying kinetic equation (Eq.(\ref{eq:kinetic})). Together, they regulate how information
+and the underlying kinetic equations (Eq.(\ref{eq:kinetic})). Together, they regulate how information
 can be transported around the quantum state space as a result of the interactions between the
 system and its environment. The kinetic equation represents the microscopic, detailed, model 
-while the continuity equation is more adapt to extract phenomenological descriptions. 
-As an example of this logic, in Section \ref{sec:EXAMPLES1} and \ref{sec:EXAMPLES2} we have looked
-at the transport of information in the state space of a qubit. In both cases we have seen the emergence
-of well-defined average behavior that can be described with sufficiently simple information 
-fluxes. In the case of an isolated qubit we were able to analytically extract the information flux and
-for the case of an antiferromagnetic Ising environment with both longitudinal and transverse field, we
-have seen how a simple diffusion model can reproduce the macroscopic feature of the kinetic evolution.
+while the goal of the continuity equation formulation is to extract emergent, simplified, phenomenological descriptions. 
+As an example of this logic, in Section \ref{sec:EXAMPLES1} and \ref{sec:EXAMPLES2} 
+we have looked at the transport of information in the state space of a qubit. In both cases we have 
+seen the emergence of consisten behavior that can be described with sufficiently simple information 
+fluxes. In the case of an isolated qubit, we were able to analytically extract the information flux. The 
+case of an antiferromagnetic Ising environment with both longitudinal and transverse field led us to 
+see how a simple diffusion model can reproduce the macroscopic feature of the kinetic evolution.
 
 While here we focused only on the theoretical framework, we believe we have shown that the 
-detailed study of concrete kinetic models of information transport is phenomenologically richer than expected.
+study of concrete kinetic models of information transport is phenomenologically quite rich, and
+deserves to be investigated in depth. The underlying reason behind our efforts in this kind of geometric-oriented 
+research direction is that we believe these new tools will allow us to (1) gather a more accurate understanding
+and (2) build improved models for the nonequilibrium behavior of quantum systems. In particular, we
+believe these tools will reveal to be appropriate to get a more accurate picture of the interplay between 
+the non-equilibrium physical properties of open quantum systems and the information-theoretic features
+of their dynamics, which emerge from their complex stochastic nature.
+
+
+
 Future work in this direction will be focused on extracting more general, approximated, analytical models and 
 developing more powerful numerical techniques, to investigate the behavior of quantum systems with larger 
-environments. In this sense, an interesting concrete issue is to understand how quantum information moves around the 
+environments. An interesting concrete issue is to understand how quantum information moves around the 
 quantum state space when our system is part of a quantum computer performing quantum computation.
 Indeed, we believe this framework can help better understand how to improve and optimize quantum information
 processing for future quantum technologies.
-Moreover, the analyses outlined in Section \ref{sec:EXAMPLES1} and \ref{sec:EXAMPLES2}
-have exhibited certain features of interest, which deserve further investigation. For example, the emergence of 
-the fractal pattern in the transient behavior and the more general question of describing stationary states
-with non-trivial non-equilibrium behavior.
+
+We conclude with a general comment, clarifying our main goal behind the paper, and with a series of future directions
+opened by our work. While our main goal here was to develop the theoretical framework and build the intuition to 
+support it, we believe the general analyses presented in Sections \ref{sec:EXAMPLES1} and \ref{sec:EXAMPLES2} 
+revealed four features of interest, which deserve attention on their own. First, the dynamical emergence of the 
+fractal pattern in the transient behavior of the antiferromagnetic model was unexpected and one wonders
+if similar dynamical patterns are typical of quantum models or not. This is clearly related to the Second point: 
+the more general question of describing stationary states, with non-trivial non-equilibrium behavior.
+A natural route starts with imposing $\frac{\partial q_t}{\partial t} = 0$ in the continuity equation, which in turn 
+leads to a balance equation between information flux and information sinks and sources. While one
+can expect that $J_t=\sigma_t=0$ characterizes thermal equilibrium, this will not be true in general, and the
+continuity equation can be used to characterize stationary states. Third, in the Discussion part of Section \ref{sec:EXAMPLES1} (see 
+Eq. (\ref{eq:nochaos})), we have seen that a unitary dynamics is a very rigid evolution in which there is a unique
+velocity field (a divergence-free one) and all points in the support of any geometric quantum state have to 
+move in the same way. It is well known from the theory of dynamical systems that this is not a feature of all
+Hamiltonian evolutions, which are able to support chaotic phenomenology via stretching and folding. Therefore, 
+a quantum state space should be able to support more general Hamiltonian evolutions, exhibiting richer phenomenology
+as chaos, of quantum nature. Thus, we believe the geometric formalism and the framework developed here to 
+be a concrete route to improve our understanding of quantum chaos. Fourth, in Section \ref{subsec:IQS} we have 
+proven a novel form of Liouville's theorem for quantum systems. This poses a conundrum as it is in stark contrast with 
+all other phase space formulation of quantum mechanics, such as Wigner's \cite{Wig32} or variations of it such as 
+the one based on the Husimi function \cite{Hus40}, both of which are known to violate Lioville's theorem \cite{Oliva18}. 
+The validity of Liouville's theorem is not just a mathematical fact, but a truly important property of the dynamical 
+evolution, which can help us characterize useful properties of the dynamics, such as the emergence of chaos. 
+Here, again, the geometric formalism and the theoretical framework developed here is bringing to light interesting
+new insights into the nonequilibrium behavior of quantum systems. 
+
 
 
 \section*{Acknowledgments}
