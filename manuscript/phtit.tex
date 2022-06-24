@@ -106,14 +106,14 @@ A kinetic theory for quantum information transport
 }
 
 \def\ourAbstract{%
-In this work we build a theoretical framework for the transport of information in quantum systems. 
-This is a framework aimed at describing how out of equilibrium open quantum systems move information 
-around their state space, using an approach inspired by transport theories. The main goal is to build new 
-mathematical tools, together with physical intuition, to improve our understanding of non-equilibrium 
-phenomena in quantum systems. In particular, we are aiming at unraveling the interplay between 
-dynamical properties and information-theoretic features. The main rationale here is to have a framework 
-that can imitate, and potentially replicate, the decades-long history of success of transport theories in 
-modeling non-equilibrium phenomena. 
+We propose a novel theoretical framework to describe the transport of information in quantum systems. 
+This is aimed at modeling and understanding how out of equilibrium open quantum systems move information 
+across their quantum state space, using an approach inspired by transport theories. The main goal is to build 
+new mathematical tools, together with physical intuition, to improve our understanding of complex (many-body and
+out-of-equilibrium) quantum systems. In particular, we are aiming at unraveling the interplay between dynamical 
+properties and information-theoretic features. The main rationale here is to have a framework that can imitate, 
+and potentially replicate, the decades-long history of empirical success of classical transport theories in modeling 
+out-of-equilibrium phenomena. 
 }
 
 \def\ourKeywords{%
@@ -184,46 +184,47 @@ University of California at Davis, One Shields Avenue, Davis, CA 95616}
 % {\bf Lead Paragraph:
 % }
 
-\section*{Introduction.} The study of transport phenomena is crucial to harness 
-the dynamical properties of natural systems. In this sense, transport theories are 
-simplified phenomenological descriptions of the nonequilibrium behavior of a system. 
-Well-known examples are the theories of transport of charge, mass and heat. Most of them were 
-originally formulated to understand macroscopic phenomena like, in the case of 
-mass transport, the tendency of a system to transfer mass to minimize the 
-concentration difference. Over time, they were put on more rigorous ground using 
-statistical mechanics and kinetic theory, and their use has been incredibly powerful in understanding
-and modeling emergent non-equilibrium properties of many-particles systems. Most notably, 
-Boltzmann used this approach to describe the behavior of gases, and explain the rise of 
+\section*{Introduction.} Understanding out-of-equilibrium phenomena in many-body systems 
+is crucial to harness the dynamical properties of spatially extended systems. In this sense, transport 
+theories are phenomenological descriptions of a detailed out-of-equilibrium behavior of a system. Their 
+aim is to capture, at the phenomenological level, the way spatially extended system move quantities
+which, in principle, can be globally conserved by can be locally exchanged. Well-known examples are the 
+theories of transport of charge, mass, momentum and heat, which underlie macroscopic phenomena like hydrodynamics. 
+Most of them were originally formulated to understand Avogadro-scale phenomena, like the tendency of a 
+system to transfer mass to minimize the concentration difference. Over time, they were put on more rigorous 
+grounds using statistical mechanics and kinetic theory, and their use has been incredibly powerful in understanding 
+and modeling emergent non-equilibrium properties of many-particles systems. This is true both scientifically and 
+at the industrial level, where these established theories have now become vital parts of our industrial 
+development.
+ 
+Most notably, Boltzmann used this approach to describe the behavior of gases, and explained the rise of 
 macroscopic irreversibility from the underlying time-symmetric classical mechanics. After 
 Boltzmann's work, the core idea of treating motion and interactions in a statistical way has 
 led to innumerable advances, both of fundamental and applied nature. With the rise of 
 quantum theory, these techniques have also been adapted to include quantum fluctuations, 
-leading to improved descriptions of transport phenomena at the nanoscale. 
-While nowadays the use of kinetic and transport theories is ubiquitous, and also appropriate
-at various length scales (from the lower nanoscale to the larger scale of stars and galaxies), 
-these techniques have not been leveraged to study quantum information in closed and open 
-quantum systems. Thus, in this work, we attempt to lay a bridge between the field of quantum 
-information and that of transport theories, with the goal of building new tools to investigate the
-interplay between non-equilibrium physical properties of quantum systems and their information-theoretic
-features. More accurately, here we provide a self-consistent framework to track and model the 
-dynamical evolution of a quantum state (and its probability distribution) in nonequilibrium quantum 
-systems. We do so by building a kinetic theory of quantum state evolution, on the quantum 
-state space, both in closed and open configurations.
+leading to improved descriptions of transport phenomena at the nanoscale.
+ 
+In this work, we explore the idea that these techniques can be used to understand how many-body 
+quantum systems move quantum information across its fundamental constituents, thus laying a bridge 
+between the field of quantum information and that of transport theories. The long-term goal we have in mind
+here is to have a comprehensive framework which addresses the interplay between non-equilibrium physical 
+properties of quantum systems and their information-theoretic features. Thus, here we provide a self-consistent 
+framework to track and model the transport of probability across a quantum state space. We do so by building 
+a kinetic theory of quantum state evolution, both in closed and open configurations.
 
-At the technical level, this is done by leveraging recent work \cite{Anza20a,Anza20b} on 
-Geometric Quantum Mechanics: a differential-geometric approach to quantum mechanics that 
+At the technical level, this is done by leveraging recent work \cite{Anza20a,Anza20b,Anza20c} on 
+Geometric Quantum Mechanics (GQM): a differential-geometric approach to quantum mechanics that 
 gets rid of the phase redundancy of the Hilbert space and exposes the underlying phase-space-like
 structure of the space of quantum states, with probabilities and phases playing the role of 
 canonically conjugated coordinates.
 
 The paper is organized as follows. In Section \ref{sec:GQM} we give a brief summary of 
-GQM, and of the tools introduced in \cite{Anza20a,Anza20b}, both of which are needed to
-follow the details of the main part of the work. In Section \ref{sec:IT} we give our first result: 
-a microscopic derivation of the continuity equation for the information transport in quantum 
-systems, with the appropriate microscopic definitions for phenomenological quantities such 
-as information flux and sink/sources. Section \ref{sec:DYN} contains our second result: a 
-general equation of motion for the probability distribution to find an open quantum system 
-in one of its pure states. In Sections \ref{sec:EXAMPLES1} and \ref{sec:EXAMPLES2} 
+GQM, and of the tools introduced in \cite{Anza20a,Anza20b} to describe open quantum systems. 
+In Section \ref{sec:IT} we give our first result: a microscopic derivation of the continuity equation 
+for the information transport in quantum systems, with the appropriate microscopic definitions for 
+phenomenological quantities such as information flux and sink/sources. Section \ref{sec:DYN} contains 
+our second result: a general equation of motion for the probability distribution to find an open quantum 
+system in one of its pure states. In Sections \ref{sec:EXAMPLES1} and \ref{sec:EXAMPLES2} 
 we use the theoretical framework developed to analyze a few concrete examples, supported 
 by numerical analysis. Eventually, in Section \ref{sec:FINAL} we draw some conclusions. 
 
@@ -256,21 +257,19 @@ elements we need, working with Hilbert spaces $\mathcal{H}$ of finite dimension 
 For the details of the derivations, we send the reader to the literature cited above.
 
 Given an arbitrary basis $\left\{\ket{e_n} \right\}_{n=0}^{D-1}$, a pure state is
-parametrized by $D$ complex homogeneous coordinates $Z = \left\{      Z^n\right\}$, up to
+parametrized by $D$ complex homogeneous coordinates $Z = \left\{      Z^n\right\}_n$, up to
 normalization and an overall phase:
 \begin{align*}
 \ket{\psi} = \sum_{n=0}^{D-1} Z^n \ket{e_n}~.
 \end{align*}
 Here, and throughout the paper, we will always use upper indices to identify different 
-coordinates of the same point and lower indices to identify different point. This 
-description is redundant since we can renormalize $Z$ by multiplying it for a real number
-and a phase (hence a complex number) and we would get the same physical state. Therefore, 
-$Z \in \mathbb{C}^{D}$, $Z \sim \lambda Z$, with $\lambda \in \mathbb{C}/\left\{ 0\right\}$. This equivalence 
+coordinates of the same point and lower indices to identify different points. The Hilbert space
+formulation is redundant since we can multiply $Z$ by a complex number and get the same 
+physical state. Therefore, $Z \in \mathbb{C}^{D}$, $Z \sim \lambda Z$, with $\lambda \in \mathbb{C}/\left\{ 0\right\}$. This equivalence 
 relation means pure states of a quantum system are points in the complex projective space $\mathcal{P}\left(
-\mathcal{H} \right)=\mathbb{C}\mathrm{P}^{D-1}$. We will often refer to $\PH$ as the \emph{quantum 
-state space}. One can always use probability-phase coordinates which, in the case of a single qubit
-are $Z = (\sqrt{1-p},\sqrt{p} e^{i\phi})$. We will often refer to this set of coordinates as 
-they play a particular useful role.
+\mathcal{H} \right) \sim \mathbb{C}\mathrm{P}^{D-1}$. We will often refer to $\PH$ as the \emph{quantum 
+state space}. One can always use probability-phase coordinates $Z^n = \sqrt{p_n} e^{i\phi_n}$. We will often use 
+this set of coordinates as they play a particular useful role.
 
 \paragraph*{Observables and POVMs.} In GQM, an \emph{observable} is a function $\mathcal{O}(Z) \in
 \mathbb{R}$ that associates to each point  $Z \in \mathcal{P}(\mathcal{H})$ the
@@ -303,7 +302,7 @@ associated volume element $dV_{FS}$ that is coordinate-independent and
 invariant under unitary transformations. The geometric derivation of $dV_{FS}$
 is beyond our immediate goals here. That said, it is sufficient to give its
 explicit form in the probability-phase coordinate system $Z^n =
-\sqrt{p_n}e^{i\phi_n}$ that we are going to use for explicit calculations: 
+\sqrt{p_n}e^{i\phi_n}$:
 \begin{align*}
 dV_{FS}
   & = \sqrt{\det g_{FS}}
@@ -311,7 +310,7 @@ dV_{FS}
   & =  \prod_{n=1}^{D-1} \frac{dp_n d\phi_n}{2}
   ~.
 \end{align*}
-Notice how $p_0$ and $\phi_0$ are not involved. This is due to
+Note how $p_0$ and $\phi_0$ are not involved. This is due to
 $\mathcal{P}(\mathcal{H})$'s projective nature which guarantees that we can
 choose a coordinate patch in which $p_0 = 1 - \sum_{n=1}^{D-1}p_n$
 and $\phi_0 = 0$. As we see now, the probability-phase coordinates play a 
@@ -325,7 +324,7 @@ structure is the geometric entity allowing us to define ``Poisson Brackets''
 and the existence of canonically conjugated coordinates. In particular, using 
 probabilities and phases coordinates $\left\{ (p_n,\phi_n)\right\}$
 one has that $\left\{ p_n , \phi_n \right\} = \frac{1}{\hbar}\delta_{nm}$. Thus,
-for arbitrary functions $A$ and $B$ on $\PH$ one has
+for arbitrary functions $A$ and $B$ on $\PH$ we have
 \begin{equation}
 \left\{ A, B\right\} \coloneqq \frac{1}{\hbar}\sum_{n=1}^{D-1} \frac{\partial A}{\partial p_n} \frac{\partial B}{\partial \phi_n} - \frac{\partial B}{\partial p_n} \frac{\partial A}{\partial \phi_n}
 \end{equation}
@@ -334,15 +333,15 @@ for arbitrary functions $A$ and $B$ on $\PH$ one has
 \paragraph*{Unitary evolution.} In QM, an isolated quantum system evolves
 with a unitary propagator $U(t,t_0) = e^{-\frac{i}{\hbar}H (t-t_0)}$, where the
 generator $H$ is the (time-independent) Hamiltonian of the system. Surprisingly, 
-it can be shown \cite{Bengtsson2017} that this evolution is equivalent to a classical 
-Hamiltonian dynamics, with geometric coordinates. In particular, calling $E(p_n, \phi_n) = \bra{\psi(p_n,\phi_n)}H \ket{\psi(p_n,\phi_n)}$
-the expectation value of $H$ on a generic state $\ket{\psi(p_n,\phi_n)} = \sum_{n=0}^{D-1}\sqrt{p_n}e^{i\phi_n}\ket{e_n}$
-parametrized by $(p_n,\phi_n)_n$, the unitary evolution of a generic function $A$
-on $\PH$ is given by 
+it can be shown \cite{Bengtsson2017} that this evolution in Hilbert space is equivalent to 
+a classical Hamiltonian dynamics on $\PH$. In particular, using a vector notation $\left\{ p_n,\phi_n\right\}_n = (\vec{p},\vec{\phi})$, 
+$E(\vec{p}, \vec{\phi}) = \bra{\vec{p},\vec{\phi}}H \ket{\vec{p},\vec{\phi}}$
+the expectation value of $H$ on a generic state $\ket{\vec{p},\vec{\phi}} = \sum_{n=0}^{D-1}\sqrt{p_n}e^{i\phi_n}\ket{e_n}$, 
+the unitary evolution of a generic function $A$ on $\PH$ is given by 
 \begin{equation}
 \frac{\partial A}{\partial t} = \left\{ A,E\right\}
 \end{equation}
-Or, equivalently, a generic state $(p_n,\phi_n)_n$
+Or, equivalently, a generic state point $Z \sim (\vec{p},\vec{\phi}) \in \PH$
 evolves according to Hamilton's equations of motion:
 \begin{subequations}\label{eq:HAM_EOM}
 \begin{align}
@@ -354,10 +353,10 @@ evolves according to Hamilton's equations of motion:
 Here the analogies with classical Hamiltonian mechanics are particularly evident.
 While quantum mechanics is clearly very different from its classical
 counterpart, at a certain descriptive level we can still use the intuition
-of classical mechanics to understand the dynamical evolution of quantum systems. 
-We now proceed in our summary by looking at situations in which the state of the 
-system can not be characterized by a single point, thus needing a probability distribution 
-over the whole state space.
+of classical mechanics to understand the geometry of the dynamical flows in a
+quantum state space. We proceed in our summary of GQM by looking at situations 
+in which the state of the system can not be characterized by a single point but needs 
+a probability distribution over the whole state space.
 
 
 \paragraph*{Geometric quantum states.}
@@ -370,126 +369,112 @@ together with observable functions.
 Geometric Quantum States are functionals $P_q[\mathcal{O}]$ from the algebra of
 observables $\mathcal{A}$ to the real line: 
 \begin{align}
-P_q[\mathcal{O}]
-  = \int_{\mathcal{P}(\mathcal{H})} q(Z) \mathcal{O}(Z) dV_{FS}
+P_\mu[\mathcal{O}]
+  = \int_{\mathcal{P}(\mathcal{H})}  \mathcal{O}(Z) \mu(dV_{FS})
   ~,
 \label{eq:gqs}
 \end{align}
-where $\mathcal{O} \in \mathcal{A}$, $q(Z) \geq 0$ is the
-normalized distribution associated with the functional $P_q$:
+where $\mathcal{O} \in \mathcal{A}$ and $\mu $ is a normalized probability
+measure on $\PH$ associated to the functional $P_\mu$:
 \begin{align*}
-P_q[1] = \int_{\mathcal{P}(\mathcal{H})}
-  q(Z) dV_{FS}  = 1
+P_\mu[1] = \int_{\mathcal{P}(\mathcal{H})}
+ \mu(dV_{FS})  = 1
   ~,
 \end{align*}
-and $P_q[\mathcal{O}] \in \mathbb{R}$. 
-Thus, kets $\ket{\psi_0}$ are described by functionals with a Dirac-delta
-distribution $q_0(Z) = \widetilde{\delta}\left[ Z - Z_0\right]$:
+and $P_\mu[\mathcal{O}] \in \mathbb{R}$. Here it is convenient to introduce
+De Finetti's notation for measures, $\mu(A) = \int_{A} \mu(dV_{FS})$ and 
+think about the state of a quantum system as described by a \emph{Random Quantum Variable} ${\bf Z} = 
+(Z,\mu,\PH)$. This is a random variable, in the classical sense, in which $Z$
+are the realizations, which belong to the sampling space $\PH$, occurring 
+with measure $\mu$. If the measure is absolutely continuous with respect to the
+Fubini-Study measure $dV_{FS}$, then there is a continuous density $q(Z)$
+such that $\mu(dV_{FS}) = q(Z)dV_{FS}$. 
+
+In this description, the quantumness of the system is taken care of by the non-trivial 
+geometry of the sampling space, which is the state 
+space of a quantum system.
+
+
+Thus, a generic pure state $\ket{\psi_0} \sim Z_0$ is described by a Dirac measure 
+ $\delta_{Z_0}$ on $\PH$ such that:
 \begin{align*}
-P_{0}[\mathcal{O}] &= \intP \widetilde{\delta}(Z-Z_0)\mathcal{O}(Z) dV_{FS} \\
+P_{Z_0}[\mathcal{O}] &= \intP \mathcal{O}(Z) \delta_{Z_0}(dV_{FS}) \\
   & = \mathcal{O}(Z_0)  = \bra{\psi_0}\mathcal{O}\ket{\psi_0}
   ~.
 \end{align*}
-Here, $\widetilde{\delta}(Z-Z_0)$ is shorthand for a coordinate-covariant Dirac-delta in
-arbitrary coordinates. In homogeneous coordinates this reads:
+Extending by linearity, a generic ensemble $\left\{ \lambda_j, \ket{\lambda_j}\right\}$
+is described by a convex combinations of Dirac measures:
 \begin{align*}
-\widetilde{\delta}(Z - Z_0) \coloneqq \frac{1}{\sqrt{\det g_{FS}}}
-  \prod_{n=0}^{D-1} \delta(X^n - X^n_0)
-  \delta(Y^n - Y^n_0)
-  ~,
-\end{align*}
-where $Z^n = X^n + iY^n$. In $(p_n,\phi_n)$ coordinates
-this becomes simply:
-\begin{align*}
-\widetilde{\delta}(Z - Z_0) = \prod_{n=1}^{D-1} 2\delta(p_n - p_n^0) \delta(\phi_n - \phi_n^0)
-  ~,
-\end{align*}
-where the coordinate-invariant nature of the functionals $P_q[\mathcal{O}]$ is
-now apparent. Extending by linearity, a specific decomposition $\left\{ \lambda_j, \ket{\lambda_j}\right\}$
-of a density matrix
-\begin{align*}
-\rho = \sum_{j}\lambda_j \ket{\lambda_j}\bra{\lambda_j}
-\end{align*}
-corresponds to a convex combinations of these Dirac-delta functionals:
-\begin{align*}
-q_{\mathrm{mix}}(Z) = \sum_{j}\lambda_j \widetilde{\delta}(Z-Z_j)
+\mu_{\mathrm{mix}} = \sum_{j}\lambda_j \delta_{Z_j}
   ~. 
 \end{align*}
-Thus, expressed as functionals from observables to the real line, mixed states
-are:
-\begin{align}
-P_{\mathrm{mix}}\left[ \mathcal{O}\right]
-  & = \sum_{j} \lambda_j \bra{\lambda_j}\mathcal{O}\ket{\lambda_j}
-  ~.
-\label{eq:Functional}
-\end{align}
  
-Equipped with this tools, one identifies the distribution $q(Z)$ of Eq.
-(\ref{eq:gqs}) as a system's \emph{geometric quantum state}. This is a
-generalized notion of quantum state.
+Equipped with these tools, we call both $\mu$ and $q$ (when it exists) as the system's
+Geometric Quantum State.  
 
-A simple example of a geometric quantum state is the 
-\emph{geometric canonical ensemble}:
-\begin{align*}
-q(Z) = \frac{1}{Q_\beta} e^{-\beta h(Z)}
-  ~,
-\end{align*}
-where:
-\begin{align*}
-  Q_\beta & = \int dV_{FS} e^{-\beta h(Z)} ~, \\
-  h(Z) & = \bra{\psi(Z)}H\ket{\psi(Z)} ~,
-\end{align*}
-and $H$ is the system's Hamiltonian operator. This was introduced in 
-Refs. \cite{Brody1998}. References \cite{Brody2016} and \cite{Anza20b} 
-investigated its potential role in establishing a quantum foundation of
-thermodynamics that is an alternative to that based on Gibbs ensembles and von
-Neumann entropy. 
+%A simple example of a geometric quantum state is the 
+%\emph{geometric canonical ensemble}:
+%\begin{align*}
+%q(Z) = \frac{1}{Q_\beta} e^{-\beta h(Z)}
+%  ~,
+%\end{align*}
+%where:
+%\begin{align*}
+%  Q_\beta & = \int dV_{FS} e^{-\beta h(Z)} ~, \\
+%  h(Z) & = \bra{\psi(Z)}H\ket{\psi(Z)} ~,
+%\end{align*}
+%and $H$ is the system's Hamiltonian operator. This was introduced in 
+%Refs. \cite{Brody1998}. References \cite{Brody2016} and \cite{Anza20b} 
+%investigated its potential role in establishing a quantum foundation of
+%thermodynamics that is an alternative to that based on Gibbs ensembles and von
+%Neumann entropy. 
 
 \paragraph*{Density matrix.}
 The connection between geometric quantum states and density matrices is
 fairly straightforward. Since density matrices are a synthetic way of collecting
 probability outcomes about POVMs, which are functions of the 
 form $A(Z) \propto \sum_{n,m}A_{n m} Z^n \overline{Z}^m$, 
-given a generic geometric quantum state $q(Z)$ the associated density matrix $\rho^q$ can be 
-simply computed as follows:
+given a generic geometric quantum state $\mu$ the associated density matrix $\rho^\mu$ can be 
+computed as follows:
 \begin{align}
-\rho^q_{mn} & = P_q[Z^m \overline{Z}^n] \nonumber \\
-  & = \intP dV_{FS} \, q(Z)  \, Z^m \overline{Z}^n
+\rho^\mu_{mn} & = P_\mu[Z^m \overline{Z}^n] \nonumber \\
+  & = \intP \mu(dV_{FS}) \,   \, Z^m \overline{Z}^n
   ~.
 \label{eq:densitymatrix}
 \end{align}
 Owing to the specific form of POVMs on $\mathcal{P}(\mathcal{H})$, recall Eq. (\ref{eq:GQM_POVMs}), they
-are sensitive to $q(Z)$ only via $\rho^q$. Therefore, if two geometric quantum states 
-$q_1$ and $q_2$ induce the same density matrix $\rho^{q_1} = \rho^{q_2}$, then all POVMs
+are sensitive to $\mu$ only via $\rho^\mu$. Therefore, if two geometric quantum states 
+$\mu_1$ and $\mu_2$ induce the same density matrix $\rho^{\mu_1} = \rho^{\mu_2}$, then all POVMs
 produce the same outcomes.
 
 \paragraph*{The GQS of an Open Quantum System.}
-As shown above, if a system is in a pure state its GQS is simply a Dirac delta concentrated
-on a single point. However, if the system is in contact with an environment, this is not true 
-anymore, unless they are exactly in a product state. In general, contact with the environment
-causes the loss of information about which region of the state space the system inhabits. Hence, 
-we need a probability distribution for the state of our system: a geometric quantum state. The explicit 
+As shown above, if a system is in a pure state its GQS is a Dirac measure concentrated
+on a single point of the quantum state space. However, if the system is in contact with an environment, 
+this is not always true, unless system and environment are in a product state. In general, contact with 
+the environment causes the loss of information about which region of the state space the system inhabits. 
+Hence, we need a probability distribution for the state of our system: a geometric quantum state. The explicit 
 derivation of the generic geometric quantum state for an open quantum system can be found 
 in Ref.\cite{Anza20a}. Here we simply give the result, without discussing the derivation. 
 Given a system and its environment, we call $\left\{ \ket{a_j}\right\}_{j=0}^{d_S-1}$ a basis for 
 the Hilbert space $\mathcal{H}_S$ of the system (dimension $d_S$) and 
-$\left\{ \ket{b_n}\right\}_{n=0}^{d_E}$ a basis for the Hilbert space $\mathcal{H}_E$ 
+$\left\{ \ket{b_n}\right\}_{n=0}^{d_E-1}$ a basis for the Hilbert space $\mathcal{H}_E$ 
 of the environment (dimension $d_E$). Assuming system and environment are in 
 a pure state $\ket{\psi_{SE}} = \sum_{j,\alpha}\psi_{j\alpha}\ket{a_j}\ket{b_\alpha}$, the 
-geometric quantum state of the system is
+GQS of the system is
 \begin{equation}
-q(Z) = \sum_{\alpha=0}^{d_E-1} x_\alpha \widetilde{\delta}\left( Z-Z(\chi_\alpha)\right)~,\label{eq:gqs_opn}
+\mu = \sum_{\alpha=0}^{d_E-1} x_\alpha \delta_{Z(\chi_\alpha)}~,\label{eq:gqs_opn}
 \end{equation}
 where 
 \begin{subequations}\label{eq:def_xchi}
 \begin{align}
-&x_\alpha \coloneqq \sum_j \left\vert \psi_{j\alpha}\right\vert^2~,\\
+&x_\alpha \coloneqq \sum_j \left\vert \psi_{j\alpha}\right\vert^2~, \quad \mathrm{with} \quad \sum_\alpha x_\alpha =1\\
 &Z^j(\chi_\alpha) = \frac{\psi_{j\alpha}}{\sqrt{x_\alpha}}\quad \to \quad \ket{\chi_\alpha} = \sum_j \frac{\psi_{j\alpha}}{\sqrt{x_\alpha}}\ket{a_j}
 \end{align}\label{eq:xgammas}
 \end{subequations}
 Here $x_\alpha$ is the probability that the environment is in state $\ket{b_\alpha}$ and $\left\{\ket{\chi_\alpha}\right\}$ 
 is a set of $d_E$ states of the system which constitutes the discrete support of the geometric 
-quantum state. The geometric quantum state in Eq.(\ref{eq:gqs_opn}) provides the correct reduced density matrix of the system
+quantum state. The GQS in Eq.(\ref{eq:gqs_opn}) is in one-to-one correspondence with a specific decomposition
+of the reduced density matrix of the system
 $\rho^{S}(\psi_{SE}) = \sum_\alpha x_\alpha \ket{\chi_\alpha}\bra{\chi_\alpha}$.
 \begin{figure*}[t!]
 \centering
@@ -509,33 +494,23 @@ $\rho^{S}(\psi_{SE}) = \sum_\alpha x_\alpha \ket{\chi_\alpha}\bra{\chi_\alpha}$.
 	}
 \label{fig:gqs_dynamics}
 \end{figure*}
-\paragraph*{Probability mass in a region of the state space.} Before we proceed with the
-main result, we introduce here a notation that will be useful later. This is imported
-from measure theory. Given a region $A \subseteq \PH$, we have
-\begin{equation}
-\mu_t(A) = \int_A q_t(Z) dV_{FS}
-\end{equation}
-$\mu_t(A)$ quantifies the probability that, at time $t$, our quantum system is in a state $Z$ that 
-belongs to the region $A$ of the quantum state space $\PH$. In this sense, this is the core quantity
-that conveys how much information about the system is contained in a certain region $A$
-of the state space.
 
 
 \section{Information Transport: Continuity equation}
 \label{sec:IT}
 
-In the past section we have summarized previous results about GQM. We now build on them 
+So far, we have summarized previous results about GQM. We now build on them 
 and, by bringing in the dynamics of the system, we derive 
-a continuity equation which dictates how the geometric quantum state of a non-equilibrium 
-open quantum system evolves, under very general assumptions. This is the fundamental 
-kinetic equation governing how the information about the state of a quantum system 
-changes as a result of its interaction with an environment. 
+a continuity equation which dictates how the geometric quantum state of an open
+quantum system out-of-equilibrium evolves, under very general assumptions. This is 
+the fundamental kinetic equation governing how the probability of finding the state 
+of the system in a region of $\PH$ changes as a result of its interaction with an environment. 
 Throughout this section we will try to maintain a fairly general language, to emphasize
 how the treatment applies to quantum systems under very general assumptions. However, 
-for concrete examples we will always refer to the simple case of a qubit.
+for concrete examples, both numerical and analytical, we will always refer to the case of a qubit.
 
 
-
+{\bf HERE}\\
 \subsection*{General treatment}
 The following treatment, and its results, pertains quantum systems which are finite-dimensional, 
 and interact with finite-dimensional environments but are, otherwise, arbitrary. 
@@ -570,14 +545,14 @@ resulting from measuring the environment on a generic eigenbasis $\left\{\ket{b_
 there is a corresponding pure state that the system inhabits: $\Gamma_\alpha \in \mathcal{P}(\mathcal{H}_S)$,
 which corresponds to the ket $\ket{\chi_\alpha} \in \mathcal{H}_S$. Since these $\Gamma_\alpha(t)$ are points moving 
 in a state space, we can think of them as particles on a classical phases space, 
-which interact in a non-trivial way. These are the ``carriers of information'', in the sense that each of 
+which interact in a non-trivial way. These are the \emph{``carriers of information''}, in the sense that each of 
 these particles carries a probability mass $x_\alpha(t)$ that the system will be found in $\Gamma_\alpha(t)$.
-A clarifying example of how the geometric quantum state of a qubit evolves when the system 
+An example of how the geometric quantum state of a qubit evolves when the system 
 interacts with an environment is given in Figure \ref{fig:gqs_dynamics}. Since the total amount 
-of information has to be preserved, $\mu_t(\PH) = \int_{\PH} q_t(Z) dV_{\mathrm{FS}} = \sum_\alpha x_\alpha(t) =1$,
-the geometric quantum state $q_t(Z)$ must satisfy a continuity equation. Conceptually, this is 
+of information has to be preserved, $\mu_t(\PH) = \sum_\alpha x_\alpha(t) =1$,
+the geometric quantum state $\mu_t$ must satisfy a continuity equation. Conceptually, this is 
 the starting point of virtually all transport theories, which deal with quantities that are globally 
-conserved, but that are moved around as a result of the underlying dynamics.
+conserved, but that are moved around as a result of the underlying microscopic dynamics.
 
 Thus, in the dynamics of a geometric quantum state we identify two different terms, arising from the 
 time-evolution of these two sets of quantities. Loosely speaking, by looking at Figure \ref{fig:gqs_dynamics}
