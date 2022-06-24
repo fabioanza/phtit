@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  24 JUN 2022 11:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  24 JUN 2022 16:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1972,77 +1972,87 @@ Package pdftex.def Info: ./img/DynamicsLong.pdf  used on input line 481.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 494.
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 513--514
-
- []
-
 <./img/Flux.pdf, id=39, 1927.2pt x 1084.05pt>
 File: ./img/Flux.pdf Graphic file (type pdf)
 <use ./img/Flux.pdf>
-Package pdftex.def Info: ./img/Flux.pdf  used on input line 520.
+Package pdftex.def Info: ./img/Flux.pdf  used on input line 518.
 (pdftex.def)             Requested size: 229.49844pt x 129.0879pt.
 <./img/Source.pdf, id=40, 1927.2pt x 1084.05pt>
 File: ./img/Source.pdf Graphic file (type pdf)
 <use ./img/Source.pdf>
-Package pdftex.def Info: ./img/Source.pdf  used on input line 530.
+Package pdftex.def Info: ./img/Source.pdf  used on input line 528.
 (pdftex.def)             Requested size: 229.49844pt x 129.0879pt.
-[4 <./img/DynamicsLong.pdf>]
-Underfull \hbox (badness 3439) in paragraph at lines 573--573
+
+Underfull \hbox (badness 3439) in paragraph at lines 572--572
   [][][]\T1/lmr/m/n/8 With an ar-bi-trary co-or-di-nate sys-tem we have $[][] \
 OT1/lmr/m/n/8 =
  []
 
-[5 <./img/Flux.pdf> <./img/Source.pdf>] [6]
-<./img/gqs_dynamics2.pdf, id=1149, 1927.2pt x 1084.05pt>
+[4 <./img/DynamicsLong.pdf>]
+
+Package natbib Warning: Citation `AnzaC-Qidge' on page 5 undefined on input lin
+e 628.
+
+
+Underfull \hbox (badness 1205) in paragraph at lines 619--629
+[]\T1/lmr/m/n/10 First, the deriva-tion pre-sented here per-tains finite-
+ []
+
+[5 <./img/Flux.pdf> <./img/Source.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 702--703
+
+ []
+
+[6] [7]
+<./img/gqs_dynamics2.pdf, id=1153, 1927.2pt x 1084.05pt>
 File: ./img/gqs_dynamics2.pdf Graphic file (type pdf)
 <use ./img/gqs_dynamics2.pdf>
-Package pdftex.def Info: ./img/gqs_dynamics2.pdf  used on input line 835.
+Package pdftex.def Info: ./img/gqs_dynamics2.pdf  used on input line 863.
 (pdftex.def)             Requested size: 458.99689pt x 258.17583pt.
- [7]
 <./img/gqs_dynamics3.pdf, id=1154, 1927.2pt x 1084.05pt>
 File: ./img/gqs_dynamics3.pdf Graphic file (type pdf)
 <use ./img/gqs_dynamics3.pdf>
-Package pdftex.def Info: ./img/gqs_dynamics3.pdf  used on input line 889.
+Package pdftex.def Info: ./img/gqs_dynamics3.pdf  used on input line 917.
 (pdftex.def)             Requested size: 458.99689pt x 258.17583pt.
- [8 <./img/gqs_dynamics2.pdf>]
-Underfull \hbox (badness 1152) in paragraph at lines 928--932
+ [8]
+Underfull \hbox (badness 1152) in paragraph at lines 956--960
 \T1/lmr/m/n/10 Its so-lu-tion is given by the prop-a-ga-tor $\OML/lmm/m/it/10 P
 \OT1/lmr/m/n/10 (\OML/lmm/m/it/10 t; t[]\OT1/lmr/m/n/10 ) =
  []
 
-[9 <./img/gqs_dynamics3.pdf>]
-<./img/summary.pdf, id=1281, 1927.2pt x 1084.05pt>
+<./img/summary.pdf, id=1158, 1927.2pt x 1084.05pt>
 File: ./img/summary.pdf Graphic file (type pdf)
 <use ./img/summary.pdf>
-Package pdftex.def Info: ./img/summary.pdf  used on input line 952.
+Package pdftex.def Info: ./img/summary.pdf  used on input line 980.
 (pdftex.def)             Requested size: 458.99689pt x 258.17583pt.
- [10] [11 <./img/summary.pdf>]
+[9 <./img/gqs_dynamics2.pdf>] [10 <./img/gqs_dynamics3.pdf>] [11 <./img/summary
+.pdf>]
 <./img/mu_average.pdf, id=1372, 909.43285pt x 890.89067pt>
 File: ./img/mu_average.pdf Graphic file (type pdf)
 <use ./img/mu_average.pdf>
-Package pdftex.def Info: ./img/mu_average.pdf  used on input line 1112.
+Package pdftex.def Info: ./img/mu_average.pdf  used on input line 1140.
 (pdftex.def)             Requested size: 153.00156pt x 149.87251pt.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 7.20001pt on input line 1133.
+(Font)              scaled to size 7.20001pt on input line 1161.
  [12 <./img/mu_average.pdf>]
 
-Package natbib Warning: Citation `Wig32' on page 13 undefined on input line 121
-2.
+Package natbib Warning: Citation `Wig32' on page 13 undefined on input line 124
+0.
 
 
-Package natbib Warning: Citation `Hus40' on page 13 undefined on input line 121
-3.
+Package natbib Warning: Citation `Hus40' on page 13 undefined on input line 124
+1.
 
 
 Package natbib Warning: Citation `Oliva18' on page 13 undefined on input line 1
-213.
+241.
 
-
-Underfull \hbox (badness 1303) in paragraph at lines 1224--1229
+[13]
+Underfull \hbox (badness 1303) in paragraph at lines 1252--1257
 []\T1/lmr/m/n/10 We thank James Crutch-field, David Gier, Ari-adna
  []
 
-[13] (./phtit.bbl
+(./phtit.bbl
 
 LaTeX Warning: Reference `LastBibItem' on page 14 undefined on input line 1.
 
@@ -2057,28 +2067,24 @@ FiXme Summary: Number of notes: 0,
 (FiXme)        Number of fatal errors: 0,
 (FiXme)        Total: 0.
 
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1233.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1261.
 [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1233.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1261.
  (./phtit.aux)
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1233.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1261.
 
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
-
-
  ) 
 Here is how much of TeX's memory you used:
  55806 strings out of 492616
- 1231071 string characters out of 6129482
- 1449306 words of memory out of 5000000
+ 1231072 string characters out of 6129482
+ 1452304 words of memory out of 5000000
  58812 multiletter control sequences out of 15000+600000
  637690 words of font info for 119 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,12n,138p,1261b,816s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 85i,12n,138p,1261b,824s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/lo
 cal/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texliv
 e/2019/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2019/texmf-d
@@ -2109,7 +2115,7 @@ live/2019/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2019/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/20
 19/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb></usr/local/texlive
 /2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on phtit.pdf (14 pages, 35950183 bytes).
+Output written on phtit.pdf (14 pages, 35956036 bytes).
 PDF statistics:
  1497 PDF objects out of 1728 (max. 8388607)
  970 compressed objects within 10 object streams

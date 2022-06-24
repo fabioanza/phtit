@@ -341,8 +341,8 @@ the unitary evolution of a generic function $A$ on $\PH$ is given by
 \begin{equation}
 \frac{\partial A}{\partial t} = \left\{ A,E\right\}
 \end{equation}
-Or, equivalently, a generic state point $Z \sim (\vec{p},\vec{\phi}) \in \PH$
-evolves according to Hamilton's equations of motion:
+Or, equivalently, a generic point $Z \sim (\vec{p},\vec{\phi}) \in \PH$
+will evolve according to Hamilton's equations of motion:
 \begin{subequations}\label{eq:HAM_EOM}
 \begin{align}
 &\frac{dp_n}{dt} = \frac{1}{\hbar}\frac{\partial E}{\partial \phi_n} \\
@@ -509,8 +509,6 @@ Throughout this section we will try to maintain a fairly general language, to em
 how the treatment applies to quantum systems under very general assumptions. However, 
 for concrete examples, both numerical and analytical, we will always refer to the case of a qubit.
 
-
-{\bf HERE}\\
 \subsection*{General treatment}
 The following treatment, and its results, pertains quantum systems which are finite-dimensional, 
 and interact with finite-dimensional environments but are, otherwise, arbitrary. 
@@ -518,7 +516,7 @@ and interact with finite-dimensional environments but are, otherwise, arbitrary.
 \centering
 \begin{minipage}[t]{.45\textwidth}
 \includegraphics[width=\textwidth]{./img/Flux.pdf}
-\caption{Kinetic interpretation of the Information flux $J_t(Z)$. If we look at a small region of the 
+\caption{Kinetic interpretation of the Information flux $J_t$. If we look at a small region of the 
 	quantum state space,  due to the underlying dynamics we see that information is locally conserved 
 	in the sense that there is a certain number of points which enters and leaves this region. As a 
 	result of this local process, probability is moved around and can concentrate in a certain region 
@@ -561,43 +559,47 @@ in time. First, there is the color of each particle, which changes over time: $\
 the movements of each point: $\dot{\Gamma}_\alpha \neq 0$. By summing each term over
 all particles, and then summing the two terms, we get the following evolution equation for the geometric quantum state:
 \begin{equation}
-\frac{\partial q_t(Z)}{\partial t} = \sum_\alpha \dot{x}_\alpha \tilde{\delta}\left( Z- \Gamma_\alpha \right) - x_\alpha \widetilde{\delta}^{'}\left(Z - \Gamma_\alpha \right) \dot{\Gamma}_{\alpha}~.\label{eq:cont}
+\frac{\partial \mu_t}{\partial t} = \sum_\alpha \dot{x}_\alpha \delta_{\Gamma_\alpha} - x_\alpha \dot{\Gamma}_{\alpha} \delta^{'}_{\Gamma_\alpha} ~.\label{eq:cont}
 \end{equation}
-Let's start by analyzing the second term. There, $\widetilde{\delta}^{'}$ is the first distributional derivative 
-of $\widetilde{\delta}(Z-\Gamma_\alpha)$ and $\Gamma_\alpha(t)$ is the velocity of each particle $\Gamma_\alpha(t)$.
-Thus, the second term in the right-hand side looks like the divergence of a velocity field or, in other words, as a flux
-term in a continuity equation. Indeed, since all the dependence on the coordinate $Z$ lies inside the $\widetilde{\delta}^{'}$, 
-the whole term can be written as a covariant divergence\footnote{With an arbitrary coordinate system we have 
+Let's start by analyzing the second term. $\delta^{'}$ is the distributional derivative 
+of the Dirac measure $\delta_{\Gamma_\alpha}$ and $\dot{\Gamma}_\alpha(t)$ is 
+the velocity vector, in state space, of each point $\Gamma_\alpha(t)$. Thus, this term 
+is the covariant divergence of a velocity field or, in other words, a flux term in a continuity equation. 
+Indeed, since all the dependence on the set of which to evaluate the measure lies inside the $\delta^{'}$, 
+the whole term can be explicitly written as the divergence\footnote{With an arbitrary coordinate system we have 
 $\mathrm{div} \vec{f} = \frac{1}{\sqrt{g}} \partial_\alpha \left(\sqrt{g} f^\alpha\right)$,
 where $g = \vert \mathrm{det} g_{FS}\vert$ is the absolute value of the determinant of the metric which, 
 in our case, is the Fubini-Study metric.}
 \begin{equation}
-\sum_\alpha x_\alpha \widetilde{\delta}^{'}\left(Z - \Gamma_\alpha \right) \dot{\Gamma}_{\alpha} = (\nabla \cdot J_t)(Z)~,
+\sum_\alpha x_\alpha \delta^{'}_{\Gamma_\alpha} \dot{\Gamma}_{\alpha} = \nabla \cdot J_t~,
 \end{equation}
-where we have identified the \emph{Information Flux} $J_t(Z)$ as the ``single-particle'' flux $J_\alpha(Z,t)$, averaged
+where we have identified the \emph{Information Flux} $J_t$ as the ``single-particle'' flux $J_\alpha(t)$, averaged
 with the probability mass it is carrying $x_\alpha(t)$:
 \begin{subequations}\label{eq:flux}
 \begin{align}
-&J_\alpha(Z,t) =  \widetilde{\delta}\left(Z - \Gamma_\alpha(t) \right) \dot{\Gamma}_{\alpha}(t)~,\\
-&J_t(Z) = \sum_\alpha x_\alpha(t)J_\alpha(Z,t)~.
+&J_t = \sum_\alpha x_\alpha(t)J_\alpha(t)~,\\
+&J_\alpha(t) =  \delta_{\Gamma_\alpha(t)} \dot{\Gamma}_{\alpha}(t)~.
 \end{align}
 \end{subequations}
-We now look at the first term in the right-hand side of Eq.(\ref{eq:cont}): $\sum_\alpha \dot{x}_\alpha(t) \delta(Z-\Gamma_\alpha(t))$.
+We now look at the first term in the right-hand side of Eq.(\ref{eq:cont}): $\sum_\alpha \dot{x}_\alpha(t) \delta_{\Gamma_\alpha(t)}$.
 We recognize a source/sink term, which is independent on the underlying movement of
 the points in the quantum state space. This identifies the other functional term in our continuity 
-equation: \emph{sinks and sources of information} $\sigma_t(Z)$:
+equation: \emph{sinks and sources of information} $\sigma_t$:
 \begin{equation}
-\sigma_t(Z) = \sum_{\alpha=0}^{d_E} \dot{x}_\alpha(t) \widetilde{\delta}\left(Z - \Gamma_\alpha(t) \right)~.\label{eq:sigma}
+\sigma_t = \sum_{\alpha=0}^{d_E} \dot{x}_\alpha(t) \delta_{\Gamma_\alpha(t)}~.\label{eq:sigma}
 \end{equation}
 Eventually, we obtain the following continuity equation for the geometric quantum state of a finite-dimensional
 quantum system interacting with a finite-dimensional environment:
 \begin{equation}
-\frac{\partial q_t}{\partial t} + \nabla \cdot J_t = \sigma_t\label{eq:continuity}
+\dot{\mu}_t + \nabla \cdot J_t = \sigma_t\label{eq:continuity}
 \end{equation}
-This is our first result. A crucial aspect here is that this theoretical framework allows us to talk about information 
-as a physically localized (and overall conserved) quantity, which is carried around by points in quantum state space.
-This is in analogy with most classical theories of transport which deal with properties of particles, such as mass 
-or charge, which are carried around by particles, represented as points wondering in a classical phase-space.
+This novel equation is our first and most important result. It is the central tool which regulates 
+how quantum information is scrambled around the state space, due to the interaction between a 
+system and its environment. 
+
+Before we move on to use the equation to study the flow of quantum information in some concrete
+systems, a few comments about general validity of the equation, and the physical interpretation of each of
+its terms are in order.
 
 
 %\begin{figure}[t!]
@@ -611,17 +613,40 @@ or charge, which are carried around by particles, represented as points wonderin
 %	}
 %\label{fig:flux_term}
 %\end{figure}
-To support this theoretical framework, the physical interpretation of the flux $J_t$ and source/sink $\sigma_t$ term is essentially the 
-same as in other transport theories. We now describe them explicitly, using their kinetic interpretation, drawn
-in Figures \ref{fig:flux_term} and \ref{fig:sigma_term}. First, $J_t$ is an information flux, in the proper sense of flux. 
-This flux is associated to an overall conserved quantity, probability mass, localized in its carriers $\Gamma_\alpha$, which 
-is moved around the quantum state space. To emphasize this point, we look at the simpler situation in which $\dot{x}_\alpha = 0$. 
+
+\subsection*{Discussion and interpretation}
+
+First, the derivation presented here pertains finite-dimensional quantum systems interacting with 
+finite environments. However, generalization to countably-infinite or uncountably-infinite dimensional
+environment is straightforward. In the first case, a simple limit $d_E \to \infty$ suffices. This limit goes
+through the derivation, leaving it unaltered. In the second case, which pertains the case in which we 
+have continuous variables or quantum fields as environment, only minor adjustments are needed.
+However, the core aspects of the derivation hold, leaving the final form of the continuity equation
+unaltered. In summary, the only difference between the three cases of finite, countably-infinite or uncountably-infinite
+environment will be that the support of the geometric quantum state will go from being a set of dimension zero (finite number
+of points), to a more generic set which, in some cases, can even have fractal dimension. For a thorough analysis
+of these situations we send the interested reader to Ref.\cite{AnzaC-Qidge}.
+
+Second, an aspect that we deem quite interesting here is that the proposed theoretical framework allows us to talk 
+about quantum information as a localized quantity, which is carried around in quantum state space. This is in analogy 
+with all classical theories of transport of properties, such as mass or charge, which are carried around by 
+particles, represented as points wondering in a classical phase-space. 
+
+Third, the derivation was performed using the generic measure $\mu_t$, thus holding also for $q_t(Z)$, when it exists.
+
+Fourth, to strengthen the physical intuition about the theoretical derivation, we now argue that the physical interpretation 
+of the flux $J_t$ and source/sink $\sigma_t$ terms are essentially the same as in other transport theories. Indeed, the 
+property that is carried around is essentially probability mass or, equivalently, surprisal. We now describe them explicitly, using 
+their kinetic interpretation, drawn in Figures \ref{fig:flux_term} and \ref{fig:sigma_term}. 
+
+\paragraph*{$J_t$ is an information flux,} associated to an overall conserved quantity, probability mass, localized in its carriers $\Gamma_\alpha$, which 
+is moved around the quantum state space. To emphasize this point, we look at the situation in which $\dot{x}_\alpha = 0$. 
 In this case, $\sigma_t=0$ and the information carried around by the points in state space is a constant of motion 
 ($x_\alpha(t)= x_\alpha(t_0)$). Thus, the analogy with a model of point particles carrying around a physical property, 
 like charge or mass, becomes exact. As the carriers move around, the information is dispersed across the quantum 
-state space with a mechanisms that ensures it is locally preserved, and therefore well described with a continuity 
-equation that equates the local time derivative of the probability distribution with the divergence of the local flux of 
-particles.
+state space in a way that guarantees its local preservation. This means the spread of quantum information can be described 
+with a continuity equation, which equates the local time derivative of the probability distribution with the divergence of the 
+local flux of information.
 %\begin{figure}[t!]
 %\centering
 %\includegraphics[width=.45\textwidth]{./img/Source.pdf}
@@ -635,15 +660,15 @@ particles.
 %\label{fig:sigma_term}
 %\end{figure}
 
-Second, the term $\sigma_t$ is a proper source/sink term, with the usual interpretation. Indeed, first, we note that it
+\paragraph*{$\sigma_t$ is a proper source/sink term,} with the usual interpretation. Indeed, first, we note that it
 can not be written as a divergence term. Second, we look at the simpler dynamics in which the position of the points 
 in $\PH$ does not change: $\dot{\Gamma}_\alpha = 0$. In this case the support of the distribution is fixed and the 
 particles don't move around $\Gamma_\alpha(t)=\Gamma_\alpha(t_0)$. However, there can still be a non-trivial 
-dynamics, due to $\dot{x}_\alpha(t)\neq 0$. Depending on the actual support of the distribution, and how spread it is, 
-as depicted in Figure \ref{fig:sigma_term}, the time-evolution generated by this term is generally non-local in the 
+dynamics, due to $\dot{x}_\alpha(t)\neq 0$. Depending on the actual support of the distribution, as depicted in Figure \ref{fig:sigma_term}, 
+the time-evolution generated by this term is generally non-local in the 
 quantum state space. Thus, $\sigma_t$ possesses all the hallmarks of the standard sinks and sources terms in 
 transport theories: it is not associated with particles moving around the state space and it can not be rewritten 
-as a divergence term.
+as a divergence term, while still affecting the time-derivative of the quantity that is being transported---probability mass.
 
 
 \subsection{Isolated quantum systems}\label{subsec:IQS}
@@ -652,16 +677,16 @@ What happens when the system is closed? Is there a specific form for the informa
 Here we answer both these questions in a detailed manner. Since the evolution is Hamiltonian, we can 
 use Hamilton's equations of motion to derive the evolution equation of $\mu_t$ or, equivalently, of $q_t(Z)$.
 First, the sink/sources terms vanishes, since the evolution is Hamiltonian, thus preserving the local probabilities.
-Thus proves that a $\sigma_t \neq 0$ is related to the existence of a dissipative dynamics. Second, starting from 
-the definition of the flux in Eq.(\ref{eq:flux}), we can explicitly write the form of the flux $J_t$, 
+This supports the idea that a $\sigma_t \neq 0$ is related to the loss of information, and possibly to the existence of a 
+dissipative dynamics. Second, starting from the definition of the flux in Eq.(\ref{eq:flux}), we can explicitly write the form of the flux $J_t$, 
 using Hamilton's equations of motion. Writing $\Gamma_\alpha$ in canonical coordinates $(p_n(\Gamma_\alpha),\phi_n(\Gamma_\alpha))$, 
 we have 
 \begin{align}
-\dot{\Gamma}_\alpha & = \left( \dot{p}_n(\Gamma_\alpha), \dot{\phi}_n(\Gamma_\alpha)\right)_n \nonumber \\
-& = \left( \frac{1}{\hbar}\frac{\partial E}{\partial \phi_n}, -\frac{1}{\hbar}\frac{\partial E}{\partial p_n}  \right)_n = v_H(p_n,\phi_n)
+\dot{\Gamma}_\alpha & = \left\{ \dot{p}_n(\Gamma_\alpha), \dot{\phi}_n(\Gamma_\alpha)\right\}_n \nonumber \\
+& = \left\{ \frac{1}{\hbar}\frac{\partial E}{\partial \phi_n}, -\frac{1}{\hbar}\frac{\partial E}{\partial p_n}  \right\}_n = v_H(\vec{p},\vec{\phi})
 \end{align}
-Note how the right-hand side, which we called $v_H$ does not depend on the index $\alpha$ anymore: all 
-the points evolve in the same way, following the same Hamiltonian flow. Inserting this into the definition of the flux 
+Note how the right-hand side, $v_H$, does not depend on the index $\alpha$ anymore: all 
+the points evolve in the same way, following the same (Hamiltonian) flow. Inserting this into the definition of the flux 
 we obtain that the flux is equal to the product between the distribution and the Hamiltonian velocity field $v_H$:
 \begin{equation}
 J_t(Z) = q_t(Z) v_H(Z)~,
@@ -673,6 +698,9 @@ thus providing the following continuity equation:
 This can be further simplified by noting that the Hamiltonian vector field is divergence free, $\nabla \cdot v_H = 0$.
 This is due to the smoothness of $E(p_n,\phi_n)$ which, via Schwarz's theorem, implies that the Hessian of $E(p_n,\phi_n)$ 
 is symmetric. 
+
+{\bf TO CHECK THIS WITH THE PROPER DEFINITION OF DIVERGENCE}\\
+
 \begin{align}
 \nabla \cdot v_H &= \sum_n \left( \frac{\partial}{\partial p_n} , \frac{\partial}{\partial \phi_n}\right) \cdot \frac{1}{\hbar}\left(\frac{\p E}{\p \phi_n}, -\frac{\p E}{\p p_n} \right) \nonumber \\
 & = \frac{1}{\hbar} \sum_n \left( \frac{\p^2 E}{\p p_n \p \phi_n } - \frac{\p^2 E}{\p \phi_n \p p_n }\right) = 0 \nonumber
