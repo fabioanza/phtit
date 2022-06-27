@@ -10,6 +10,11 @@ F.~Anza and J.~P. Crutchfield.
 \newblock Geometric quantum thermodynamics.
 \newblock {\em arXiv:2008.08683}.
 
+\bibitem{Anza20c}
+F.~Anza and J.~P. Crutchfield.
+\newblock Geometric quantum state estimation.
+\newblock {\em arXiv:2008.08679}, 2020.
+
 \bibitem{STROCCHI1966}
 F.~Strocchi.
 \newblock {Complex Coordinates and Quantum Mechanics}.
@@ -127,19 +132,31 @@ F.~Strocchi.
   mechanics: {A} short course for mathematicians}}.
 \newblock World Scientific, 2008.
 
-\bibitem{Brody1998}
-D.~C. Brody and L.~P. Hughston.
-\newblock {The quantum canonical ensemble}.
-\newblock {\em J. Math. Physics}, 39(12):6502--6508, 1998.
-
-\bibitem{Brody2016}
-D.~C. Brody and L.~P Hughston.
-\newblock {Thermodynamics of quantum heat bath}.
-\newblock {\em J. Physics A: Math. Theo.}, 49(42):425302, 2016.
+\bibitem{Marsd13}
+Ratiu Marsden.
+\newblock {\em Introduction to mechanics and symmetry}.
+\newblock Springer Science and Business Media, 2013, 2013.
 
 \bibitem{Soto16}
 R.~Soto.
 \newblock {\em Kinetic theory and transport phenomena}.
 \newblock Oxford University Press, New York, US, 2016.
+
+\bibitem{Wig32}
+E.~Wigner.
+\newblock {On the quantum corrections for thermodynamic equilibrium}.
+\newblock {\em Phys. Rev.}, 40, 1932.
+
+\bibitem{Hus40}
+K.~Husimi.
+\newblock Some formal properties of the density matrix.
+\newblock {\em Proceedings of the Physico-Mathematical Society of Japan. 3rd
+  Series}, 22(4), 1940.
+
+\bibitem{Oliva18}
+M.~Oliva, D.~Kakofengitis, and O.~Steuernagel.
+\newblock {Anharmonic quantum mechanical systems do not feature phase space
+  trajectories}.
+\newblock {\em Physica A}, 502, 2018.
 
 \end{thebibliography}

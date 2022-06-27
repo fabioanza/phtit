@@ -134,11 +134,11 @@ Quantum Mechanics, Geometric Quantum Mechanics
 \title{\ourTitle}
 
 \author{Fabio Anza}
-\email{fanza@ucdavis.edu}
+\email{fanza@uw.edu}
 
 %\author{James P. Crutchfield}
 %\email{chaos@ucdavis.edu}
-
+\affiliation{InQubator for Quantum Simulation (IQuS), Department of Physics, University of Washington, Seattle, WA 98195, USA}
 \affiliation{Complexity Sciences Center and Physics Department,
 University of California at Davis, One Shields Avenue, Davis, CA 95616}
 
@@ -377,7 +377,7 @@ P_\mu[\mathcal{O}]
 where $\mathcal{O} \in \mathcal{A}$ and $\mu $ is a normalized probability
 measure on $\PH$ associated to the functional $P_\mu$:
 \begin{align*}
-P_\mu[1] = \int_{\mathcal{P}(\mathcal{H})}
+P_\mu[\mathbb{I}] = \int_{\mathcal{P}(\mathcal{H})}
  \mu(dV_{FS})  = 1
   ~,
 \end{align*}
@@ -559,7 +559,7 @@ in time. First, there is the color of each particle, which changes over time: $\
 the movements of each point: $\dot{\Gamma}_\alpha \neq 0$. By summing each term over
 all particles, and then summing the two terms, we get the following evolution equation for the geometric quantum state:
 \begin{equation}
-\frac{\partial \mu_t}{\partial t} = \sum_\alpha \dot{x}_\alpha \delta_{\Gamma_\alpha} - x_\alpha \dot{\Gamma}_{\alpha} \delta^{'}_{\Gamma_\alpha} ~.\label{eq:cont}
+\dot{\mu}_t = \sum_\alpha \dot{x}_\alpha \delta_{\Gamma_\alpha} - x_\alpha \dot{\Gamma}_{\alpha} \delta^{'}_{\Gamma_\alpha} ~.\label{eq:cont}
 \end{equation}
 Let's start by analyzing the second term. $\delta^{'}$ is the distributional derivative 
 of the Dirac measure $\delta_{\Gamma_\alpha}$ and $\dot{\Gamma}_\alpha(t)$ is 
@@ -593,11 +593,11 @@ quantum system interacting with a finite-dimensional environment:
 \begin{equation}
 \dot{\mu}_t + \nabla \cdot J_t = \sigma_t\label{eq:continuity}
 \end{equation}
-This novel equation is our first and most important result. It is the central tool which regulates 
+This is our first and most important result. It is the central tool which regulates 
 how quantum information is scrambled around the state space, due to the interaction between a 
 system and its environment. 
 
-Before we move on to use the equation to study the flow of quantum information in some concrete
+Before we move on and use the equation to study the flow of quantum information in some concrete
 systems, a few comments about general validity of the equation, and the physical interpretation of each of
 its terms are in order.
 
@@ -632,7 +632,8 @@ about quantum information as a localized quantity, which is carried around in qu
 with all classical theories of transport of properties, such as mass or charge, which are carried around by 
 particles, represented as points wondering in a classical phase-space. 
 
-Third, the derivation was performed using the generic measure $\mu_t$, thus holding also for $q_t(Z)$, when it exists.
+Third, the derivation was performed using the generic measure $\mu_t$. Thus, it holds also for the probability
+density $q_t(Z)$, when it exists.
 
 Fourth, to strengthen the physical intuition about the theoretical derivation, we now argue that the physical interpretation 
 of the flux $J_t$ and source/sink $\sigma_t$ terms are essentially the same as in other transport theories. Indeed, the 
@@ -642,7 +643,7 @@ their kinetic interpretation, drawn in Figures \ref{fig:flux_term} and \ref{fig:
 \paragraph*{$J_t$ is an information flux,} associated to an overall conserved quantity, probability mass, localized in its carriers $\Gamma_\alpha$, which 
 is moved around the quantum state space. To emphasize this point, we look at the situation in which $\dot{x}_\alpha = 0$. 
 In this case, $\sigma_t=0$ and the information carried around by the points in state space is a constant of motion 
-($x_\alpha(t)= x_\alpha(t_0)$). Thus, the analogy with a model of point particles carrying around a physical property, 
+($x_\alpha(t)= x_\alpha(t_0)$). Thus, the analogy with a typical model of point particles carrying around a physical property, 
 like charge or mass, becomes exact. As the carriers move around, the information is dispersed across the quantum 
 state space in a way that guarantees its local preservation. This means the spread of quantum information can be described 
 with a continuity equation, which equates the local time derivative of the probability distribution with the divergence of the 
@@ -682,31 +683,22 @@ dissipative dynamics. Second, starting from the definition of the flux in Eq.(\r
 using Hamilton's equations of motion. Writing $\Gamma_\alpha$ in canonical coordinates $(p_n(\Gamma_\alpha),\phi_n(\Gamma_\alpha))$, 
 we have 
 \begin{align}
-\dot{\Gamma}_\alpha & = \left\{ \dot{p}_n(\Gamma_\alpha), \dot{\phi}_n(\Gamma_\alpha)\right\}_n \nonumber \\
-& = \left\{ \frac{1}{\hbar}\frac{\partial E}{\partial \phi_n}, -\frac{1}{\hbar}\frac{\partial E}{\partial p_n}  \right\}_n = v_H(\vec{p},\vec{\phi})
+\dot{\Gamma}_\alpha & = \left( \frac{d\vec{p}}{dt}(\Gamma_\alpha), \frac{d\vec{\phi}}{dt}(\Gamma_\alpha)\right) \nonumber \\
+& = \left( \frac{1}{\hbar}\frac{\partial E}{\partial \vec{\phi}}, -\frac{1}{\hbar}\frac{\partial E}{\partial \vec{p}}  \right) = v_H(\vec{p}(\Gamma_\alpha),\vec{\phi}(\Gamma_\alpha))
 \end{align}
-Note how the right-hand side, $v_H$, does not depend on the index $\alpha$ anymore: all 
-the points evolve in the same way, following the same (Hamiltonian) flow. Inserting this into the definition of the flux 
+Note how the definition of the flow in the right-hand side, $v_H$, does not depend on the index $\alpha$: all 
+$\Gamma_\alpha$ evolve according to the same (Hamiltonian) flow. Inserting this into the definition of the flux 
 we obtain that the flux is equal to the product between the distribution and the Hamiltonian velocity field $v_H$:
 \begin{equation}
-J_t(Z) = q_t(Z) v_H(Z)~,
+J_t = \mu_t v_H~,
 \end{equation}
 thus providing the following continuity equation:
 \begin{equation}
 \frac{\partial q_t}{\partial t} = - v_H \cdot \nabla q_t - q_t \, \nabla \cdot v_H
 \end{equation}
-This can be further simplified by noting that the Hamiltonian vector field is divergence free, $\nabla \cdot v_H = 0$.
-This is due to the smoothness of $E(p_n,\phi_n)$ which, via Schwarz's theorem, implies that the Hessian of $E(p_n,\phi_n)$ 
-is symmetric. 
-
-{\bf TO CHECK THIS WITH THE PROPER DEFINITION OF DIVERGENCE}\\
-
-\begin{align}
-\nabla \cdot v_H &= \sum_n \left( \frac{\partial}{\partial p_n} , \frac{\partial}{\partial \phi_n}\right) \cdot \frac{1}{\hbar}\left(\frac{\p E}{\p \phi_n}, -\frac{\p E}{\p p_n} \right) \nonumber \\
-& = \frac{1}{\hbar} \sum_n \left( \frac{\p^2 E}{\p p_n \p \phi_n } - \frac{\p^2 E}{\p \phi_n \p p_n }\right) = 0 \nonumber
-\end{align}
-
-This leads us to the final form of the continuity equation of an isolated quantum system:
+This can be further simplified by remembering that the Hamiltonian vector field is divergence free, $\nabla \cdot v_H = 0$.
+For a discussion on this (and more) see Ref.\cite{Marsd13}. This leads us to the final form of the continuity equation of an isolated 
+quantum system:
 \begin{equation}
 \frac{\partial q_t}{\partial t} = - v_H \cdot \nabla q_t = -\left\{ q_t, E \right\}
 \end{equation}
@@ -763,11 +755,10 @@ We now turn to the more convoluted case of an open quantum system.
 
 As we move to analyze how open quantum systems scramble information around the
 quantum state space, the goal of this section is to provide a microscopic approach
-to the transport of information: a kinetic theory of how the information about the state
-of a quantum system changes as a result of its interaction with a structured, non-thermal,
-environment. Thus, the main outcome of this section is a concrete set of microscopic 
-equations that determines the evolution of the geometric quantum state in a non-Hamiltonian 
-setting.
+to the transport of information: a kinetic theory of how the probability mass of finding our system 
+in a region of its quantum state space changes as a result of its interaction with a structured, non-thermal,
+environment. The main outcome of this section is a concrete set of microscopic equations that determines
+the evolution of the geometric quantum state of an open quantum system.
 
 Calling $H_S$ and $H_E$ the Hamiltonian operators of the system and environment, respectively, 
 the total Hamiltonian of the joint system is $H = H_S + H_E + H_{\mathrm{int}}$. Since $H_{\mathrm{int}}$
@@ -780,7 +771,7 @@ respectively. With a slight abuse of notation we will often conflate $A^{(k)}$ w
 and $B^{(k)}$ with $\mathbb{I}_S \otimes B^{(k)}$, where $\mathbb{I}_S$ and $\mathbb{I}_E$ are, respectively,
 the identity operator on $\mathcal{H}_{S}$ and $\mathcal{H}_E$.
 Here we do not impose a specific choice for the basis of the system and environment. While a natural one
-is to choose the bases that diagonalize the non-interacting Hamiltonians $H_S$ and $H_E$, there are cases
+is the bases that diagonalize the non-interacting Hamiltonians $H_S$ and $H_E$, there are cases
 where a different choice is more appropriate. For example, in the case of a spin-$1/2$ chain one might be interested 
 in using the computational basis. Thus, we keep things general and use a generic basis, with no particular 
 properties with respect to the algebra of observables: $\left\{ \ket{a_j}\right\}_{j=0}^{d_S}$ and $\left\{ \ket{b_\alpha}\right\}_{\alpha=0}^{d_E-1}$.
@@ -822,7 +813,8 @@ and the interaction between particles is vehiculated by the set of operators $\h
 \end{equation}
 The remaining step is to connect this with the quantities that determine the geometric quantum state of the system: $x_\alpha$ and $\Gamma_\alpha$.
 This is easily done by using the original definition $\ket{\Phi_\alpha} = \sqrt{x_\alpha} \ket{\chi_\alpha}$. Since $\Gamma_\alpha(t) \leftrightarrow \ket{\chi_\alpha}$,
-we have $\Gamma^j_\alpha(t) = \frac{\braket{a_j}{\Phi_\alpha(t)}}{\sqrt{x_\alpha(t)}}$ and $x_\alpha(t) = \braket{\Phi_\alpha(t)}{\Phi_\alpha(t)}$.
+we have $\Gamma^j_\alpha(t) = \frac{\braket{a_j}{\Phi_\alpha(t)}}{\sqrt{x_\alpha(t)}}$ and $x_\alpha(t) = \braket{\Phi_\alpha(t)}{\Phi_\alpha(t)}$. 
+
 %we can also derive the evolution equation for $x_\alpha(t)$ by using Eq.(\ref{eq:kinetic}):
 %\begin{equation}
 %\frac{dx_\alpha}{dt} = \frac{d}{dt}\braket{\Phi_\alpha}{\Phi_\alpha} = \frac{2}{\hbar} \sum_\beta \mathrm{Im} \left[ \bra{\Phi_\alpha}\hat{V}_{\alpha \beta}\ket{\Phi_\beta}\right]~.
@@ -830,20 +822,29 @@ we have $\Gamma^j_\alpha(t) = \frac{\braket{a_j}{\Phi_\alpha(t)}}{\sqrt{x_\alpha
 
 %Here we can see that the evolution of $x_\alpha$ is dictated only by the interaction $\hat{V}_{\alpha \beta}$.
 
-Equation (\ref{eq:kinetic}) provides a way to describe the dynamics of an open 
+Thus, Equation (\ref{eq:kinetic}) provides a way to describe the dynamics of an open 
 quantum system as a set of $d_E$ linear, coupled, differential equations, for the 
-non-normalized states $\ket{\Phi_\alpha}$. The emergence of this set of coupled 
-equation also reinforces the interpretation of $\Gamma_\alpha(t)$ as behaving as 
-``particle-like'', with their own local notion of energy, represented by $H_\alpha$ and 
-their pair-wise interaction $\hat{V}_{\alpha \beta}$. While not treated here, by using 
-the approach developed in Ref.\cite{Anza20a} these results can be extended 
-to include finite-systems interacting with infinite-dimensional environments.
+geometric quantum state $\mu_t$: they provide evolution equations for $x_\alpha$ and $\Gamma_\alpha$
+which, by definition, satisfy the continuity equation in Eq.(\ref{eq:continuity}). By numerically
+simulating the globally unitary evolution, we can therefore access and study both
+phenomenological terms in the continuity equation: the information flux $J_t$ and
+the sink/source term $\sigma_t$.
 
-As a consistency check, we note that the preservation of information within the 
+
+It is worth noting that the emergence of this set of coupled equations reinforces the 
+interpretation of $\Gamma_\alpha(t)$ as behaving as ``particle-like'', with their own local 
+notion of energy, represented by $H_\alpha$ and their pair-wise interaction $\hat{V}_{\alpha \beta}$. 
+While not treated here, by using the approach developed in Ref.\cite{Anza20a} these 
+results can be extended to include finite-systems interacting with infinite-dimensional environments.
+
+As a self-consistency check, we note that the preservation of information within the 
 quantum state space of the system is inherited by the unitarity of the global evolution. 
 This is manifested in the relations $\hat{H}_\alpha^\dagger = \hat{H}_\alpha$ and 
-$\hat{V}_{\alpha \beta}^{\dagger} = \hat{V}_{\beta \alpha}$, both of which can be 
-easily shown to be true from the definitions above.
+$\hat{V}_{\alpha \beta}^{\dagger} = \hat{V}_{\beta \alpha}$, which can be 
+easily proven from the definitions above, implying that 
+probability is globally conserved: $\int_{\PH} \dot{\mu}_t = 0$.
+
+{\bf here}\\
 
 So far, we have derived the microscopic, kinetic, equations regulating the 
 information transport across the quantum state space. In the next few sections, using
