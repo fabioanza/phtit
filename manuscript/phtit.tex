@@ -205,10 +205,10 @@ quantum theory, these techniques have also been adapted to include quantum fluct
 leading to improved descriptions of transport phenomena at the nanoscale.
  
 In this work, we explore the idea that these techniques can be used to understand how many-body 
-quantum systems move quantum information across its fundamental constituents, thus laying a bridge 
-between the field of quantum information and that of transport theories. The long-term goal we have in mind
-here is to have a comprehensive framework which addresses the interplay between non-equilibrium physical 
-properties of quantum systems and their information-theoretic features. Thus, here we provide a self-consistent 
+quantum systems move quantum information across its quantum state space, thus laying a bridge 
+between the field of quantum information processing in quantum systems and that of transport theories. 
+The long-term goal we have in mind here is to have a comprehensive framework to understand the flows
+of quantum information in out-of-equilibrium many-body quantum systems. Thus, here we provide a self-consistent 
 framework to track and model the transport of probability across a quantum state space. We do so by building 
 a kinetic theory of quantum state evolution, both in closed and open configurations.
 
@@ -220,13 +220,13 @@ canonically conjugated coordinates.
 
 The paper is organized as follows. In Section \ref{sec:GQM} we give a brief summary of 
 GQM, and of the tools introduced in \cite{Anza20a,Anza20b} to describe open quantum systems. 
-In Section \ref{sec:IT} we give our first result: a microscopic derivation of the continuity equation 
-for the information transport in quantum systems, with the appropriate microscopic definitions for 
-phenomenological quantities such as information flux and sink/sources. Section \ref{sec:DYN} contains 
-our second result: a general equation of motion for the probability distribution to find an open quantum 
-system in one of its pure states. In Sections \ref{sec:EXAMPLES1} and \ref{sec:EXAMPLES2} 
-we use the theoretical framework developed to analyze a few concrete examples, supported 
-by numerical analysis. Eventually, in Section \ref{sec:FINAL} we draw some conclusions. 
+In section \ref{sec:IT} we provide our first result: a microscopic derivation of the continuity equation 
+for the information transport in quantum systems, together with the appropriate microscopic definitions 
+for phenomenological quantities such as the information flux and sink/sources. Section \ref{sec:DYN} 
+deals with the kinetic aspects underlying the continuity equation and gives the second result: a general 
+set of kinetic equations regulating the transport of information. In Sections \ref{sec:EXAMPLES1} and \ref{sec:EXAMPLES2} 
+we use the theoretical framework developed in the previous two sections to analyze a few concrete examples, 
+supported by numerical analysis. Eventually, in Section \ref{sec:FINAL} we draw some conclusions. 
 
 
 %In the last fifty years we have witnessed an increasing use of
@@ -625,7 +625,7 @@ However, the core aspects of the derivation hold, leaving the final form of the 
 unaltered. In summary, the only difference between the three cases of finite, countably-infinite or uncountably-infinite
 environment will be that the support of the geometric quantum state will go from being a set of dimension zero (finite number
 of points), to a more generic set which, in some cases, can even have fractal dimension. For a thorough analysis
-of these situations we send the interested reader to Ref.\cite{AnzaC-Qidge}.
+of these situations we send the interested reader to Ref.\cite{Anza22}.
 
 Second, an aspect that we deem quite interesting here is that the proposed theoretical framework allows us to talk 
 about quantum information as a localized quantity, which is carried around in quantum state space. This is in analogy 
@@ -672,15 +672,16 @@ transport theories: it is not associated with particles moving around the state 
 as a divergence term, while still affecting the time-derivative of the quantity that is being transported---probability mass.
 
 
-\subsection{Isolated quantum systems}\label{subsec:IQS}
+\subsection*{Isolated quantum systems}\label{subsec:IQS}
 
-What happens when the system is closed? Is there a specific form for the information flux $J_t$ and source $\sigma_t$?
-Here we answer both these questions in a detailed manner. Since the evolution is Hamiltonian, we can 
-use Hamilton's equations of motion to derive the evolution equation of $\mu_t$ or, equivalently, of $q_t(Z)$.
+What happens when the system is closed? Do the information flux $J_t$ and source $\sigma_t$ have a specific form?
+Here we answer both these questions in a detailed manner. To ease the presentation of the results, in this subsection we will 
+assume that $\mu_t(dV_{FS})=q_t(Z)dV_{FS}$, where $q_t$ is an absolutely continuous probability density. Since the evolution is Hamiltonian, 
+we can use Hamilton's equations of motion to derive the evolution equation of $q_t$.
 First, the sink/sources terms vanishes, since the evolution is Hamiltonian, thus preserving the local probabilities.
 This supports the idea that a $\sigma_t \neq 0$ is related to the loss of information, and possibly to the existence of a 
 dissipative dynamics. Second, starting from the definition of the flux in Eq.(\ref{eq:flux}), we can explicitly write the form of the flux $J_t$, 
-using Hamilton's equations of motion. Writing $\Gamma_\alpha$ in canonical coordinates $(p_n(\Gamma_\alpha),\phi_n(\Gamma_\alpha))$, 
+using Hamilton's equations of motion. Writing $\Gamma_\alpha$ in canonical coordinates $(\vec{p}(\Gamma_\alpha),\vec{\phi}(\Gamma_\alpha))$, 
 we have 
 \begin{align}
 \dot{\Gamma}_\alpha & = \left( \frac{d\vec{p}}{dt}(\Gamma_\alpha), \frac{d\vec{\phi}}{dt}(\Gamma_\alpha)\right) \nonumber \\
@@ -690,7 +691,7 @@ Note how the definition of the flow in the right-hand side, $v_H$, does not depe
 $\Gamma_\alpha$ evolve according to the same (Hamiltonian) flow. Inserting this into the definition of the flux 
 we obtain that the flux is equal to the product between the distribution and the Hamiltonian velocity field $v_H$:
 \begin{equation}
-J_t = \mu_t v_H~,
+J_t = q_t v_H~,
 \end{equation}
 thus providing the following continuity equation:
 \begin{equation}
@@ -706,14 +707,11 @@ quantum system:
 \paragraph*{Liouville's theorem for GQM.} As a further point of contact with the techniques of classical 
 statistical mechanics and kinetic theory, we now show that a generic Hamiltonian dynamics for the 
 geometric quantum state satisfies Liouville's theorem \cite{Soto16}. Indeed, by writing explicitly the total 
-derivative of $q_t(Z)$ with respect to time we get 
-\begin{equation}
-\frac{d q}{d t} = \sum_\alpha \frac{\partial q_t}{\partial p_\alpha} \frac{dp_\alpha}{dt}+\frac{\partial q_t}{\partial \phi_\alpha} \frac{d\phi_\alpha}{dt} + \frac{\partial q_t}{\partial t}
-\end{equation}
-Inserting Hamilton's equations of motion (Eq. (\ref{eq:HAM_EOM})), and then using the continuity equation
+derivative of $q_t(Z)$ with respect to time, inserting Hamilton's equations of motion (Eq. (\ref{eq:HAM_EOM})) and then using the continuity equation we get
 \begin{align}
-\frac{d q}{d t} &= \sum_\alpha \frac{\partial q_t}{\partial p_\alpha} \frac{dp_\alpha}{dt}+\frac{\partial q_t}{\partial \phi_\alpha} \frac{d\phi_\alpha}{dt} + \frac{\partial q_t}{\partial t}\nonumber \\
-& = \left\{ q_t, E\right\} - \nabla \cdot q_t v_H = 0
+\frac{d q_t}{d t} &= \sum_\alpha \frac{\partial q_t}{\partial p_\alpha} \frac{dp_\alpha}{dt}+\frac{\partial q_t}{\partial \phi_\alpha} \frac{d\phi_\alpha}{dt} + \frac{\partial q_t}{\partial t} \nonumber\\
+& = \left\{ q_t, E\right\} - \nabla \cdot q_t v_H \nonumber \\
+& = 0
 \end{align}
 This concludes the section about the general approach, and the treatment of isolated quantum systems.
 We now turn to the more convoluted case of an open quantum system.
