@@ -794,9 +794,9 @@ and $\vec{\sigma}$ are the Pauli matrices. Thus, the generator of the geometric 
 &+ \sqrt{p(1-p)} \left(e^{i\phi}H_{01}+e^{-i\phi}H_{10} \right) \\
 & = \vec{B} \cdot \vec{S} \nonumber~,
 \end{align}
-where 
+where $\MV{\vec{m}}=\vec{S}(p,\phi)$:
 \begin{equation}
-\vec{S}= \MV{\vec{m}} = \frac{\hbar}{2}\left( 2\sqrt{p(1-p)}\cos \phi, 2\sqrt{p(1-p)}\sin \phi , p\right)\nonumber
+\vec{S}= \frac{\hbar}{2}\left( 2\sqrt{p(1-p)}\cos \phi, 2\sqrt{p(1-p)}\sin \phi , 1-2p\right)\nonumber
 \end{equation}
 
 \begin{figure*}[t!]
@@ -816,18 +816,13 @@ where
 	}
 \label{fig:gqs_dynamics3}
 \end{figure*}
-Since the evolution is Hamiltonian, there is no source or sink term, so the continuity equation is 
+Since the evolution is Hamiltonian $\sigma_t=0$ and the continuity equation is 
 \begin{equation}
 \frac{\partial f_t(p,\phi)}{\partial t} + \nabla \cdot J_t = 0~.
 \end{equation}
-The divergence operator can be computed, in arbitrary coordinates $\xi^j$, using the Voss-Weyl formula: 
-$\nabla \cdot \vec{V} = \frac{1}{\sqrt{\mathrm{det}g}} \frac{\partial}{\partial \xi^i} \left( \sqrt{\mathrm{det}g} g^{ij}\frac{\partial}{\partial \xi^j}\right) $
-
-{\bf HERE}\\
-
-
+The divergence operator can be computed, in arbitrary coordinates, using the Voss-Weyl formula: 
 \begin{equation}
-\frac{\partial f_t(p,\phi)}{\partial t} + \frac{\p J_t^p}{\p p} + \frac{\p J_t^{\phi}}{\p \phi} = 0~.
+\frac{\partial f_t(p,\phi)}{\partial t} + \frac{\p J_t^p \sqrt{p(1-p)}}{\p p} + \frac{1}{\sqrt{p(1-p)}}\frac{\p J_t^{\phi}}{\p \phi} = 0~.
 \end{equation}
 We now come to writing explicitly the flux $J_t = (J_t^p,J_t^{\phi})$. As argued above, 
 with Hamiltonian evolution the flux is the product between the Hamiltonian vector 
@@ -836,31 +831,29 @@ field $v_H$ and the geometric quantum state $f_t(p,\phi)$. Explicitly:
 J_t =  \frac{f_t(p,\phi)}{\hbar} \left(\frac{\p \mathcal{E}(p,\phi)}{\p \phi}, -\frac{\p \mathcal{E}(p,\phi)}{\p p}\right)
 \end{equation}
 Plugging this into the continuity equation and remembering that a Hamiltonian vector field is 
-divergence-free, we the following equation for $f_t(p,\phi)$
-\begin{equation}
-\frac{\partial f_t}{\partial t} + A(p,\phi) \frac{\partial f_t}{\partial p} + B(p,\phi) \frac{\partial f_t}{\partial \phi} = 0~,
-\end{equation}
-with $A(p,\phi) = \frac{1}{\hbar}\frac{\partial \mathcal{E}}{\partial \phi}$ and $B(p,\phi) = - \frac{1}{\hbar}\frac{\partial \mathcal{E}}{\partial p}$.
-Alternatively, using the poisson brackets, we get
+divergence-free leads to a partial differential equation for $f_t$. Alternatively, using the symplectic two-form, we get
 \begin{equation}
 \frac{\partial f_t}{\partial t} + \left\{ f_t, \mathcal{E}\right\} = 0
 \end{equation}
 Its solution is given by the propagator $P(t,t_0) = \mathrm{Exp}\left[ - (t-t_0)\left\{\mathcal{E}, \cdot \right\} \right]$.
-Since $\mathcal{E}= \vec{h} \cdot \vec{m}$ and, by using the algebra of poisson brackets,
-one can prove that $\vec{m} = \frac{\hbar}{2}\left( S_x(p,\phi),S_y(p,\phi),S_z(p,\phi)\right)$ are the generators of $SO(3)$:
+Since $\mathcal{E}= \vec{B} \cdot \vec{S}$ and, by using the algebra of poisson brackets,
+one can prove that $\vec{S} = \frac{\hbar}{2}\left( S_x(p,\phi),S_y(p,\phi),S_z(p,\phi)\right)$ are the generators of $SO(3)$:
 \begin{equation}
-\left\{ m_a, m_b\right\} = \epsilon_{abc} m_c~,
+\left\{ S_a, S_b\right\} = \epsilon_{abc} S_c~,
 \end{equation}
  here we recognize that the propagator $P(t,t_0)$ implements a 3D rotation of the generic 
-expectation value $\vec{m}(t)$ around the axis $\vec{B}$, with angle $||\vec{B}||(t - t_0)$. 
+expectation value $\vec{S}(t)$ around the axis $\vec{B}$, with angle $||\vec{B}||(t - t_0)$. 
 In more physics-agnostic terms, this is a linear, first-order, partial differential equation, which can be solved 
 in full generality by using the method of the characteristics. Here we simplify the treatment 
 by switching to coordinates aligned to the convenient basis in which the Hamiltonian 
 is diagonal. This leads to
 \begin{equation}
-\frac{\partial f_t}{\partial t} - \omega \frac{\partial f_t}{\partial \phi} = 0~,
+\frac{\partial f_t}{\partial t} + \frac{\omega}{\sqrt{p(1-p)}} \frac{\partial f_t}{\partial \phi} = 0~,
 \end{equation}
-where $\omega = \frac{E_1 - E_0}{\hbar}$. This is equivalent to the transport 
+where $\omega = \frac{E_1 - E_0}{\hbar}$. This is very similar to an advection equation in which the speed of 
+propagation along $\phi$ depends on $p$. \\
+
+Equivalent to the transport 
 equation for advection, or heat equation, which leads to the analytical solution for the 
 time-dependent geometric quantum state: $f_t(p,\phi) = f_0(p,\phi+\omega t)$, for any 
 valid initial distribution $f_0(p,\phi)$.
