@@ -593,9 +593,8 @@ quantum system interacting with a finite-dimensional environment:
 \begin{equation}
 \dot{\mu}_t + \nabla \cdot J_t = \sigma_t\label{eq:continuity}
 \end{equation}
-This is our first and most important result. It is the central tool which regulates 
-how quantum information is scrambled around the state space, due to the interaction between a 
-system and its environment. 
+This is our first and most important result. It is the central tool which describes, in a phenomenologically
+meaningful way, how quantum information is spread around the state space, due to the underlying dynamics.
 
 Before we move on and use the equation to study the flow of quantum information in some concrete
 systems, a few comments about general validity of the equation, and the physical interpretation of each of
@@ -672,28 +671,41 @@ transport theories: it is not associated with particles moving around the state 
 as a divergence term, while still affecting the time-derivative of the quantity that is being transported---probability mass.
 
 
-\subsection*{Isolated quantum systems}\label{subsec:IQS}
 
-What happens when the system is closed? Do the information flux $J_t$ and source $\sigma_t$ have a specific form?
-Here we answer both these questions in a detailed manner. To ease the presentation of the results, in this subsection we will 
-assume that $\mu_t(dV_{FS})=q_t(Z)dV_{FS}$, where $q_t$ is an absolutely continuous probability density. Since the system
-is isolated we have $\dot{x}_\alpha = 0$. This can be seen from the definitions $U_S(t) \otimes \mathbb{I}_E  \ket{\psi_{SE}} = U_S(t) \otimes \mathbb{I}_E  \sum_\alpha \sqrt{x_\alpha} \ket{\chi_\alpha}\ket{e_\alpha} = \sum_\alpha \sqrt{x_\alpha} \ket{\chi_\alpha(t)}\ket{e_\alpha}$, where $\ket{\chi_\alpha(t)} = U_S(t) \ket{\chi_\alpha}$. This proves that 
-the sink/source term vanishes: the evolution is Hamiltonian, thus preserving the local probabilities and the shape of the geometric quantum state.
-This supports the idea that $\sigma_t \neq 0$ is related to the loss or gain of information and, likely, to a dissipative dynamics. 
-Second, starting from the definition of the flux in Eq.(\ref{eq:flux}), we can explicitly write the form of the flux $J_t$, 
-using Hamilton's equations of motion. Writing $\Gamma_\alpha$ in canonical coordinates $(\vec{p}(\Gamma_\alpha),\vec{\phi}(\Gamma_\alpha))$, 
+
+\section*{Example 1: Isolated quantum systems}\label{subsec:IQS}
+
+As first use-case, here we describe the flow of quantum information when our system of interest is
+isolated. Indeed, in this case both $J_t$ and $\sigma_t$ assume a generic form, which can be characterized
+in full generality. To ease the exposition of the results, in this subsection we will assume that $\mu_t(dV_{FS})=q_t(Z)dV_{FS}$, 
+where $q_t$ is an absolutely continuous probability density. The results do not depend on this choice. 
+
+The first task at hand is to find the kinetic equations which regulate the evolution of $q_t$, namely $\dot{x}_\alpha$ and $\dot{\Gamma}_\alpha$.
+To find these equations we can simply look at the unitary of the global $\ket{\psi_{SE}}$: 
+\begin{align}
+\ket{\psi_{SE}(t)} &= \sum_\alpha \sqrt{x_\alpha(t)}\ket{\chi_\alpha(t)}\ket{e_\alpha} \nonumber \\
+&= U_S(t) \otimes \mathbb{I}_E  \ket{\psi_{SE}(0)} \nonumber \\
+&= U_S(t) \otimes \mathbb{I}_E  \sum_\alpha \sqrt{x_\alpha} \ket{\chi_\alpha}\ket{e_\alpha} \nonumber \\
+& = \sum_\alpha \sqrt{x_\alpha(0)} \ket{\chi_\alpha(t)}\ket{e_\alpha}
+\end{align}
+Two features are relevant here. First, $x_\alpha(t)=x_\alpha(0)$, leading to $\dot{x}_\alpha=0$. In turn, this leads to $\sigma_t=0$:
+This supports the idea that $\sigma_t \neq 0$ is related to the loss or gain of information and, likely, to a dissipative dynamics
+resulting from the interaction of our system with an environment. Second, $\ket{\chi_\alpha(t)}=U_S(t)\ket{\chi_\alpha(0)}$. This
+means all elements $\Gamma_\alpha(t)$ of the support of $q_t$ evolve rigidly, according to the same equation. Indeed, starting from the 
+definition of the flux in Eq.(\ref{eq:flux}), we can explicitly write the form of the flux $J_t$, 
+using Hamilton's equations of motion. Writing $\Gamma_\alpha$ in canonical coordinates and with the following vector notation $\Gamma_\alpha = (\vec{p}(\Gamma_\alpha),\vec{\phi}(\Gamma_\alpha)) = (\vec{p}_\alpha,\vec{\phi}_\alpha)$, 
 we have 
 \begin{align}
-\dot{\Gamma}_\alpha & = \left( \frac{d\vec{p}}{dt}(\Gamma_\alpha), \frac{d\vec{\phi}}{dt}(\Gamma_\alpha)\right) \nonumber \\
-& = \left( \frac{1}{\hbar}\frac{\partial E}{\partial \vec{\phi}}, -\frac{1}{\hbar}\frac{\partial E}{\partial \vec{p}}  \right) = v_H(\vec{p}(\Gamma_\alpha),\vec{\phi}(\Gamma_\alpha))
+\dot{\Gamma}_\alpha & = \left( \frac{d\vec{p}_\alpha}{dt}, \frac{d\vec{\phi}_\alpha}{dt}\right) \nonumber \\
+& = \left.\left( \frac{1}{\hbar}\frac{\partial E}{\partial \vec{\phi}}\right\vert_{\Gamma_\alpha}, \left.-\frac{1}{\hbar}\frac{\partial E}{\partial \vec{p}}\right\vert_{\Gamma_\alpha}  \right) = v_H(\vec{p}_\alpha,\vec{\phi}_\alpha)
 \end{align}
-Note how the flow in the right-hand side, $v_H$, does not depend on the index $\alpha$: all 
+Note how the flow, $v_H$, does not depend on the index $\alpha$: all 
 $\Gamma_\alpha$ evolve according to the same (Hamiltonian) flow. Inserting this into the definition of $J_t$ 
 we obtain
 \begin{equation}
 J_t = q_t v_H~,
 \end{equation}
-thus providing the following continuity equation:
+leading to the following continuity equation:
 \begin{equation}
 \frac{\partial q_t}{\partial t} = - v_H \cdot \nabla q_t - q_t \, \nabla \cdot v_H
 \end{equation}
@@ -707,6 +719,8 @@ quantum system:
 This is a convection equation, typically used to describe an incompressible fluid with zero mass diffusivity, 
 as dilute gases at very low temperatures. We will come back to this point later, when discussing the physical 
 interpretation of our results.
+
+%the evolution is Hamiltonian, thus preserving the local probabilities and the shape of the geometric quantum state. 
 
 
 %Here the parallel with ordinary transport theories is made plain: unitary evolution 
@@ -723,147 +737,11 @@ derivative of $q_t(Z)$ with respect to time, inserting Hamilton's equations of m
 & = \left\{ q_t, E\right\} - \nabla \cdot q_t v_H \nonumber \\
 & = 0
 \end{align}
-The treatment of isolated quantum systems concludes the section about the general features of this
-new framework. We now turn to the case of an open quantum system.
 
-%\subsection*{Discussion}
+Before we turn to the general case of an open quantum system, we now discuss in detail the example
+of the evolution of the simplest isolated system: a qubit.
 
-%
-%\begin{itemize}
-%\item This kind of hamiltonian dynamics is more restrictive than a generic classical Hamiltonian dynamics: No chaos allowed, as the distance between points is constant.
-%\item Hence, we can concot Hamiltonian dynamics that violate this condition, possibly to give us quantum chaos.
-%\item Equilibrium ($J=\sigma=0$) and non-equilibrium stationary states.
-%\item Coupled Schroedinger equations
-%\end{itemize}
-
-
-%Upon unitary evolution the distribution remains 
-%a Dirac delta, but 
-%the point such state is concentrated on changes over time. For example, in the case of a 
-%qubit we have coordinates $Z^0 = \sqrt{1-p}$ and $Z^1 = \sqrt{p}e^{i\phi}$. Hence we only 
-%have a pair of independent canonically conjugated coordinates $(p,\phi)$. If the qubit is 
-%isolated, with Hamiltonian $H = E_0 \ket{E_0}\bra{E_0} + E_1 \ket{E_1}\bra{E_1}$, we 
-%can choose as a basis the Hamiltonian eigenstates and its evolution is simply written.
-%Indeed, with this choice of coordinates we have $E(p,\phi) = E_0 + (E_1-E_0)p = E(p)$.
-%Using Hamilton equations of motion (see Eq.\ref{eq:HAM_EOM}) we can see that $p$
-%is preserved, $\dot{p} = \frac{1}{\hbar}\frac{\partial E}{\p \phi}=0$ and that $\phi$ is a cyclical
-%coordinate $\dot{\phi} = - \frac{1}{\hbar} \frac{\partial E}{\partial p} = - \frac{E_0 - E_1}{\hbar}$, 
-%giving $\phi(t) = \phi(t_0) - \frac{E_1-E_0}{\hbar}(t-t_0)$. This is easily generalized to
-%the case of a generic Hilbert space, in which $p_\alpha$ are preserved and 
-%$\phi_\alpha(t) = \phi_\alpha(t_0) - \frac{E_\alpha - E_0}{\hbar}(t-t_0)$. In a general coordinate
-%system this means $q_t(Z) = \tilde{\delta}\left( Z - Z_t\right)$. 
-
-%Unitary evolution do not spread information around the state space, but keep it localized, while
-%moving around support of the distribution. 
-
-
-
-\section{Kinetic equations of information transport in open quantum systems}
-\label{sec:DYN}
-
-As we move to analyze how open quantum systems scramble information around the
-quantum state space, the goal of this section is to provide a microscopic approach
-to the transport of information: a kinetic theory of how the probability mass of finding our system 
-in a region of its quantum state space changes as a result of its interaction with a structured, non-thermal,
-environment. The main outcome of this section is a concrete set of microscopic equations that determines
-the evolution of the geometric quantum state of an open quantum system.
-
-Calling $H_S$ and $H_E$ the Hamiltonian operators of the system and environment, respectively, 
-the total Hamiltonian of the joint system is $H = H_S + H_E + H_{\mathrm{int}}$. Since $H_{\mathrm{int}}$
-is the interaction term between system and environment, we can always put it in the form
-\begin{equation}
-H_{\mathrm{int}} = \sum_{k=1}^M A^{(k)} \otimes B^{(k)}~,
-\end{equation}
-where $A^{(k)}$ and $B^{(k)}$ are operators with support on $\mathcal{H}_S$ and $\mathcal{H}_E$,
-respectively. With a slight abuse of notation we will often conflate $A^{(k)}$ with $A^{(k)}\otimes \mathbb{I}_E$
-and $B^{(k)}$ with $\mathbb{I}_S \otimes B^{(k)}$, where $\mathbb{I}_S$ and $\mathbb{I}_E$ are, respectively,
-the identity operator on $\mathcal{H}_{S}$ and $\mathcal{H}_E$.
-Here we do not impose a specific choice for the basis of the system and environment. While a natural one
-is the bases that diagonalize the non-interacting Hamiltonians $H_S$ and $H_E$, there are cases
-where a different choice is more appropriate. For example, in the case of a spin-$1/2$ chain one might be interested 
-in using the computational basis. Thus, we keep things general and use a generic basis, with no particular 
-properties with respect to the algebra of observables: $\left\{ \ket{a_j}\right\}_{j=0}^{d_S}$ and $\left\{ \ket{b_\alpha}\right\}_{\alpha=0}^{d_E-1}$.
-
-Since the goal is to derive a dynamic equation for $\left\{x_\alpha(t) \right\}$ and $\left\{\Gamma_\alpha(t)\right\}$,
-we begin with the overall Schroedinger equation for the pure state $\ket{\psi(t)}$ of the joint system+environment, written
-in the generic tensor product basis defined above, with $\psi_{j\alpha}(t) = \braket{a_j,e_\alpha}{\psi(t)}$:
-\begin{equation}
-i\hbar \frac{d \psi_{j\alpha}(t)}{dt} = \sum_{k,\beta} H_{j\alpha;k\beta} \psi_{k\beta}(t)~,
-\end{equation}
-where
-\begin{align}
-H_{j\alpha;k\beta} &\coloneqq \bra{a_j,b_\alpha} H \ket{a_k,b_\beta}\\
-&= \left(H_S\right)_{jk}\delta_{\alpha \beta} + \delta_{jk} \left(H_E\right)_{\alpha \beta} + \sum_{n=1}^M A_{jk}^{(n)} B^{(n)}_{\alpha \beta}~.\nonumber 
-\end{align}
-We now collect the probability $x_\alpha(t)$ and the states $\ket{\chi_\alpha(t)}$ into
-a single quantity: a non-normalized ket $\ket{\Phi_\alpha(t)} \coloneqq \sqrt{x_\alpha}\ket{\chi_\alpha} \in \mathcal{H}_S$.
-By plugging Schroedinger's equation into the time-derivative of $\ket{\Phi_\alpha(t)}$ we get the following set of $d_E$
-coupled linear equations:
-\begin{equation}
-i\hbar \frac{d \ket{\Phi_\alpha}}{dt} = H_S \ket{\Phi_\alpha} + \sum_{\beta} \left( H_E\right)_{\alpha\beta}\ket{\Phi_\beta} + \hat{M}_{\alpha \beta}\ket{\Phi_\beta}~,
-\end{equation}
-where $\hat{M}_{\alpha\beta}$ is a set of operators acting on the system, defined as 
-\begin{equation}
-\hat{M}_{\alpha \beta} \coloneqq \sum_{k=1}^M B^{(k)}_{\alpha\beta} A^{(k)}
-\end{equation}
-This can be further manipulated to separate the non-interacting part, acting on each vector $\ket{\Phi_\alpha}$, 
-from the interacting part, acting on $\ket{\Phi_\beta}\neq \ket{\Phi_\alpha}$. The final form of our kinetic equation is
-\begin{equation}
-i\hbar \frac{d \ket{\Phi_\alpha}}{dt} = \hat{H}_\alpha \ket{\Phi_\alpha} + \sum_{\beta \neq \alpha} \hat{V}_{\alpha \beta}\ket{\Phi_\beta}~,\label{eq:kinetic}
-\end{equation}
-where the single-particle Hamiltonian is $\hat{H}_\alpha$ is
-\begin{equation}
-\hat{H}_\alpha \coloneqq H_S + \left( H_E\right)_{\alpha \alpha} \mathbb{I}_S + \sum_{k=1}^M B^{(k)}_{\alpha \alpha}A^{(k)}~,\label{ed:def_Halpha}
-\end{equation}
-and the interaction between particles is vehiculated by the set of operators $\hat{V}_{\alpha \beta}$
-\begin{equation}
-\hat{V}_{\alpha \beta} \coloneqq \left( H_E\right)_{\alpha \beta} \mathbb{I}_S + \sum_{k=1}^M B^{(k)}_{\alpha \beta} A^{(k)}~.\label{ed:def_V}
-\end{equation}
-The remaining step is to connect this with the quantities that determine the geometric quantum state of the system: $x_\alpha$ and $\Gamma_\alpha$.
-This is easily done by using the original definition $\ket{\Phi_\alpha} = \sqrt{x_\alpha} \ket{\chi_\alpha}$. Since $\Gamma_\alpha(t) \leftrightarrow \ket{\chi_\alpha}$,
-we have $\Gamma^j_\alpha(t) = \frac{\braket{a_j}{\Phi_\alpha(t)}}{\sqrt{x_\alpha(t)}}$ and $x_\alpha(t) = \braket{\Phi_\alpha(t)}{\Phi_\alpha(t)}$. 
-
-%we can also derive the evolution equation for $x_\alpha(t)$ by using Eq.(\ref{eq:kinetic}):
-%\begin{equation}
-%\frac{dx_\alpha}{dt} = \frac{d}{dt}\braket{\Phi_\alpha}{\Phi_\alpha} = \frac{2}{\hbar} \sum_\beta \mathrm{Im} \left[ \bra{\Phi_\alpha}\hat{V}_{\alpha \beta}\ket{\Phi_\beta}\right]~.
-%\end{equation}
-
-%Here we can see that the evolution of $x_\alpha$ is dictated only by the interaction $\hat{V}_{\alpha \beta}$.
-
-Thus, Equation (\ref{eq:kinetic}) provides a way to describe the dynamics of an open 
-quantum system as a set of $d_E$ linear, coupled, differential equations, for the 
-geometric quantum state $\mu_t$: they provide evolution equations for $x_\alpha$ and $\Gamma_\alpha$
-which, by definition, satisfy the continuity equation in Eq.(\ref{eq:continuity}). By numerically
-simulating the globally unitary evolution, we can therefore access and study both
-phenomenological terms in the continuity equation: the information flux $J_t$ and
-the sink/source term $\sigma_t$.
-
-
-It is worth noting that the emergence of this set of coupled equations reinforces the 
-interpretation of $\Gamma_\alpha(t)$ as behaving as ``particle-like'', with their own local 
-notion of energy, represented by $H_\alpha$ and their pair-wise interaction $\hat{V}_{\alpha \beta}$. 
-While not treated here, by using the approach developed in Ref.\cite{Anza20a} these 
-results can be extended to include finite-systems interacting with infinite-dimensional environments.
-
-As a self-consistency check, we note that the preservation of information within the 
-quantum state space of the system is inherited by the unitarity of the global evolution. 
-This is manifested in the relations $\hat{H}_\alpha^\dagger = \hat{H}_\alpha$ and 
-$\hat{V}_{\alpha \beta}^{\dagger} = \hat{V}_{\beta \alpha}$, which can be 
-easily proven from the definitions above, implying that 
-probability is globally conserved: $\int_{\PH} \dot{\mu}_t = 0$.
-
-{\bf here}\\
-
-So far, we have derived the microscopic, kinetic, equations regulating the 
-information transport across the quantum state space. In the next few sections, using
-both analytical and numerical approaches, we explore the theoretical framework developed
-so far to look at the phenomenology of information transport in concrete physical systems. 
-In particular, in our examples we look at the information transport in the state 
-space of a qubit, both in isolated and open configurations. This choice is made 
-to support the theoretical calculations with visual representations, both of which 
-are simpler in the case of a qubit.
-
-\section{System 1: Isolated qubit}
+\subsection*{Isolated qubit}
 \label{sec:EXAMPLES1}
 
 
@@ -1026,6 +904,146 @@ that this goes beyond the assumption of a time-independent Hamiltonian.
 Even with time-dependent Hamiltonian, this aspect of the isolated evolution
 of a qubit still holds true, thus confirming that a unitary evolution might not be
 the most general Hamiltonian evolution that can occur in a quantum state space.
+
+
+
+%\subsection*{Discussion}
+
+%
+%\begin{itemize}
+%\item This kind of hamiltonian dynamics is more restrictive than a generic classical Hamiltonian dynamics: No chaos allowed, as the distance between points is constant.
+%\item Hence, we can concot Hamiltonian dynamics that violate this condition, possibly to give us quantum chaos.
+%\item Equilibrium ($J=\sigma=0$) and non-equilibrium stationary states.
+%\item Coupled Schroedinger equations
+%\end{itemize}
+
+
+%Upon unitary evolution the distribution remains 
+%a Dirac delta, but 
+%the point such state is concentrated on changes over time. For example, in the case of a 
+%qubit we have coordinates $Z^0 = \sqrt{1-p}$ and $Z^1 = \sqrt{p}e^{i\phi}$. Hence we only 
+%have a pair of independent canonically conjugated coordinates $(p,\phi)$. If the qubit is 
+%isolated, with Hamiltonian $H = E_0 \ket{E_0}\bra{E_0} + E_1 \ket{E_1}\bra{E_1}$, we 
+%can choose as a basis the Hamiltonian eigenstates and its evolution is simply written.
+%Indeed, with this choice of coordinates we have $E(p,\phi) = E_0 + (E_1-E_0)p = E(p)$.
+%Using Hamilton equations of motion (see Eq.\ref{eq:HAM_EOM}) we can see that $p$
+%is preserved, $\dot{p} = \frac{1}{\hbar}\frac{\partial E}{\p \phi}=0$ and that $\phi$ is a cyclical
+%coordinate $\dot{\phi} = - \frac{1}{\hbar} \frac{\partial E}{\partial p} = - \frac{E_0 - E_1}{\hbar}$, 
+%giving $\phi(t) = \phi(t_0) - \frac{E_1-E_0}{\hbar}(t-t_0)$. This is easily generalized to
+%the case of a generic Hilbert space, in which $p_\alpha$ are preserved and 
+%$\phi_\alpha(t) = \phi_\alpha(t_0) - \frac{E_\alpha - E_0}{\hbar}(t-t_0)$. In a general coordinate
+%system this means $q_t(Z) = \tilde{\delta}\left( Z - Z_t\right)$. 
+
+%Unitary evolution do not spread information around the state space, but keep it localized, while
+%moving around support of the distribution. 
+
+
+
+\section{Kinetic equations of information transport in open quantum systems}
+\label{sec:DYN}
+
+As we move to analyze how open quantum systems scramble information around the
+quantum state space, the goal of this section is to provide a microscopic approach
+to the transport of information: a kinetic theory of how the probability mass of finding our system 
+in a region of its quantum state space changes as a result of its interaction with a structured, non-thermal,
+environment. The main outcome of this section is a concrete set of microscopic equations that determines
+the evolution of the geometric quantum state of an open quantum system.
+
+Calling $H_S$ and $H_E$ the Hamiltonian operators of the system and environment, respectively, 
+the total Hamiltonian of the joint system is $H = H_S + H_E + H_{\mathrm{int}}$. Since $H_{\mathrm{int}}$
+is the interaction term between system and environment, we can always put it in the form
+\begin{equation}
+H_{\mathrm{int}} = \sum_{k=1}^M A^{(k)} \otimes B^{(k)}~,
+\end{equation}
+where $A^{(k)}$ and $B^{(k)}$ are operators with support on $\mathcal{H}_S$ and $\mathcal{H}_E$,
+respectively. With a slight abuse of notation we will often conflate $A^{(k)}$ with $A^{(k)}\otimes \mathbb{I}_E$
+and $B^{(k)}$ with $\mathbb{I}_S \otimes B^{(k)}$, where $\mathbb{I}_S$ and $\mathbb{I}_E$ are, respectively,
+the identity operator on $\mathcal{H}_{S}$ and $\mathcal{H}_E$.
+Here we do not impose a specific choice for the basis of the system and environment. While a natural one
+is the bases that diagonalize the non-interacting Hamiltonians $H_S$ and $H_E$, there are cases
+where a different choice is more appropriate. For example, in the case of a spin-$1/2$ chain one might be interested 
+in using the computational basis. Thus, we keep things general and use a generic basis, with no particular 
+properties with respect to the algebra of observables: $\left\{ \ket{a_j}\right\}_{j=0}^{d_S}$ and $\left\{ \ket{b_\alpha}\right\}_{\alpha=0}^{d_E-1}$.
+
+Since the goal is to derive a dynamic equation for $\left\{x_\alpha(t) \right\}$ and $\left\{\Gamma_\alpha(t)\right\}$,
+we begin with the overall Schroedinger equation for the pure state $\ket{\psi(t)}$ of the joint system+environment, written
+in the generic tensor product basis defined above, with $\psi_{j\alpha}(t) = \braket{a_j,e_\alpha}{\psi(t)}$:
+\begin{equation}
+i\hbar \frac{d \psi_{j\alpha}(t)}{dt} = \sum_{k,\beta} H_{j\alpha;k\beta} \psi_{k\beta}(t)~,
+\end{equation}
+where
+\begin{align}
+H_{j\alpha;k\beta} &\coloneqq \bra{a_j,b_\alpha} H \ket{a_k,b_\beta}\\
+&= \left(H_S\right)_{jk}\delta_{\alpha \beta} + \delta_{jk} \left(H_E\right)_{\alpha \beta} + \sum_{n=1}^M A_{jk}^{(n)} B^{(n)}_{\alpha \beta}~.\nonumber 
+\end{align}
+We now collect the probability $x_\alpha(t)$ and the states $\ket{\chi_\alpha(t)}$ into
+a single quantity: a non-normalized ket $\ket{\Phi_\alpha(t)} \coloneqq \sqrt{x_\alpha}\ket{\chi_\alpha} \in \mathcal{H}_S$.
+By plugging Schroedinger's equation into the time-derivative of $\ket{\Phi_\alpha(t)}$ we get the following set of $d_E$
+coupled linear equations:
+\begin{equation}
+i\hbar \frac{d \ket{\Phi_\alpha}}{dt} = H_S \ket{\Phi_\alpha} + \sum_{\beta} \left( H_E\right)_{\alpha\beta}\ket{\Phi_\beta} + \hat{M}_{\alpha \beta}\ket{\Phi_\beta}~,
+\end{equation}
+where $\hat{M}_{\alpha\beta}$ is a set of operators acting on the system, defined as 
+\begin{equation}
+\hat{M}_{\alpha \beta} \coloneqq \sum_{k=1}^M B^{(k)}_{\alpha\beta} A^{(k)}
+\end{equation}
+This can be further manipulated to separate the non-interacting part, acting on each vector $\ket{\Phi_\alpha}$, 
+from the interacting part, acting on $\ket{\Phi_\beta}\neq \ket{\Phi_\alpha}$. The final form of our kinetic equation is
+\begin{equation}
+i\hbar \frac{d \ket{\Phi_\alpha}}{dt} = \hat{H}_\alpha \ket{\Phi_\alpha} + \sum_{\beta \neq \alpha} \hat{V}_{\alpha \beta}\ket{\Phi_\beta}~,\label{eq:kinetic}
+\end{equation}
+where the single-particle Hamiltonian is $\hat{H}_\alpha$ is
+\begin{equation}
+\hat{H}_\alpha \coloneqq H_S + \left( H_E\right)_{\alpha \alpha} \mathbb{I}_S + \sum_{k=1}^M B^{(k)}_{\alpha \alpha}A^{(k)}~,\label{ed:def_Halpha}
+\end{equation}
+and the interaction between particles is vehiculated by the set of operators $\hat{V}_{\alpha \beta}$
+\begin{equation}
+\hat{V}_{\alpha \beta} \coloneqq \left( H_E\right)_{\alpha \beta} \mathbb{I}_S + \sum_{k=1}^M B^{(k)}_{\alpha \beta} A^{(k)}~.\label{ed:def_V}
+\end{equation}
+The remaining step is to connect this with the quantities that determine the geometric quantum state of the system: $x_\alpha$ and $\Gamma_\alpha$.
+This is easily done by using the original definition $\ket{\Phi_\alpha} = \sqrt{x_\alpha} \ket{\chi_\alpha}$. Since $\Gamma_\alpha(t) \leftrightarrow \ket{\chi_\alpha}$,
+we have $\Gamma^j_\alpha(t) = \frac{\braket{a_j}{\Phi_\alpha(t)}}{\sqrt{x_\alpha(t)}}$ and $x_\alpha(t) = \braket{\Phi_\alpha(t)}{\Phi_\alpha(t)}$. 
+
+%we can also derive the evolution equation for $x_\alpha(t)$ by using Eq.(\ref{eq:kinetic}):
+%\begin{equation}
+%\frac{dx_\alpha}{dt} = \frac{d}{dt}\braket{\Phi_\alpha}{\Phi_\alpha} = \frac{2}{\hbar} \sum_\beta \mathrm{Im} \left[ \bra{\Phi_\alpha}\hat{V}_{\alpha \beta}\ket{\Phi_\beta}\right]~.
+%\end{equation}
+
+%Here we can see that the evolution of $x_\alpha$ is dictated only by the interaction $\hat{V}_{\alpha \beta}$.
+
+Thus, Equation (\ref{eq:kinetic}) provides a way to describe the dynamics of an open 
+quantum system as a set of $d_E$ linear, coupled, differential equations, for the 
+geometric quantum state $\mu_t$: they provide evolution equations for $x_\alpha$ and $\Gamma_\alpha$
+which, by definition, satisfy the continuity equation in Eq.(\ref{eq:continuity}). By numerically
+simulating the globally unitary evolution, we can therefore access and study both
+phenomenological terms in the continuity equation: the information flux $J_t$ and
+the sink/source term $\sigma_t$.
+
+
+It is worth noting that the emergence of this set of coupled equations reinforces the 
+interpretation of $\Gamma_\alpha(t)$ as behaving as ``particle-like'', with their own local 
+notion of energy, represented by $H_\alpha$ and their pair-wise interaction $\hat{V}_{\alpha \beta}$. 
+While not treated here, by using the approach developed in Ref.\cite{Anza20a} these 
+results can be extended to include finite-systems interacting with infinite-dimensional environments.
+
+As a self-consistency check, we note that the preservation of information within the 
+quantum state space of the system is inherited by the unitarity of the global evolution. 
+This is manifested in the relations $\hat{H}_\alpha^\dagger = \hat{H}_\alpha$ and 
+$\hat{V}_{\alpha \beta}^{\dagger} = \hat{V}_{\beta \alpha}$, which can be 
+easily proven from the definitions above, implying that 
+probability is globally conserved: $\int_{\PH} \dot{\mu}_t = 0$.
+
+{\bf here}\\
+
+So far, we have derived the microscopic, kinetic, equations regulating the 
+information transport across the quantum state space. In the next few sections, using
+both analytical and numerical approaches, we explore the theoretical framework developed
+so far to look at the phenomenology of information transport in concrete physical systems. 
+In particular, in our examples we look at the information transport in the state 
+space of a qubit, both in isolated and open configurations. This choice is made 
+to support the theoretical calculations with visual representations, both of which 
+are simpler in the case of a qubit.
+
 
 \section{System 2: Qubit in Ising environment}
 \label{sec:EXAMPLES2}
