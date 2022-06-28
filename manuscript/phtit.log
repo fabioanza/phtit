@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  28 JUN 2022 11:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  28 JUN 2022 11:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1990,22 +1990,22 @@ Underfull \hbox (badness 1205) in paragraph at lines 619--629
  []
 
 [5 <./img/Flux.pdf> <./img/Source.pdf>] [6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 845--846
+Underfull \hbox (badness 10000) in paragraph at lines 855--856
 
  []
 
 <./img/gqs_dynamics2.pdf, id=1152, 1927.2pt x 1084.05pt>
 File: ./img/gqs_dynamics2.pdf Graphic file (type pdf)
 <use ./img/gqs_dynamics2.pdf>
-Package pdftex.def Info: ./img/gqs_dynamics2.pdf  used on input line 862.
+Package pdftex.def Info: ./img/gqs_dynamics2.pdf  used on input line 872.
 (pdftex.def)             Requested size: 458.99689pt x 258.17583pt.
 <./img/gqs_dynamics3.pdf, id=1153, 1927.2pt x 1084.05pt>
 File: ./img/gqs_dynamics3.pdf Graphic file (type pdf)
 <use ./img/gqs_dynamics3.pdf>
-Package pdftex.def Info: ./img/gqs_dynamics3.pdf  used on input line 916.
+Package pdftex.def Info: ./img/gqs_dynamics3.pdf  used on input line 926.
 (pdftex.def)             Requested size: 458.99689pt x 258.17583pt.
 [8]
-Underfull \hbox (badness 1152) in paragraph at lines 955--959
+Underfull \hbox (badness 1152) in paragraph at lines 965--969
 \T1/lmr/m/n/10 Its so-lu-tion is given by the prop-a-ga-tor $\OML/lmm/m/it/10 P
 \OT1/lmr/m/n/10 (\OML/lmm/m/it/10 t; t[]\OT1/lmr/m/n/10 ) =
  []
@@ -2013,19 +2013,19 @@ Underfull \hbox (badness 1152) in paragraph at lines 955--959
 <./img/summary.pdf, id=1158, 1927.2pt x 1084.05pt>
 File: ./img/summary.pdf Graphic file (type pdf)
 <use ./img/summary.pdf>
-Package pdftex.def Info: ./img/summary.pdf  used on input line 979.
+Package pdftex.def Info: ./img/summary.pdf  used on input line 989.
 (pdftex.def)             Requested size: 458.99689pt x 258.17583pt.
 [9 <./img/gqs_dynamics2.pdf>] [10 <./img/gqs_dynamics3.pdf>] [11 <./img/summary
 .pdf>]
 <./img/mu_average.pdf, id=1372, 909.43285pt x 890.89067pt>
 File: ./img/mu_average.pdf Graphic file (type pdf)
 <use ./img/mu_average.pdf>
-Package pdftex.def Info: ./img/mu_average.pdf  used on input line 1139.
+Package pdftex.def Info: ./img/mu_average.pdf  used on input line 1149.
 (pdftex.def)             Requested size: 153.00156pt x 149.87251pt.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 7.20001pt on input line 1160.
+(Font)              scaled to size 7.20001pt on input line 1170.
  [12 <./img/mu_average.pdf>] [13]
-Underfull \hbox (badness 1303) in paragraph at lines 1251--1256
+Underfull \hbox (badness 1303) in paragraph at lines 1261--1266
 []\T1/lmr/m/n/10 We thank James Crutch-field, David Gier, Ari-adna
  []
 
@@ -2041,21 +2041,21 @@ FiXme Summary: Number of notes: 0,
 (FiXme)        Number of fatal errors: 0,
 (FiXme)        Total: 0.
 
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1260.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1270.
 [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1260.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1270.
  (./phtit.aux)
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1260.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1270.
 
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 55829 strings out of 492616
- 1231319 string characters out of 6129482
+ 55830 strings out of 492616
+ 1231329 string characters out of 6129482
  1456338 words of memory out of 5000000
- 58835 multiletter control sequences out of 15000+600000
+ 58836 multiletter control sequences out of 15000+600000
  637690 words of font info for 119 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  85i,12n,138p,1261b,824s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2089,7 +2089,7 @@ live/2019/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2019/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/20
 19/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb></usr/local/texlive
 /2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on phtit.pdf (14 pages, 35953631 bytes).
+Output written on phtit.pdf (14 pages, 35954162 bytes).
 PDF statistics:
  1497 PDF objects out of 1728 (max. 8388607)
  970 compressed objects within 10 object streams

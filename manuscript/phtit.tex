@@ -676,20 +676,20 @@ as a divergence term, while still affecting the time-derivative of the quantity 
 
 What happens when the system is closed? Do the information flux $J_t$ and source $\sigma_t$ have a specific form?
 Here we answer both these questions in a detailed manner. To ease the presentation of the results, in this subsection we will 
-assume that $\mu_t(dV_{FS})=q_t(Z)dV_{FS}$, where $q_t$ is an absolutely continuous probability density. Since the evolution is Hamiltonian, 
-we can use Hamilton's equations of motion to derive the evolution equation of $q_t$.
-First, the sink/sources terms vanishes, since the evolution is Hamiltonian, thus preserving the local probabilities.
-This supports the idea that a $\sigma_t \neq 0$ is related to the loss of information, and possibly to the existence of a 
-dissipative dynamics. Second, starting from the definition of the flux in Eq.(\ref{eq:flux}), we can explicitly write the form of the flux $J_t$, 
+assume that $\mu_t(dV_{FS})=q_t(Z)dV_{FS}$, where $q_t$ is an absolutely continuous probability density. Since the system
+is isolated we have $\dot{x}_\alpha = 0$. This can be seen from the definitions $U_S(t) \otimes \mathbb{I}_E  \ket{\psi_{SE}} = U_S(t) \otimes \mathbb{I}_E  \sum_\alpha \sqrt{x_\alpha} \ket{\chi_\alpha}\ket{e_\alpha} = \sum_\alpha \sqrt{x_\alpha} \ket{\chi_\alpha(t)}\ket{e_\alpha}$, where $\ket{\chi_\alpha(t)} = U_S(t) \ket{\chi_\alpha}$. This proves that 
+the sink/source term vanishes: the evolution is Hamiltonian, thus preserving the local probabilities and the shape of the geometric quantum state.
+This supports the idea that $\sigma_t \neq 0$ is related to the loss or gain of information and, likely, to a dissipative dynamics. 
+Second, starting from the definition of the flux in Eq.(\ref{eq:flux}), we can explicitly write the form of the flux $J_t$, 
 using Hamilton's equations of motion. Writing $\Gamma_\alpha$ in canonical coordinates $(\vec{p}(\Gamma_\alpha),\vec{\phi}(\Gamma_\alpha))$, 
 we have 
 \begin{align}
 \dot{\Gamma}_\alpha & = \left( \frac{d\vec{p}}{dt}(\Gamma_\alpha), \frac{d\vec{\phi}}{dt}(\Gamma_\alpha)\right) \nonumber \\
 & = \left( \frac{1}{\hbar}\frac{\partial E}{\partial \vec{\phi}}, -\frac{1}{\hbar}\frac{\partial E}{\partial \vec{p}}  \right) = v_H(\vec{p}(\Gamma_\alpha),\vec{\phi}(\Gamma_\alpha))
 \end{align}
-Note how the definition of the flow in the right-hand side, $v_H$, does not depend on the index $\alpha$: all 
-$\Gamma_\alpha$ evolve according to the same (Hamiltonian) flow. Inserting this into the definition of the flux 
-we obtain that the flux is equal to the product between the distribution and the Hamiltonian velocity field $v_H$:
+Note how the flow in the right-hand side, $v_H$, does not depend on the index $\alpha$: all 
+$\Gamma_\alpha$ evolve according to the same (Hamiltonian) flow. Inserting this into the definition of $J_t$ 
+we obtain
 \begin{equation}
 J_t = q_t v_H~,
 \end{equation}
@@ -701,20 +701,30 @@ This can be further simplified by remembering that the Hamiltonian vector field 
 For a discussion on this (and more) see Ref.\cite{Marsd13}. This leads us to the final form of the continuity equation of an isolated 
 quantum system:
 \begin{equation}
-\frac{\partial q_t}{\partial t} = - v_H \cdot \nabla q_t = -\left\{ q_t, E \right\}
+\frac{\partial q_t}{\partial t} + v_H \cdot \nabla q_t =0
 \end{equation}
+
+This is a convection equation, typically used to describe an incompressible fluid with zero mass diffusivity, 
+as dilute gases at very low temperatures. We will come back to this point later, when discussing the physical 
+interpretation of our results.
+
+
+%Here the parallel with ordinary transport theories is made plain: unitary evolution 
+%moves probability around the quantum state space in a way that is formally equivalent to an incompressible fluid with zero
+%diffusion coefficient. Naturally, there are also crucial differences, like the fact that the underlying space is generically different
+%from the standard cases of 
 
 \paragraph*{Liouville's theorem for GQM.} As a further point of contact with the techniques of classical 
 statistical mechanics and kinetic theory, we now show that a generic Hamiltonian dynamics for the 
 geometric quantum state satisfies Liouville's theorem \cite{Soto16}. Indeed, by writing explicitly the total 
 derivative of $q_t(Z)$ with respect to time, inserting Hamilton's equations of motion (Eq. (\ref{eq:HAM_EOM})) and then using the continuity equation we get
 \begin{align}
-\frac{d q_t}{d t} &= \sum_\alpha \frac{\partial q_t}{\partial p_\alpha} \frac{dp_\alpha}{dt}+\frac{\partial q_t}{\partial \phi_\alpha} \frac{d\phi_\alpha}{dt} + \frac{\partial q_t}{\partial t} \nonumber\\
+\frac{d q_t}{d t} &= \sum_\alpha \frac{\partial q_t}{\partial \vec{p}_\alpha} \frac{d\vec{p}_\alpha}{dt}+\frac{\partial q_t}{\partial \vec{\phi}_\alpha} \frac{d\vec{\phi}_\alpha}{dt} + \frac{\partial q_t}{\partial t} \nonumber\\
 & = \left\{ q_t, E\right\} - \nabla \cdot q_t v_H \nonumber \\
 & = 0
 \end{align}
-This concludes the section about the general approach, and the treatment of isolated quantum systems.
-We now turn to the more convoluted case of an open quantum system.
+The treatment of isolated quantum systems concludes the section about the general features of this
+new framework. We now turn to the case of an open quantum system.
 
 %\subsection*{Discussion}
 
