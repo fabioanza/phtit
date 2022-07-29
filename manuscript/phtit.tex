@@ -709,7 +709,7 @@ leading to the following continuity equation:
 \begin{equation}
 \frac{\partial q_t}{\partial t} = - v_H \cdot \nabla q_t - q_t \, \nabla \cdot v_H
 \end{equation}
-This can be further simplified by remembering that the Hamiltonian vector field is divergence free, $\nabla \cdot v_H = 0$.
+This can be further simplified by remembering that the Hamiltonian vector field is divergence-free, $\nabla \cdot v_H = 0$.
 For a discussion on this (and more) see Ref.\cite{Marsd13}. This leads us to the final form of the continuity equation of an isolated 
 quantum system:
 \begin{equation}
@@ -850,8 +850,9 @@ is diagonal. This leads to
 \begin{equation}
 \frac{\partial f_t}{\partial t} + \frac{\omega}{\sqrt{p(1-p)}} \frac{\partial f_t}{\partial \phi} = 0~,
 \end{equation}
-where $\omega = \frac{E_1 - E_0}{\hbar}$. This is very similar to an advection equation in which the speed of 
-propagation along $\phi$ depends on $p$. \\
+where $\omega = \frac{E_1 - E_0}{\hbar}$. This is an advection equation in which the speed of 
+propagation along $\phi$ depends on $p$. However, due to the fact that the geometry is not euclidean, 
+the propagation speed is not $\omega/\sqrt{p(1-p)}$ but rather $||\dot{\gamma}|| = \sqrt{\frac{\dot{\gamma}_p^2}{\sqrt{p(1-p)}}+\dot{\gamma}_{\phi}^2 \sqrt{p(1-p)}}$\\
 
 Equivalent to the transport 
 equation for advection, or heat equation, which leads to the analytical solution for the 
