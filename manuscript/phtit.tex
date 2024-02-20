@@ -102,18 +102,17 @@
 \def\ourTitle{%
 % Interpretation of the Geometric Quantum State
 % What is a Quantum State?
-A kinetic theory for quantum information transport
+Kinetic theory for quantum information transport
 }
 
 \def\ourAbstract{%
-We propose a novel theoretical framework to describe the transport of information in quantum systems. 
-This is aimed at modeling and understanding how out of equilibrium open quantum systems move information 
-across their quantum state space, using an approach inspired by transport theories. The main goal is to build 
-new mathematical tools, together with physical intuition, to improve our understanding of complex (many-body and
-out-of-equilibrium) quantum systems. In particular, we are aiming at unraveling the interplay between dynamical 
-properties and information-theoretic features. The main rationale here is to have a framework that can imitate, 
-and potentially replicate, the decades-long history of empirical success of classical transport theories in modeling 
-out-of-equilibrium phenomena. 
+We propose a novel theoretical framework aimed at studying and understanding how generic open quantum 
+systems move information across their quantum state space, using an approach inspired by transport theories. 
+The main goal is to build new tools, together with physical intuition, to improve our understanding of complex 
+(open, many-body and out-of-equilibrium) quantum systems. In particular, we are aiming at unraveling the 
+interplay between dynamical properties and information-theoretic features. The main rationale here is to have a 
+framework that can imitate and replicate the decades-long history of empirical success of classical transport 
+theories in modeling out-of-equilibrium phenomena. 
 }
 
 \def\ourKeywords{%
@@ -134,11 +133,11 @@ Quantum Mechanics, Geometric Quantum Mechanics
 \title{\ourTitle}
 
 \author{Fabio Anza}
-\email{fanza@uw.edu}
+\email{fabio.anza@units.it}
 
 %\author{James P. Crutchfield}
 %\email{chaos@ucdavis.edu}
-\affiliation{InQubator for Quantum Simulation (IQuS), Department of Physics, University of Washington, Seattle, WA 98195, USA}
+\affiliation{Department of Mathematics and Geoscience, University of Trieste, Via Weiss 2, Trieste, 34128, Italy}
 \affiliation{Complexity Sciences Center and Physics Department,
 University of California at Davis, One Shields Avenue, Davis, CA 95616}
 
@@ -184,18 +183,24 @@ University of California at Davis, One Shields Avenue, Davis, CA 95616}
 % {\bf Lead Paragraph:
 % }
 
+\begin{itemize}
+\item Why state space structure is important
+\item Emerging patterns perspective
+\end{itemize}
+
 \section*{Introduction.} Understanding out-of-equilibrium phenomena in many-body systems 
 is crucial to harness the dynamical properties of spatially extended systems. In this sense, transport 
-theories are phenomenological descriptions of a detailed out-of-equilibrium behavior of a system. Their 
-aim is to capture, at the phenomenological level, the way spatially extended system move quantities
-which, in principle, can be globally conserved by can be locally exchanged. Well-known examples are the 
-theories of transport of charge, mass, momentum and heat, which underlie macroscopic phenomena like hydrodynamics. 
-Most of them were originally formulated to understand Avogadro-scale phenomena, like the tendency of a 
-system to transfer mass to minimize the concentration difference. Over time, they were put on more rigorous 
-grounds using statistical mechanics and kinetic theory, and their use has been incredibly powerful in understanding 
-and modeling emergent non-equilibrium properties of many-particles systems. This is true both scientifically and 
-at the industrial level, where these established theories have now become vital parts of our industrial 
-development.
+theories are phenomenological descriptions of a detailed out-of-equilibrium behavior of a system. Given some
+quantity like mass or charge, globally conserved, their aim is to capture the microscopic mechanism of local 
+exchange which, at the mesoscopic and macroscopic scale, gives rise to fluxes.
+
+Well-known examples are the theories of transport of charge, mass, momentum and heat, which underlie 
+macroscopic phenomena like hydrodynamics. Most of them were originally formulated to understand 
+Avogadro-scale phenomena, like the tendency of a system to transfer mass to minimize the concentration 
+difference. Over time, they were put on more rigorous grounds using statistical mechanics and kinetic theory, 
+and they have been incredibly useful to understand and model emergent non-equilibrium properties of 
+many-particles systems. This is true both scientifically and at the industrial level, where these established theories 
+have now become vital parts of our industrial development.
  
 Most notably, Boltzmann used this approach to describe the behavior of gases, and explained the rise of 
 macroscopic irreversibility from the underlying time-symmetric classical mechanics. After 
@@ -205,24 +210,27 @@ quantum theory, these techniques have also been adapted to include quantum fluct
 leading to improved descriptions of transport phenomena at the nanoscale.
  
 In this work, we explore the idea that these techniques can be used to understand how many-body 
-quantum systems move quantum information across its quantum state space, thus laying a bridge 
+quantum systems move quantum information across their quantum state space, thus laying a bridge 
 between the field of quantum information processing in quantum systems and that of transport theories. 
-The long-term goal we have in mind here is to have a comprehensive framework to understand the flows
-of quantum information in out-of-equilibrium many-body quantum systems. Thus, here we provide a self-consistent 
-framework to track and model the transport of probability across a quantum state space. We do so by building 
-a kinetic theory of quantum state evolution, both in closed and open configurations.
+\emph{The goal is to have a comprehensive framework to understand the flows of quantum information in complex
+quantum systems: many-body and out-of-equilibrium open quantum systems interacting with highly 
+structured environments.}
+Thus, here we provide a self-consistent framework to track and model the transport of probability across 
+a quantum state space. We do so by building a kinetic theory of quantum state evolution, both in closed 
+and open configurations.
 
-At the technical level, this is done by leveraging recent work \cite{Anza20a,Anza20b,Anza20c} on 
-Geometric Quantum Mechanics (GQM): a differential-geometric approach to quantum mechanics that 
-gets rid of the phase redundancy of the Hilbert space and exposes the underlying phase-space-like
-structure of the space of quantum states, with probabilities and phases playing the role of 
-canonically conjugated coordinates.
+At the technical level, this is done by following the lead of how dynamical systems theory has helped
+studying the dynamics of non-linear systems \cite{Ruelle}. We leverage Geometric Quantum Mechanics (GQM): 
+a differential-geometric approach to quantum mechanics that encodes the quantumness of a system
+in the geometry of its state space. In doing so, it makes plain the underlying phase-space-like
+structure of quantum state spaces, where probabilities and phases play the role of canonically 
+conjugated coordinates. 
 
 The paper is organized as follows. In Section \ref{sec:GQM} we give a brief summary of 
 GQM, and of the tools introduced in \cite{Anza20a,Anza20b} to describe open quantum systems. 
 In section \ref{sec:IT} we provide our first result: a microscopic derivation of the continuity equation 
 for the information transport in quantum systems, together with the appropriate microscopic definitions 
-for phenomenological quantities such as the information flux and sink/sources. Section \ref{sec:DYN} 
+for the relevant phenomenological quantities: \emph{the information flux and the information sink/sources}. Section \ref{sec:DYN} 
 deals with the kinetic aspects underlying the continuity equation and gives the second result: a general 
 set of kinetic equations regulating the transport of information. In Sections \ref{sec:EXAMPLES1} and \ref{sec:EXAMPLES2} 
 we use the theoretical framework developed in the previous two sections to analyze a few concrete examples, 
@@ -273,8 +281,8 @@ this set of coordinates as they play a particular useful role.
 
 \paragraph*{Observables and POVMs.} In GQM, an \emph{observable} is a function $\mathcal{O}(Z) \in
 \mathbb{R}$ that associates to each point  $Z \in \mathcal{P}(\mathcal{H})$ the
-expectation value $\bra{\psi} \mathcal{O} \ket{\psi}/\braket{\psi}{\psi}$ of the corresponding
-operator $\mathcal{O}$ on state $\ket{\psi}$ with coordinates $Z$:
+projectively invariant expectation value $\bra{\psi} \mathcal{O} \ket{\psi}/\braket{\psi}{\psi}$ of 
+the corresponding self-adjoint operator $\mathcal{O}$ on state $\ket{\psi}$ with coordinates $Z$:
 \begin{align}
 \mathcal{O}(Z) = \frac{\sum_{\alpha,\beta} \mathcal{O}_{\alpha,\beta}Z^\alpha \overline{Z}^\beta}{\sum_{\gamma} \left\vert Z^\gamma\right\vert^2}
   ~,
@@ -286,7 +294,7 @@ Measurement outcome probabilities are determined by \emph{positive
 operator-valued measurements} (POVMs) $\left\{E_j\right\}_{j=1}^D$ applied to a
 state \cite{Nielsen2010,Heinosaari2012}. They are nonnegative operators
 $E_j\geq 0$, called \emph{effects}, that sum up to the identity: $\sum_{j=1}^{D}
-E_j = \mathbb{I}$. In GQM they consist of nonnegative real functions $E_j(Z)\ge
+E_j = \mathbb{I}$. In GQM they consist of nonnegative hermitian forms $E_j(Z)\ge
 0$ on $\mathcal{P}(\mathcal{H})$ whose sum is always unity:
 \begin{align}
 E_j(Z) = \frac{\sum_{m,n}
@@ -323,7 +331,7 @@ This is the hallmark of classical state spaces and justifies the use of the term
 structure is the geometric entity allowing us to define ``Poisson Brackets''
 and the existence of canonically conjugated coordinates. In particular, using 
 probabilities and phases coordinates $\left\{ (p_n,\phi_n)\right\}$
-one has that $\left\{ p_n , \phi_n \right\} = \frac{1}{\hbar}\delta_{nm}$. Thus,
+one has that $\left\{ p_n , \phi_k \right\} = \frac{1}{\hbar}\delta_{nk}$. Thus,
 for arbitrary functions $A$ and $B$ on $\PH$ we have
 \begin{equation}
 \left\{ A, B\right\} \coloneqq \frac{1}{\hbar}\sum_{n=1}^{D-1} \frac{\partial A}{\partial p_n} \frac{\partial B}{\partial \phi_n} - \frac{\partial B}{\partial p_n} \frac{\partial A}{\partial \phi_n}
@@ -402,13 +410,6 @@ P_{Z_0}[\mathcal{O}] &= \intP \mathcal{O}(Z) \delta_{Z_0}(dV_{FS}) \\
   & = \mathcal{O}(Z_0)  = \bra{\psi_0}\mathcal{O}\ket{\psi_0}
   ~.
 \end{align*}
-Extending by linearity, a generic ensemble $\left\{ \lambda_j, \ket{\lambda_j}\right\}$
-is described by a convex combinations of Dirac measures:
-\begin{align*}
-\mu_{\mathrm{mix}} = \sum_{j}\lambda_j \delta_{Z_j}
-  ~. 
-\end{align*}
- 
 Equipped with these tools, we call both $\mu$ and $q$ (when it exists) as the system's
 Geometric Quantum State.  
 
@@ -447,7 +448,7 @@ are sensitive to $\mu$ only via $\rho^\mu$. Therefore, if two geometric quantum 
 $\mu_1$ and $\mu_2$ induce the same density matrix $\rho^{\mu_1} = \rho^{\mu_2}$, then all POVMs
 produce the same outcomes.
 
-\paragraph*{The GQS of an Open Quantum System.}
+\paragraph*{Geometric Quantum States and Conditional Ensembles.}
 As shown above, if a system is in a pure state its GQS is a Dirac measure concentrated
 on a single point of the quantum state space. However, if the system is in contact with an environment, 
 this is not always true, unless system and environment are in a product state. In general, contact with 
@@ -565,15 +566,14 @@ Let's start by analyzing the second term. $\delta^{'}$ is the distributional der
 of the Dirac measure $\delta_{\Gamma_\alpha}$ and $\dot{\Gamma}_\alpha(t)$ is 
 the velocity vector, in state space, of each point $\Gamma_\alpha(t)$. Thus, this term 
 is the covariant divergence of a velocity field or, in other words, a flux term in a continuity equation. 
-Indeed, since all the dependence on the set of which to evaluate the measure lies inside the $\delta^{'}$, 
-the whole term can be explicitly written as the divergence\footnote{With an arbitrary coordinate system we have 
-$\mathrm{div} \vec{f} = \frac{1}{\sqrt{g}} \partial_\alpha \left(\sqrt{g} f^\alpha\right)$,
+Indeed, the whole term can be explicitly written as the divergence\footnote{With an arbitrary coordinate system we have 
+$\mathrm{div} \vec{f} =  \vec{\nabla} \cdot \vec{f} = \frac{1}{\sqrt{g}} \partial_j \left(\sqrt{g} f^j\right)$,
 where $g = \vert \mathrm{det} g_{FS}\vert$ is the absolute value of the determinant of the metric which, 
 in our case, is the Fubini-Study metric.}
 \begin{equation}
 \sum_\alpha x_\alpha \delta^{'}_{\Gamma_\alpha} \dot{\Gamma}_{\alpha} = \nabla \cdot J_t~,
 \end{equation}
-where we have identified the \emph{Information Flux} $J_t$ as the ``single-particle'' flux $J_\alpha(t)$, averaged
+where we have identified the \emph{Information Flux} $J_t$ as the ``single-state'' flux $J_\alpha(t)$, averaged
 with the probability mass it is carrying $x_\alpha(t)$:
 \begin{subequations}\label{eq:flux}
 \begin{align}
@@ -617,8 +617,9 @@ its terms are in order.
 
 First, the derivation presented here pertains finite-dimensional quantum systems interacting with 
 finite environments. However, generalization to countably-infinite or uncountably-infinite dimensional
-environment is straightforward. In the first case, a simple limit $d_E \to \infty$ suffices. This limit goes
-through the derivation, leaving it unaltered. In the second case, which pertains the case in which we 
+environment is straightforward. In the first case, a simple limit $d_E \to \infty$ suffices. In most cases the limit 
+goes through the derivation, leaving it unaltered. However, singular limits are possible and one must always be mindful
+of the physical meaning of the limit that is being enforced. In the second case, which pertains the case in which we 
 have continuous variables or quantum fields as environment, only minor adjustments are needed.
 However, the core aspects of the derivation hold, leaving the final form of the continuity equation
 unaltered. In summary, the only difference between the three cases of finite, countably-infinite or uncountably-infinite
@@ -629,7 +630,7 @@ of these situations we send the interested reader to Ref.\cite{Anza22}.
 Second, an aspect that we deem quite interesting here is that the proposed theoretical framework allows us to talk 
 about quantum information as a localized quantity, which is carried around in quantum state space. This is in analogy 
 with all classical theories of transport of properties, such as mass or charge, which are carried around by 
-particles, represented as points wondering in a classical phase-space. 
+particles, represented as points wondering in a classical phase-space. However, 
 
 Third, the derivation was performed using the generic measure $\mu_t$. Thus, it holds also for the probability
 density $q_t(Z)$, when it exists.
@@ -661,11 +662,11 @@ local flux of information.
 %\end{figure}
 
 \paragraph*{$\sigma_t$ is a proper source/sink term,} with the usual interpretation. Indeed, first, we note that it
-can not be written as a divergence term. Second, we look at the simpler dynamics in which the position of the points 
-in $\PH$ does not change: $\dot{\Gamma}_\alpha = 0$. In this case the support of the distribution is fixed and the 
-particles don't move around $\Gamma_\alpha(t)=\Gamma_\alpha(t_0)$. However, there can still be a non-trivial 
-dynamics, due to $\dot{x}_\alpha(t)\neq 0$. Depending on the actual support of the distribution, as depicted in Figure \ref{fig:sigma_term}, 
-the time-evolution generated by this term is generally non-local in the 
+can not be written as a divergence term on the quantum state space. Second, we look at the simpler dynamics in 
+which the position of the points in $\PH$ does not change: $\dot{\Gamma}_\alpha = 0$. In this case the support 
+of the distribution is fixed and the particles don't move around $\Gamma_\alpha(t)=\Gamma_\alpha(t_0)$. However, 
+there can still be a non-trivial dynamics, due to $\dot{x}_\alpha(t)\neq 0$. Depending on the actual support of 
+the distribution, as depicted in Figure \ref{fig:sigma_term}, the time-evolution generated by this term is generally non-local in the 
 quantum state space. Thus, $\sigma_t$ possesses all the hallmarks of the standard sinks and sources terms in 
 transport theories: it is not associated with particles moving around the state space and it can not be rewritten 
 as a divergence term, while still affecting the time-derivative of the quantity that is being transported---probability mass.
